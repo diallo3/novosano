@@ -1,0 +1,53 @@
+// Hero Headers
+
+$hero: c-hero;
+
+.#{$hero} {
+	text-align: center;
+	background: $s-primary;
+	padding: 8rem 3rem; 
+	width: 100%;
+	display: block;
+	position: relative;
+	&:not(.#{$hero}--main) {
+		.#{$hero}__entry {
+			@include grid-col-row;
+		}
+	}
+	&--main {
+		height: 100vh;
+		min-height: 600px;
+		.#{$hero}__entry {
+			@include center-align($ver: true, $hor: true, $pos: absolute);
+		}
+	}
+	&__footer {
+		padding: rem-calc(100 20 30); 
+	}
+	.#{$hero}__title {
+		@include header-size(h1);
+		color: $white;
+		text-shadow: 1px 1px black(0.3); 
+		text-transform: capitalize;
+		margin-bottom: rem-calc(5); 
+	}
+	.#{$hero}__tag {
+		@include header-size(h6);
+		color: $white;
+		font-weight: 500; 
+		text-shadow: 1px 1px black(0.3); 
+	}
+
+	
+}
+
+
+$debug: false; // TODO: move to _settings.scss
+
+article {
+    color: black;
+
+    @if ($debug) { // visualizing layout internals
+        border: 1px dotted red;
+    }
+}

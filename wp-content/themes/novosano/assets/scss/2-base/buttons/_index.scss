@@ -1,0 +1,50 @@
+/*--------------------------------
+  
+  Buttons
+*/
+
+.o-cta {
+	@include button(
+		$background: $s-button, 
+		$background-hover: darken($s-button, 20%), 
+		$color: $white, 
+		$style: solid
+	);
+	font-size: rem-calc(14);
+	font-weight: 700; 
+	text-transform: uppercase;
+	border-color: $white; 
+	border-width: 2px; 
+	border-style: solid; 
+	border-radius: 80px;  
+	padding: 1em 2.5em;
+	width: auto; 
+	&--primary {
+		// @include typi(cta);
+		padding: rem-calc(15 60);
+	}
+	&--ghost, &--ask {
+		@include button-style($background-hover: $s-button, $color: $white);
+		@include button-hollow;
+		&:hover {
+			background-color: $s-button !important;
+		}
+	}
+	&--inv {
+		@include button-style($background: $white, $color: $s-button);
+		border-color: $s-button;
+		&:hover {
+			color: $white;
+			background-color: $s-button; 
+		}
+	}
+	&--ask {
+		padding-right: 1.8em;
+		padding-left: 1.8em; 
+	}
+	&--small {
+		font-size: rem-calc(12);
+		border-width: 0; 
+		border-radius: 5px;
+	}
+}

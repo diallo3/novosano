@@ -1,0 +1,10 @@
+{# menu main #}
+{% if pri %}
+	<ul>
+	{% for item in pri.get_items %}
+		<li class="{{item.classes | join(' ')}}">
+			<a href="{{item.get_path}}">{{item.title}}</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

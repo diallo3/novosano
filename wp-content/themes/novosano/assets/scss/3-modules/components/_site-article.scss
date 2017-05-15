@@ -1,0 +1,41 @@
+// Article
+
+$con: c-content;
+
+.#{$con}-container {
+	background-color: $white;
+}
+
+.#{$con} {
+	padding: rem-calc(80 0); 
+	&--index {
+		text-align: center;
+	}
+	&__entry {
+		@include grid-col(10);
+		@include grid-column-position(center);
+		@include breakpoint(large) {
+			@include grid-col(8);
+			@include grid-column-position(center);
+		}
+		.#{$con}__title {
+			color: $black;
+			margin-bottom: rem-calc(50); 
+			&:after {
+				content: '';
+			 	display: block;
+			  	background: darken($light-gray, 5%);
+			  	height: 4px;
+			  	max-width: 10%;
+			  	width: 100%;
+			  	margin: 0 auto;
+			}
+		}
+		h1 {
+			@include header-size(h1);
+		}
+		h2 {
+			@include header-size(h2);
+		}
+	}
+}

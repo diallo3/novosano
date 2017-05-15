@@ -1,0 +1,67 @@
+// Footer
+$info: c-info-footer;
+$site: c-site-footer;
+
+.c-summary-container {
+	background-color: $s-primary;
+	border-top: 1px solid $light-gray;  
+}
+
+.c-footer-container {
+	background-color: darken($s-primary, 10%);
+	padding: 0.8em 0;  
+}
+
+.#{$info} {
+	padding: 3em 0;
+	* {
+		color: $white;
+	} 
+	&__summary, &__social {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(6);
+		}
+	}
+}
+
+.#{$site} {
+	&__nav, &__copyright {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(6);
+		}
+	}
+
+	&__copyright {
+		p {
+			text-align: center;
+			@include breakpoint(large) {
+				text-align: right;
+			}
+		}
+	}
+}
+
+.l-menu--social {
+	@include clearfix;
+	.c-menu {
+		@include breakpoint(medium down) {
+			@include centered-list;
+		}
+		@include breakpoint(large) {
+			float: right;
+		}
+	}
+	
+}
+
+.o-main-address {
+	@include clearfix;
+	font-style: normal;
+	text-align: center;
+	display: block;
+	@include breakpoint(large) {
+		text-align: right;
+	} 
+}

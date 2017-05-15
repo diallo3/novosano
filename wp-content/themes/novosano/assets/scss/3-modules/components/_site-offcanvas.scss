@@ -1,0 +1,17 @@
+// Off Canvas
+
+$off: c-offcanvas;
+
+.#{$off} {
+	@include off-canvas-basics;
+	@include off-canvas-wrapper;
+	
+	&__content {
+		@include off-canvas-content;
+	}
+	&__nav {
+		@include off-canvas-base;
+		@include off-canvas-reveal();
+		@include off-canvas-position;
+	}
+}

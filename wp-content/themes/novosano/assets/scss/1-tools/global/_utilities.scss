@@ -1,0 +1,33 @@
+/*--------------------------------
+  
+  Utilities
+*/
+
+figure {
+	margin: 0 
+}
+
+.u-full-block {
+	display: block;
+}
+
+.u-float-left {
+	float: left !important;
+}
+
+.u-float-right {
+	float: right !important;
+}
+
+.u-text-right {
+	text-align: right;
+}
+
+.u-no-margin {
+	@include zero-out;
+}
+
+.u-divide {
+	margin: rem-calc(80 0);
+}
+
