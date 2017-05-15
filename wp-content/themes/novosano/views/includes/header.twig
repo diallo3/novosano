@@ -1,13 +1,29 @@
 {# header.twig #}
+<div class="c-social-header-container">
+	<div class="c-social-header l-wrap">
+		<nav class="l-menu u-float-right">
+			<menu class="c-menu c-menu--social">
+				<li class="c-menu__link"><a href="" class="c-menu__link">Guest Login</a></li>
+				<li class="c-menu__link"><a href="" class="c-menu__link">Live Chat</a></li>
+				<li class="c-menu__link sc"><a href="" class="c-menu__link">fb</a></li>
+				<li class="c-menu__link sc"><a href="" class="c-menu__link">tw</a></li>
+				<li class="c-menu__link sc"><a href="" class="c-menu__link">pn</a></li>
+				<li class="c-menu__link sc"><a href="" class="c-menu__link">ig</a></li>
+			</menu>
+		</nav>
+	</div>
+</div>
+
 <div class="c-header-container l-block">
+	
 	<header class="c-site-header l-wrap" role="banner">
 		{% block header %}
 		<div class="l-logo l-logo--main">
 			<div class="o-logo o-logo--header">
-				<a href="{{site.url}}" class="o-logo__brand u-ir">{{site.name}} Diallo</a>
+				<a href="{{site.url}}" class="o-logo__brand u-ir">{{site.name}}</a>
 			</div>
 		</div>
-		<nav class="l-menu l-menu--main">
+		<nav class="l-menu">
 			{% include "/includes/menu-main.twig" with {'header': header.get_items} %}
 			{# mobile button #}
 			<menu class="c-menu c-menu--mobile">

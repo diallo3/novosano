@@ -7,18 +7,21 @@ $menu: c-menu;
 		@include menu-list;
 	}
 	&--main {
+		border-left: 3px solid $s-primary; 
+		margin: 2.2rem 0; 
+		padding-left: .5em; 
 		display: none;
 		@include breakpoint(large) {
 			display: block;
 		}
 	}
 	&--social {
-		margin-bottom: 1em; 
-		.#{$menu}__item:not(:first-child) {
-			margin-left: 1em;
-		}
+		border-right: 1px solid white(0.8);
 		.#{$menu}__link {
 			text-align: center;
+			&.sc {
+				border-left: 1px solid white(0.8);
+			}
 		}
 	}
 	&--mobile {
@@ -32,21 +35,10 @@ $menu: c-menu;
 		font-size: 0.85em ;
 		font-weight: 500; 
 		text-transform: uppercase;
-		padding: .81em .95em;
+		padding: .2em .5em;
 		display: block;
 		&:hover {
 			background-color: #ddd; 
-		}
-		&.rd {
-			@include circle(50px, darken($s-primary, 5%));
-			border: 1px solid lighten($s-primary, 40%);
-			position: relative;
-			&:hover {
-				background-color: $s-button; 
-			}
-			img {
-				@include abs-pos($t:0, $r:0, $b:0, $l:0);
-			}
 		}
 	}
 }

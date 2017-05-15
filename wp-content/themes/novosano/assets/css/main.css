@@ -1051,10 +1051,12 @@ a:link, a:active, a:visited {
   
   Site header
 */
+.c-social-header-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
+
 .c-header-container {
-  background-color: rgba(0, 0, 0, 0.15);
-  padding: 1em 0 0;
-  min-height: 75px;
+  padding: .2em 0 0;
   position: absolute;
   z-index: 1; }
 
@@ -1062,8 +1064,11 @@ a:link, a:active, a:visited {
   margin: 0;
   padding: 0; }
   .o-logo__brand {
-    width: 210px;
-    height: auto;
+    background-image: url("../images/logo-wht.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 237px;
+    height: 103px;
     display: block;
     overflow: hidden; }
 
@@ -1183,16 +1188,19 @@ a:link, a:active, a:visited {
       .c-menu--main li:last-child, .c-menu--social li:last-child, .c-menu--recap li:last-child {
         margin-right: 0; }
   .c-menu--main {
+    border-left: 3px solid #bf0413;
+    margin: 2.2rem 0;
+    padding-left: .5em;
     display: none; }
     @media print, screen and (min-width: 64em) {
       .c-menu--main {
         display: block; } }
   .c-menu--social {
-    margin-bottom: 1em; }
-    .c-menu--social .c-menu__item:not(:first-child) {
-      margin-left: 1em; }
+    border-right: 1px solid rgba(255, 255, 255, 0.8); }
     .c-menu--social .c-menu__link {
       text-align: center; }
+      .c-menu--social .c-menu__link.sc {
+        border-left: 1px solid rgba(255, 255, 255, 0.8); }
   .c-menu--mobile {
     display: block; }
     @media print, screen and (min-width: 64em) {
@@ -1203,26 +1211,10 @@ a:link, a:active, a:visited {
     font-size: 0.85em;
     font-weight: 500;
     text-transform: uppercase;
-    padding: .81em .95em;
+    padding: .2em .5em;
     display: block; }
     .c-menu__link:hover {
       background-color: #ddd; }
-    .c-menu__link.rd {
-      width: 50px;
-      height: 50px;
-      background: #a60311;
-      border-radius: 25px;
-      border: 1px solid #fd929b;
-      position: relative; }
-      .c-menu__link.rd:hover {
-        background-color: #0d0d0d; }
-      .c-menu__link.rd img {
-        margin: auto;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0; }
 
 .c-hero {
   text-align: center;

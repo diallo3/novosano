@@ -1,10 +1,10 @@
 {# menu main #}
 {% if pri %}
-	<ul>
+	<menu class="c-menu c-menu--main u-float-right">
 	{% for item in pri.get_items %}
-		<li class="{{item.classes | join(' ')}}">
-			<a href="{{item.get_path}}">{{item.title}}</a>
+		<li class="c-menu__item {{item.classes | join(' ')}}">
+			<a href="{{item.get_path}}" class="c-menu__link">{{item.title}}</a>
 		</li>
 	{% endfor %}
-	</ul>
+	</menu>
 {% endif %}
