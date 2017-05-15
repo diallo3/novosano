@@ -6,6 +6,13 @@
 *.swp
 Thumbs.db
 
+# theme specific
+.DS_Store
+assets/scss/.sass-cache/*
+node_modules/
+bower_components/
+npm-debug.log
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
