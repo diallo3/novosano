@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="20px" viewBox="0 0 10 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Facebook - FontAwesome</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy" transform="translate(-1159.000000, -5.000000)" fill="#FFFFFF">
+            <g id="Top-Nav" transform="translate(0.000000, -4.000000)">
+                <g id="Social" transform="translate(1143.000000, 0.000000)">
+                    <path d="M25.703125,9.99107143 L25.703125,12.9375 L23.9508929,12.9375 C23.3110087,12.9375 22.8794654,13.0714272 22.65625,13.3392857 C22.4330346,13.6071442 22.3214286,14.0089259 22.3214286,14.5446429 L22.3214286,16.6540179 L25.5915179,16.6540179 L25.15625,19.9575893 L22.3214286,19.9575893 L22.3214286,28.4285714 L18.90625,28.4285714 L18.90625,19.9575893 L16.0602679,19.9575893 L16.0602679,16.6540179 L18.90625,16.6540179 L18.90625,14.2209821 C18.90625,12.8370467 19.2931509,11.7637687 20.0669643,11.0011161 C20.8407777,10.2384634 21.8712733,9.85714286 23.1584821,9.85714286 C24.2522376,9.85714286 25.1004434,9.90178527 25.703125,9.99107143 Z" id="Facebook---FontAwesome"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

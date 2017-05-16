@@ -1,13 +1,40 @@
 {# footer.twig #}
-<footer class="footer" role="contentinfo">
-	<div id="inner-footer" class="row">
-		<div class="large-12 medium-12 columns">
+<div class="c-footer-container l-block" role="contentinfo">
+	<footer class="c-footer l-wrap">
+		<div class="c-footer__brand">
+			<div class="o-logo o-logo--footer">
+				<a href="{{site.url}}" class="o-logo__brand u-ir">{{site.name}}</a>
+			</div>
+		</div>
+		<div class="c-footer__general">
 			<nav role="navigation">
-			{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
+				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
 			</nav>
 		</div>
-		<div class="large-12 medium-12 columns">
-			<p class="source-org copyright">&copy; Copyright {{ "now"|date('Y') }}.</p>
+		<div class="c-footer__service">
+			<nav role="navigation">
+				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
+			</nav>
 		</div>
-	</div> <!-- end #inner-footer -->
-</footer> <!-- end .footer -->
+		<div class="c-footer__contact">
+			<nav role="navigation">
+				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
+			</nav>
+		</div>
+		<div class="c-footer__social">
+			<nav class="l-menu">
+				<menu class="c-menu">
+					{% include "/includes/inc-social.twig" %}
+				</menu>
+			</nav>
+		</div>
+	</footer> <!-- end #inner-footer -->
+</div> <!-- end .footer -->
+<div class="c-credits-container l-block">
+	<div class="c-credits l-wrap">
+		<div class="c-credits__copy">
+			<p class="o-source-org copyright">&copy; Copyright {{site.title}} {{ "now"|date('Y') }}.</p>
+		</div>
+		<div class="c-credits__usage"></div>
+	</div>
+</div>

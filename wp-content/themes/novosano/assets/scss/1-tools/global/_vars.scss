@@ -17,3 +17,24 @@ $haviland: 'Mr De Haviland', cursive;
 $logo-width: 237px;
 $logo-height: 103px;
 $logo-sm-width: 180px;
+
+
+// 4. Site Mixins
+@mixin animated-bottom($color) {
+	position: relative;
+	&::after {
+		@include abs-pos($b:0, $l:0);
+		content: "";
+		background: $color; 
+		width: 0;
+		height: 2px;    
+		-webkit-transition: width .2s; 
+		-moz-transition: width .2s; 
+		-ms-transition: width .2s; 
+		-o-transition: width .2s; 
+		transition: width .2s; 
+	}
+	&:hover::after {
+		width: 100%; 
+	}
+}

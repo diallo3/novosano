@@ -1,67 +1,71 @@
 // Footer
-$info: c-info-footer;
-$site: c-site-footer;
+$site:    c-footer;
+$credits: c-credits;
 
-.c-summary-container {
-	background-color: $s-primary;
-	border-top: 1px solid $light-gray;  
-}
-
-.c-footer-container {
-	background-color: darken($s-primary, 10%);
+.#{$site}-container {
+	background-color: $black;
 	padding: 0.8em 0;  
+	* {
+		color: $medium-gray;
+	}
 }
 
-.#{$info} {
-	padding: 3em 0;
-	* {
-		color: $white;
-	} 
-	&__summary, &__social {
-		@include grid-col(12);
-		@include breakpoint(large) {
-			@include grid-col(6);
-		}
+[class^="#{$site}__"] {
+	@include grid-col(12);
+	text-align: center;
+	@include breakpoint(large) {
+		@include grid-column(1 of 5);
+		text-align: left;
 	}
+	
 }
 
 .#{$site} {
-	&__nav, &__copyright {
-		@include grid-col(12);
+	.o-logo {
+		&__brand {
+			width: 180px;
+			height: 79px;	
+		} 
+	}
+	&__general, &__service, &__contact {
+		display: none;
 		@include breakpoint(large) {
-			@include grid-col(6);
+			display: block;
+		}
+		.footer-nav {
+			@include flat-list;
+			margin-top: 0;
+			a {
+				@include animated-bottom($s-primary);
+				font-size: rem-calc(15); 
+				padding-bottom: 0.2em;
+				display: inline-block;
+			}
 		}
 	}
-
-	&__copyright {
-		p {
-			text-align: center;
-			@include breakpoint(large) {
-				text-align: right;
+	&__social {
+		.c-menu__link {
+			@include circle(40px, lighten($black, 15%));
+			img {
+				@include abs-pos($t: 0, $r: 0, $b: 0, $l: 0);
 			}
 		}
 	}
 }
 
-.l-menu--social {
-	@include clearfix;
-	.c-menu {
-		@include breakpoint(medium down) {
-			@include centered-list;
-		}
+.#{$credits} {
+	padding: 1em 0.5em; 
+	* {
+		color: $dark-gray;
+		font-size: rem-calc(13);
+	}
+	&-container {
+		background-color: $black; 
+	}
+	&__copy, &__usage {
+		@include grid-col(12);
 		@include breakpoint(large) {
-			float: right;
+			@include grid-col(6);
 		}
 	}
-	
-}
-
-.o-main-address {
-	@include clearfix;
-	font-style: normal;
-	text-align: center;
-	display: block;
-	@include breakpoint(large) {
-		text-align: right;
-	} 
 }

@@ -45,3 +45,24 @@ function joints_theme_support() {
 } /* end theme support */
 
 add_action( 'after_setup_theme', 'joints_theme_support' );
+
+// Theme Options
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'General Settings',
+		'menu_title'	=> 'Theme Options',
+		'menu_slug' 	=> 'general-options',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+	
+}
+
+// Theme Options Timber
+add_filter( 'timber_context', 'opus_timber_context'  );
+
+function opus_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}
