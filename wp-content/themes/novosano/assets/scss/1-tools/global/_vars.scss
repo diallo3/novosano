@@ -20,6 +20,8 @@ $logo-sm-width: 180px;
 
 
 // 4. Site Mixins
+
+//  animated border
 @mixin animated-bottom($color) {
 	position: relative;
 	&::after {
@@ -36,5 +38,27 @@ $logo-sm-width: 180px;
 	}
 	&:hover::after {
 		width: 100%; 
+	}
+}
+
+@mixin heading-line($color) {
+	margin: 0 auto;
+	overflow: hidden;
+	&:before, &:after {
+		content: "";
+		background-color: $color;
+		width: 50%;
+		height: 1px;
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+	}
+	&:before {
+		right: 1.5em;
+ 		margin-left: -50%;
+	}
+	&:after {
+		left: 1.5em;
+ 		margin-right: -50%;
 	}
 }

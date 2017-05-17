@@ -1,12 +1,14 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-	<main id="main" class="large-8 medium-8 columns" role="main">
+	
 
-	   {% for post in posts %}
+	<section class="c-content" role="">
+		{% for post in posts %}
 			<h1>{{post.title}} {{site.title}}</h1>
-	   {% endfor %}
+		{% endfor %}
+	</section>
 																						
-	</main>
+
 {% endblock %}
 {# end #main #}

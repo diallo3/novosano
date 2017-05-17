@@ -1,0 +1,17 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero.twig" %}
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="c-article__content">
+				{{post.get_content}}
+			</section>
+
+			<footer class="c-article__footer">
+				
+			</footer>
+		</article>
+	</div> <!-- /content-wrapper -->
+
+{% endblock %}

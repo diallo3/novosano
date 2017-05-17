@@ -1,0 +1,22 @@
+<div class="c-header-container l-block">
+	<header class="c-site-header l-wrap" role="banner">
+		{% block header %}
+		<div class="l-logo l-logo--main">
+			<div class="o-logo o-logo--header">
+				<a href="{{site.url}}" class="o-logo__brand u-ir">{{site.name}}</a>
+			</div>
+		</div>
+		<nav class="l-menu">
+			{% include "/includes/menu-main.twig" with {'header': header.get_items} %}
+			{# mobile button #}
+			<menu class="c-menu c-menu--mobile">
+				<button class="hamburger hamburger--slider" type="button">
+				 <span class="hamburger-box">
+				    <span class="hamburger-inner"></span>
+				  </span>
+				</button>
+			</menu>
+		</nav>
+		{% endblock %}
+	</header>
+</div>

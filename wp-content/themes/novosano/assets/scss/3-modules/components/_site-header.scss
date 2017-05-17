@@ -4,6 +4,12 @@
 */
 
 // components
+.c-header-wrap {
+	width: 100%; 
+	position: absolute;
+	z-index: 1005; 
+}
+
 .c-social-header-container {
 	background-color: black(0.5); 
 	border-bottom: 1px solid white(0.8); 

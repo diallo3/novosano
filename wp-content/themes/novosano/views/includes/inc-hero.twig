@@ -1,0 +1,36 @@
+{% if fn('is_front_page') %}
+	<div class="c-hero c-hero--main" style="background-image: url({{TimberImage(acf.hero_background.value).src}})">
+		<div class="o-ov"></div>
+		<article class="c-hero__entry">
+			<header class="c-hero__header">
+				<span class="c-hero__accent">{{acf.title_accent.value}}</span>
+				<h1 class="c-hero__title">
+					{% if acf.alternative_title.value %}
+						{{acf.alternative_title.value}}
+					{% else %}
+						{{post.title}}
+					{% endif %}
+				</h1>
+			</header>
+
+			<div class="c-hero__cta">
+				<a href="" class="o-cta o-cta--hero">Start Now</a>
+			</div>
+		</article>
+	</div>
+{% else %}
+	<div class="c-hero" style="background-image: url({{TimberImage(acf.hero_background.value).src}})">
+		<div class="o-ov"></div>
+		<article class="c-hero__entry">
+			<header class="c-hero__header">
+				<h1 class="c-hero__title">
+					{% if acf.alternative_title.value %}
+						{{acf.alternative_title.value}}
+					{% else %}
+						{{post.title}}
+					{% endif %}
+				</h1>
+			</header>
+		</article>
+	</div>
+{% endif %}

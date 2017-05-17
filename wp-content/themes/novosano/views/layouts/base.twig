@@ -15,10 +15,11 @@
 				<div class="off-canvas-content" data-off-canvas-content>
 					{# header #}
 					{% include 'includes/header.twig' %}
-
+					
+					<main id="main" class="c-main" role="main">
 					{% block content %}
 					{% endblock %}
-
+					</main>
 					{# footer #}
 					{% include 'includes/footer.twig' %}
 					

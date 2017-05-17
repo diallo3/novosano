@@ -4,14 +4,21 @@ $hero: c-hero;
 
 .#{$hero} {
 	text-align: center;
-	background: $s-primary;
-	padding: 8rem 3rem; 
+	background: $black;
+	background-repeat: no-repeat;
+	background-position: 50% 50%; 
+	-webkit-background-size: cover; 
+	-o-background-size: cover; 
+	background-size: cover; 
+	padding: 12rem 3rem; 
+	min-height: 65vh;
 	width: 100%;
 	display: block;
 	position: relative;
 	&:not(.#{$hero}--main) {
 		.#{$hero}__entry {
 			@include grid-col-row;
+			position: relative;
 		}
 	}
 	&--main {
@@ -21,33 +28,44 @@ $hero: c-hero;
 			@include center-align($ver: true, $hor: true, $pos: absolute);
 		}
 	}
+	&__header {
+		@include center-block;
+		@include clearfix;
+		display: inline-block;
+	}
 	&__footer {
 		padding: rem-calc(100 20 30); 
 	}
-	.#{$hero}__title {
-		@include header-size(h1);
+	.#{$hero}__accent {
+		@include typi('accent');
+		@include heading-line($white);
+		font-family: $haviland; 
 		color: $white;
+		display: block;
+	}
+	.#{$hero}__title {
+		@include typi('hero');
+		font-size: rem-calc(80); 
+		color: $white;
+		font-weight: 200; 
 		text-shadow: 1px 1px black(0.3); 
-		text-transform: capitalize;
-		margin-bottom: rem-calc(5); 
+		text-transform: uppercase;
+		letter-spacing: -1px; 
+		border-bottom: 1px solid $white; 
+		margin-bottom: rem-calc(50); 
+		padding-bottom: rem-calc(20); 
+		display: inline-block;
+		white-space: nowrap;
 	}
 	.#{$hero}__tag {
 		@include header-size(h6);
 		color: $white;
 		font-weight: 500; 
 		text-shadow: 1px 1px black(0.3); 
-	}
-
-	
+	}	
 }
 
-
-$debug: false; // TODO: move to _settings.scss
-
-article {
-    color: black;
-
-    @if ($debug) { // visualizing layout internals
-        border: 1px dotted red;
-    }
+.o-ov {
+	@include abs-pos($t:0, $r:0, $b:0, $l:0);
+	background: black(0.4); 
 }

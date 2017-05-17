@@ -2,30 +2,44 @@
 @import url('https://fonts.googleapis.com/css?family=Mr+De+Haviland|Muli:200,300,400,600');
 
 $typi: (
-	base: (
-  		null: (16px, 1.4),
+	  base: (
+  		null:   (16px, 1.4),
   		medium: 18px,
-  		large: 20px,
+  		large:  20px,
   	),
+
   	basic: (
-  		null: (14px, 1.4),
+  		null:   (14px, 1.4),
   		medium: (16px, 1.6),
   	),
+
   	opening: (
-  		null: (16px, 1.4),
+  		null:   (16px, 1.4),
   		medium: (18px, 1.6),
-  		large: (18px),
+  		large:  18px,
   	),
-  	cta: (
-		null: (15px),
+
+  	call-to-action: (
+		null:   15px,
   		medium: 16px,
-  		large: 18px,
+  		large:  18px,
   	),
+
+    // headings
+    accent: (
+    	null: (2em, 1),
+    ),
+    hero: (
+    	null:   2em,
+    	small:  2.5em,
+    	medium: 3em,
+    	large:  4em,
+    ),
 );
 
 @include headings() {
   font-family: $muli; 
-  font-weight: 400; 
+  font-weight: 300; 
   text-transform: uppercase ;
   letter-spacing: letter-spacing(180);
   margin: 0 0 $global-margin; 

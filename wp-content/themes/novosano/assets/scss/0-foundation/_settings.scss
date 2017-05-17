@@ -116,6 +116,14 @@ $header-sizes: (
     'h5': 20,
     'h6': 16,
   ),
+  large: (
+    'h1': 60,
+    'h2': 48,
+    'h3': 33,
+    'h4': 28,
+    'h5': 24,
+    'h6': 18,
+  ),
 );
 $header-color: inherit;
 $header-lineheight: 1.4;

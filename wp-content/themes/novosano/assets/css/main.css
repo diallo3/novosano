@@ -758,42 +758,42 @@ _------------------------------- */
 */
 h1 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
 
 h2 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
 
 h3 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
 
 h4 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
 
 h5 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
 
 h6 {
   font-family: "Muli", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin: 0 0 1rem; }
@@ -900,6 +900,13 @@ figure {
   
   Base
 */
+/*--------------------------------
+  
+  Main
+*/
+.c-main {
+  background-color: #f2f2f2; }
+
 a:link, a:active, a:visited {
   text-decoration: none; }
 
@@ -920,27 +927,36 @@ a:link, a:active, a:visited {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: #f2f2f2;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
   border-color: #f2f2f2;
   border-width: 1px;
   border-style: solid;
-  border-radius: 8px;
+  border-radius: 5px;
   margin-bottom: 0;
   padding: 0.5em 1em;
   width: auto; }
   [data-whatinput='mouse'] .o-cta {
     outline: 0; }
   .o-cta:hover, .o-cta:focus {
-    background-color: black;
+    background-color: #bf0413;
     color: #f2f2f2; }
-  .o-cta-nav {
+  .o-cta--nav {
     padding: .75em 1em; }
-    .o-cta-nav:hover {
+    .o-cta--nav:hover {
       background-color: #bf0413; }
+  .o-cta--hero {
+    font-size: 0.9375rem;
+    padding: 1rem 3rem; }
+    @media all and (min-width: 640px) {
+      .o-cta--hero {
+        font-size: 1rem; } }
+    @media all and (min-width: 1024px) {
+      .o-cta--hero {
+        font-size: 1.125rem; } }
 
 /*!
  * Hamburgers
@@ -1027,6 +1043,11 @@ a:link, a:active, a:visited {
   
   Site header
 */
+.c-header-wrap {
+  width: 100%;
+  position: absolute;
+  z-index: 1005; }
+
 .c-social-header-container {
   background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.8); }
@@ -1232,8 +1253,12 @@ a:link, a:active, a:visited {
 
 .c-hero {
   text-align: center;
-  background: #bf0413;
-  padding: 8rem 3rem;
+  background: #0d0d0d;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  padding: 12rem 3rem;
+  min-height: 65vh;
   width: 100%;
   display: block;
   position: relative; }
@@ -1244,7 +1269,8 @@ a:link, a:active, a:visited {
     width: 100%;
     float: left;
     padding-right: 0.625rem;
-    padding-left: 0.625rem; }
+    padding-left: 0.625rem;
+    position: relative; }
     .c-hero:not(.c-hero--main) .c-hero__entry:before, .c-hero:not(.c-hero--main) .c-hero__entry:after {
       content: "";
       display: table; }
@@ -1266,17 +1292,62 @@ a:link, a:active, a:visited {
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%); }
+  .c-hero__header {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    display: inline-block; }
+    .c-hero__header:before, .c-hero__header:after {
+      content: "";
+      display: table; }
+    .c-hero__header:after {
+      clear: both; }
   .c-hero__footer {
     padding: 6.25rem 1.25rem 1.875rem; }
-  .c-hero .c-hero__title {
-    font-size: 1.5rem;
+  .c-hero .c-hero__accent {
+    font-size: 2rem;
+    line-height: 1;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: "Mr De Haviland", cursive;
     color: #f2f2f2;
+    display: block; }
+    .c-hero .c-hero__accent:before, .c-hero .c-hero__accent:after {
+      content: "";
+      background-color: #f2f2f2;
+      width: 50%;
+      height: 1px;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle; }
+    .c-hero .c-hero__accent:before {
+      right: 1.5em;
+      margin-left: -50%; }
+    .c-hero .c-hero__accent:after {
+      left: 1.5em;
+      margin-right: -50%; }
+  .c-hero .c-hero__title {
+    font-size: 2rem;
+    font-size: 5rem;
+    color: #f2f2f2;
+    font-weight: 200;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
-    text-transform: capitalize;
-    margin-bottom: 0.3125rem; }
-    @media print, screen and (min-width: 40em) {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 3.125rem;
+    padding-bottom: 1.25rem;
+    display: inline-block;
+    white-space: nowrap; }
+    @media all and (min-width: 0) {
+      .c-hero .c-hero__title {
+        font-size: 2.5rem; } }
+    @media all and (min-width: 640px) {
       .c-hero .c-hero__title {
         font-size: 3rem; } }
+    @media all and (min-width: 1024px) {
+      .c-hero .c-hero__title {
+        font-size: 4rem; } }
   .c-hero .c-hero__tag {
     font-size: 1rem;
     color: #f2f2f2;
@@ -1285,9 +1356,18 @@ a:link, a:active, a:visited {
     @media print, screen and (min-width: 40em) {
       .c-hero .c-hero__tag {
         font-size: 1rem; } }
+    @media print, screen and (min-width: 64em) {
+      .c-hero .c-hero__tag {
+        font-size: 1rem; } }
 
-article {
-  color: black; }
+.o-ov {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4); }
 
 .c-content-container {
   background-color: #f2f2f2; }
@@ -1346,9 +1426,15 @@ article {
       @media print, screen and (min-width: 40em) {
         .c-content__entry h1 {
           font-size: 3rem; } }
+      @media print, screen and (min-width: 64em) {
+        .c-content__entry h1 {
+          font-size: 3rem; } }
     .c-content__entry h2 {
       font-size: 1.25rem; }
       @media print, screen and (min-width: 40em) {
+        .c-content__entry h2 {
+          font-size: 2.5rem; } }
+      @media print, screen and (min-width: 64em) {
         .c-content__entry h2 {
           font-size: 2.5rem; } }
 
