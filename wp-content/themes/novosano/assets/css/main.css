@@ -907,6 +907,9 @@ figure {
 .c-main {
   background-color: #f2f2f2; }
 
+html, body {
+  font-family: "Muli", sans-serif; }
+
 a:link, a:active, a:visited {
   text-decoration: none; }
 

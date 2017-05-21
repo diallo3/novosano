@@ -1,4 +1,9 @@
 // Links
+
+html, body {
+	font-family: $muli; 
+}
+
 a {
 	&:link, &:active, &:visited {
 		text-decoration: none; 
