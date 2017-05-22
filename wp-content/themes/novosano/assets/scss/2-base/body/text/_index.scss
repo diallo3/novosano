@@ -9,3 +9,10 @@ a {
 		text-decoration: none; 
 	}
 }
+
+[class*="__accent"] {
+	@include typi('accent');
+	@include heading-line($medium-gray);
+	font-family: $haviland; 
+	display: block;
+}

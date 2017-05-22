@@ -913,6 +913,28 @@ html, body {
 a:link, a:active, a:visited {
   text-decoration: none; }
 
+[class*="__accent"] {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: "Mr De Haviland", cursive;
+  display: block; }
+  [class*="__accent"]:before, [class*="__accent"]:after {
+    content: "";
+    background-color: #cacaca;
+    width: 50%;
+    height: 1px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle; }
+  [class*="__accent"]:before {
+    right: 1.5em;
+    margin-left: -50%; }
+  [class*="__accent"]:after {
+    left: 1.5em;
+    margin-right: -50%; }
+
 /*--------------------------------
   
   Buttons
@@ -1078,7 +1100,7 @@ a:link, a:active, a:visited {
 
 .c-footer-container {
   background-color: #0d0d0d;
-  padding: 0.8em 0; }
+  padding: 3.125rem 0 0.625rem; }
   .c-footer-container * {
     color: #cacaca; }
 
@@ -1308,11 +1330,8 @@ a:link, a:active, a:visited {
   .c-hero__footer {
     padding: 6.25rem 1.25rem 1.875rem; }
   .c-hero .c-hero__accent {
-    font-size: 2rem;
-    line-height: 1;
     margin: 0 auto;
     overflow: hidden;
-    font-family: "Mr De Haviland", cursive;
     color: #f2f2f2;
     display: block; }
     .c-hero .c-hero__accent:before, .c-hero .c-hero__accent:after {
@@ -1514,6 +1533,62 @@ a:link, a:active, a:visited {
   
   Pages
 */
+/*--------------------------------
+  
+  Common-Pages
+*/
+.c-lead {
+  width: 83.33333%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center; }
+  .c-lead-container {
+    padding: 3.125rem 0 1.25rem;
+    border-bottom: 1px solid #cacaca; }
+  @media print, screen and (min-width: 40em) {
+    .c-lead {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  .c-lead:last-child:not(:first-child) {
+    float: right; }
+  .c-lead, .c-lead:last-child:not(:first-child) {
+    float: none;
+    clear: both; }
+  @media print, screen and (min-width: 64em) {
+    .c-lead {
+      width: 58.33333%;
+      float: left;
+      padding-right: 0.625rem;
+      padding-left: 0.625rem;
+      margin-right: auto;
+      margin-left: auto; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-lead {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  @media print, screen and (min-width: 64em) {
+      .c-lead:last-child:not(:first-child) {
+        float: right; }
+      .c-lead, .c-lead:last-child:not(:first-child) {
+        float: none;
+        clear: both; } }
+  .c-lead__accent {
+    color: #717171; }
+  .c-lead__title {
+    font-size: 1.25rem; }
+    @media all and (min-width: 0) {
+      .c-lead__title {
+        font-size: 1.25rem; } }
+    @media all and (min-width: 640px) {
+      .c-lead__title {
+        font-size: 1.5625rem; } }
+    @media all and (min-width: 1024px) {
+      .c-lead__title {
+        font-size: 1.875rem; } }
+
 .c-services-container {
   background-color: #eeeeee; }
   .c-services-container .c-content__title, .c-services-container .c-content__footer {

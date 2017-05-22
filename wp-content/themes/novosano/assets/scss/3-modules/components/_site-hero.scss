@@ -37,9 +37,7 @@ $hero: c-hero;
 		padding: rem-calc(100 20 30); 
 	}
 	.#{$hero}__accent {
-		@include typi('accent');
 		@include heading-line($white);
-		font-family: $haviland; 
 		color: $white;
 		display: block;
 	}

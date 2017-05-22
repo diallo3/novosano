@@ -1,0 +1,26 @@
+/*--------------------------------
+  
+  Common-Pages
+*/
+
+$lead: c-lead;
+
+.#{$lead} {
+	&-container {
+		padding: rem-calc(50 0 20); 
+		border-bottom: 1px solid $medium-gray;  
+	}
+	@include grid-col(10);
+	@include grid-column-position(center);
+	@include breakpoint(large) {
+		@include grid-col(7);
+		@include grid-column-position(center);
+	}
+	text-align: center;
+	&__accent {
+		color: darken($dark-gray, 10%);
+	}
+	&__title {
+		@include typi('lead');
+	}
+}
