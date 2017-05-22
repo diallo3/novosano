@@ -20,7 +20,7 @@ $typi: (
   	),
 
   	call-to-action: (
-		null:   15px,
+		  null:   15px,
   		medium: 16px,
   		large:  18px,
   	),
@@ -29,12 +29,14 @@ $typi: (
     accent: (
     	null: (2em, 1.6),
     ),
+
     hero: (
     	null:   32px,
     	small:  40px,
     	medium: 48px,
     	large:  64px,
     ),
+
     lead: (
       null:   20px,
       small:  20px,

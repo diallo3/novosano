@@ -1,0 +1,108 @@
+$test: c-testimonial;
+
+.#{$test}-container {
+	background-color: $s-primary;
+	padding: 1em; 
+}
+
+.#{$test} {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5em 0; 
+    position: relative;
+    @include breakpoint(large) {
+    	max-width: 60rem;
+    }
+    &__header {
+    	text-align: center;
+    	border-bottom:  1px solid $white; 
+    	margin: 0 3em 2.5em 3em; 
+    	* {
+    		color: $white;
+    	}
+    }
+	&__profile {
+		@include grid-column(3, 10px);
+		text-align: center;
+		p {
+			color: $white;
+			font-size: rem-calc(12);
+			font-style: normal; 
+		}
+		.c-profile__img {
+			@include circle(100px, $black);
+			border: 2px solid $white; 
+			margin-bottom: 0.5em; 
+			overflow: hidden;
+		}
+	}
+	&__entry {
+		@include grid-column(9, 10px);
+		position: relative;
+		&::after {
+			content: " ";
+			border: solid transparent;
+			border-color: rgba(255, 255, 255, 0);
+			border-right-color: $white;
+			border-width: 10px;
+			margin-top: -10px;
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 38%;
+			right: 98%;
+			pointer-events: none;
+		}
+		blockquote {
+			background-color: $white; 
+			border-radius: 5px;
+			margin: 0; 
+			padding: 0.8em; 
+		}
+	}
+    &__title {
+    	@include header-size(h2);
+    }
+	&::before, &::after {
+		content: "";
+		background: url("#{$imgPath}/icon-quote-lt.svg") no-repeat 0 0;
+		-webkit-background-size: contain; 
+		-o-background-size: contain; 
+		background-size: contain; 
+		width: 70px;
+		height: 70px;  
+		position: absolute;
+		top: 0;
+		left: 0.9375rem;  
+	}
+	&::after {
+		background-image: url("#{$imgPath}/icon-quote-rt.svg");
+		top: auto;
+		right: 0.9375rem;
+		left: auto;
+		bottom: 0; 
+	}
+	.o-slide-container {
+		@include zero-out; 
+	}
+	.o-slide {
+		&__item {
+			@include grid-col(6);
+		}
+	}
+}
+
+.o-bullets {
+	@include orbit-bullets;
+	@include abs-pos($r: 0, $b: -40px, $l: 0);
+	.item {
+		@include grid-row;
+		border: 1px solid #c00;
+	}
+	button {
+		border: 2px solid $s-tertiary; 
+	}
+	.is-active {
+		border: 2px solid $white; 
+	}
+}
