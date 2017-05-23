@@ -7,19 +7,23 @@
 	@include button(
 		$background: transparent, 
 		$background-hover: $s-primary, 
-		$color: $white, 
+		$color: $s-primary, 
 		$style: solid
 	);
 	font-size: rem-calc(13);
-	font-weight: 400; 
+	font-weight: 700; 
 	text-transform: uppercase;
-	border-color: $white; 
+	border-color: $s-primary; 
 	border-width: 1px; 
 	border-style: solid; 
 	border-radius: 5px; 
 	margin-bottom: 0; 
-	padding: 0.5em 1em;
+	padding: 1.5em 2em;
 	width: auto; 
+	&--nav, &--hero {
+		color: $white;
+		border-color: $white; 
+	}
 	&--nav {
 		padding: .75em 1em;
 		&:hover {

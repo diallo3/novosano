@@ -1,0 +1,62 @@
+/*--------------------------------
+  
+  Home
+*/
+
+$kick: c-sidekick;
+
+.#{$kick} {
+	border-bottom: 1px solid $medium-gray;
+	&__block {
+		padding: rem-calc(60 20); 
+	}
+	&__title {
+		color: $black;
+		font-size: rem-calc(26); 
+		font-weight: 200; 
+		background: url('#{$imgPath}/icon-dots.svg') no-repeat 1% 100%;
+		margin-bottom: 0.8em; 
+		padding-bottom: 0.5em;  
+	}
+	&__entry {
+		@include grid-col(12);
+		color: darken($dark-gray, 20%);
+		@include breakpoint(medium) {
+			@include grid-col(6);
+		}
+		&.odd {
+			@include grid-col-off(6);
+		}
+	}
+	&__points {
+		@include zero-out;
+		list-style: none;
+		border-top: 1px solid $medium-gray;
+		padding: 1em 0 2em;  
+		li {
+			font-style: italic; 
+			font-weight: 600; 
+			padding-left: 1.7em;
+			text-indent: -0.1em;
+			&::before {
+				content: "\25CF";
+				color: $s-primary;
+				font-style: normal; 
+				padding-right: 0.5em; 
+			}  
+		}
+	}
+}
+
+.c-promo {
+	background-color: $black; 
+	position: relative;
+	* {
+		color: $white;
+	}
+	&__intro, &__exit {
+		@include grid-col(6);
+		border: 1px solid $white; 
+		height: 400px;
+	}
+}

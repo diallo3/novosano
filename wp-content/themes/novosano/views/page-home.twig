@@ -3,17 +3,69 @@
 {% block content %}
 	{% include "/includes/inc-hero.twig" %}
 	{% include "/includes/inc-lead.twig" %}
-	<div class="c-content__entry l-wrap">
-		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			
-			<section class="c-article__content">
-				{{post.get_content}}
-			</section>
+	<div class="c-sidekick">
+		<article class="c-sidekick__block l-wrap">
+			<section class="c-sidekick__entry odd">
+				<header class="c-sidekick__header">
+					<h3 class="c-sidekick__title">This is the Title</h3>
+				</header>
 
-			<footer class="c-article__footer">
-				
-			</footer>
+				<div class="c-sidekick__content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae consectetur, alias porro nobis itaque suscipit consequuntur voluptatibus ullam ratione fugit, quis quisquam error et quibusdam sint illo molestias, fugiat aliquid.</p>
+
+					<ul class="c-sidekick__points">
+						<li>Lorem Ipsum...</li>
+						<li>Lorem Ipsum...</li>
+						<li>Lorem Ipsum...</li>
+					</ul>
+				</div>
+
+
+
+				<footer class="c-sidekick__footer">
+					<p><a href="#" class="o-cta">More about this service</a></p>
+				</footer>
+			</section>
 		</article>
-	</div> <!-- /content-wrapper -->
+	</div>
+	<div class="c-promo">
+		<div class="c-promo__block l-wrap">
+			<div class="c-promo__intro">
+				<div class="c-promo__entry">
+					<h3 class="c-promo__title">
+						<span></span>
+						Instant Results!
+					</h3>
+					<p class="tag">No Surgery, No Downtime</p>
+				</div>
+			</div>
+			<div class="c-promo__exit"></div>
+		</div>
+	</div>
+	<div class="c-sidekick">
+		<article class="c-sidekick__block l-wrap">
+			<section class="c-sidekick__entry even">
+				<header class="c-sidekick__header">
+					<h3 class="c-sidekick__title">This is the Title</h3>
+				</header>
+
+				<div class="c-sidekick__content">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae consectetur, alias porro nobis itaque suscipit consequuntur voluptatibus ullam ratione fugit, quis quisquam error et quibusdam sint illo molestias, fugiat aliquid.</p>
+
+					<ul class="c-sidekick__points">
+						<li>Lorem Ipsum...</li>
+						<li>Lorem Ipsum...</li>
+						<li>Lorem Ipsum...</li>
+					</ul>
+				</div>
+
+
+
+				<footer class="c-sidekick__footer">
+					<p><a href="#" class="o-cta">More about this service</a></p>
+				</footer>
+			</section>
+		</article>
+	</div>
 	{% include "includes/inc-testimonials.twig" %}
 {% endblock %}
