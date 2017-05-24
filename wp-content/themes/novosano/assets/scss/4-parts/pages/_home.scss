@@ -7,6 +7,9 @@ $kick: c-sidekick;
 
 .#{$kick} {
 	border-bottom: 1px solid $medium-gray;
+	.l-wrap {
+		max-width: 60rem; 
+	}
 	&__block {
 		padding: rem-calc(60 20); 
 	}
@@ -56,7 +59,12 @@ $kick: c-sidekick;
 	}
 	&__intro, &__exit {
 		@include grid-col(6);
+		text-align: center;
 		border: 1px solid $white; 
 		height: 400px;
+		position: relative;
+	}
+	&__entry {
+		@include center-align($ver: true, $hor: true, $pos: absolute);
 	}
 }

@@ -969,6 +969,8 @@ a:link, a:active, a:visited {
   .o-cta:hover, .o-cta:focus {
     background-color: #bf0413;
     color: #bf0413; }
+  .o-cta:hover {
+    color: #f2f2f2; }
   .o-cta--nav, .o-cta--hero {
     color: #f2f2f2;
     border-color: #f2f2f2; }
@@ -1738,6 +1740,8 @@ a:link, a:active, a:visited {
 */
 .c-sidekick {
   border-bottom: 1px solid #cacaca; }
+  .c-sidekick .l-wrap {
+    max-width: 60rem; }
   .c-sidekick__block {
     padding: 3.75rem 1.25rem; }
   .c-sidekick__title {
@@ -1801,14 +1805,21 @@ a:link, a:active, a:visited {
     float: left;
     padding-right: 0.625rem;
     padding-left: 0.625rem;
+    text-align: center;
     border: 1px solid #f2f2f2;
-    height: 400px; }
+    height: 400px;
+    position: relative; }
     @media print, screen and (min-width: 40em) {
       .c-promo__intro, .c-promo__exit {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem; } }
     .c-promo__intro:last-child:not(:first-child), .c-promo__exit:last-child:not(:first-child) {
       float: right; }
+  .c-promo__entry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); }
 
 .c-services-container {
   background-color: #eeeeee; }

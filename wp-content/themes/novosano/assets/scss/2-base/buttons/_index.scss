@@ -20,6 +20,9 @@
 	margin-bottom: 0; 
 	padding: 1.5em 2em;
 	width: auto; 
+	&:hover {
+		color: $white;
+	}
 	&--nav, &--hero {
 		color: $white;
 		border-color: $white; 
