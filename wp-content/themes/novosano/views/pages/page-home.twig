@@ -1,0 +1,76 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero.twig" %}
+	{% include "/includes/inc-lead.twig" %}
+
+	{# sidekick #}
+	
+
+	{% for home_item in post.get_field('sidekicks') %}
+		{% set layout = home_item.acf_fc_layout %}
+
+	    {% if layout == 'sidekick_service' %}
+	    	{% set title = home_item.title %}
+	    	{% set desc  = home_item.description %}
+			{% set pts   = home_item.bullet_points %}
+			{% set cta   = home_item.service_cta %}
+			{% set img   = TimberImage(home_item.image).src %}
+
+	    	<div class="c-sidekick">
+				<article class="c-sidekick__block l-wrap" style="background-image: url('{{img}}');">
+					<div class="ov"></div>
+					<section class="c-sidekick__entry">
+						<header class="c-sidekick__header">
+							<h3 class="c-sidekick__title">{{title}}</h3>
+						</header>
+
+						<div class="c-sidekick__content">
+							{{desc}}
+							
+							{% if pts|length > 0 %}
+								<ul class="c-sidekick__points">
+									{% for p in pts %}
+									<li>{{p.point_item}}</li>
+									{% endfor %}
+								</ul>
+							{% endif %}
+						</div>
+
+						<footer class="c-sidekick__footer">
+							<p><a href="{{home_item.service_cta}}" class="o-cta">More about this service</a></p>
+						</footer>
+					</section>
+				</article>
+			</div> 
+	    {% elseif layout == 'sidekick_ad' %}
+	        	<div class="c-promo">
+					<div class="c-promo__block l-wrap">
+						<div class="c-promo__intro">
+							<div class="c-promo__entry">
+								<h3 class="c-promo__title">
+									{% if home_item.accent %}
+										<span class="o-accent">{{home_item.accent}}</span>
+									{% endif %}
+									{{home_item.title}}
+								</h3>
+								<p class="tag">{{home_item.tag}}</p>
+							</div>
+						</div>
+						<div class="c-promo__exit">
+							<div class="c-promo__entry">
+								<div class="c-promo__cta">
+									<a href="{{home_item.ad_cta}}" class="o-cta o-cta--ghost">Schedule a Consultation</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	    {% endif %}
+	{% endfor %}
+
+
+
+
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}

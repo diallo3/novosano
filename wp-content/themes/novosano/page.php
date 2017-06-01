@@ -25,4 +25,5 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 $context["acf"] = get_field_objects($data["post"]->ID);
-Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+// Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);
+Timber::render("/views/pages/page.twig", $context); 

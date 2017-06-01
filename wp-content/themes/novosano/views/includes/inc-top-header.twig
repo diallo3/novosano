@@ -1,11 +1,15 @@
+{# vars #}
+{% set login = options.guest_login %}
+{% set chat = options.live_chat %}
+
 <div class="c-social-header-container">
 	<div class="c-social-header l-wrap">
 		<nav class="l-menu u-float-right">
 			<menu class="c-menu c-menu--social">
-				{% if options.guest_login %}
+				{% if login %}
 					<li class="c-menu__item"><a href="" class="c-menu__link">Guest Login</a></li>
 				{% endif %}
-				{% if options.live_chat %}
+				{% if chat %}
 					<li class="c-menu__item"><a href="" class="c-menu__link">Live Chat</a></li>
 				{% endif %}
 				{% include "/includes/inc-social.twig" %}

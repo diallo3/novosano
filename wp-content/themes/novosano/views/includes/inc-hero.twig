@@ -1,23 +1,26 @@
-
-	<div class="c-hero {% if fn('is_front_page') %}c-hero--main{% endif %}" style="background-image: url({{TimberImage(acf.hero_background.value).src}})"
-	>
-		<div class="o-ov"></div>
-		<article class="c-hero__entry">
-			<header class="c-hero__header">
-				<span class="c-hero__accent">{{acf.title_accent.value}}</span>
-				<h1 class="c-hero__title">
-					{% if acf.alternative_title.value %}
-						{{acf.alternative_title.value}}
-					{% else %}
-						{{post.title}}
-					{% endif %}
-				</h1>
-			</header>
-			
-			{% if fn('is_front_page') %}
-				<div class="c-hero__cta">
-					<a href="" class="o-cta o-cta--hero">Start Now</a>
-				</div>
-			{% endif %}
-		</article>
-	</div>
+{# vars #}
+{% set bck = TimberImage(acf.hero_background.value).src %}
+{% set h_title = acf.alternative_title.value %}
+{% set h_accent = acf.title_accent.value %}
+<div class="c-hero {% if fn('is_front_page') %}c-hero--main{% endif %}" style="background-image: url({{bck}})"
+>
+	<div class="o-ov"></div>
+	<article class="c-hero__entry">
+		<header class="c-hero__header">
+			<span class="c-hero__accent">{{h_accent}}</span>
+			<h1 class="c-hero__title">
+				{% if h_title %}
+					{{h_title}}
+				{% else %}
+					{{post.title}}
+				{% endif %}
+			</h1>
+		</header>
+		
+		{% if fn('is_front_page') %}
+			<div class="c-hero__cta">
+				<a href="" class="o-cta o-cta--hero">Start Now</a>
+			</div>
+		{% endif %}
+	</article>
+</div>

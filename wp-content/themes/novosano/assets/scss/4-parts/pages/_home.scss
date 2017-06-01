@@ -7,11 +7,58 @@ $kick: c-sidekick;
 
 .#{$kick} {
 	border-bottom: 1px solid $medium-gray;
-	.l-wrap {
-		max-width: 60rem; 
-	}
 	&__block {
+		background-image: url('#{$imgPath}/bck-temp-home.jpg');
+		background-repeat: no-repeat;
+		background-position: 250% 0;
+		-webkit-background-size: contain; 
+		-o-background-size: contain; 
+		background-size: contain; 
 		padding: rem-calc(60 20); 
+		position: relative;
+		@include breakpoint(small only) {
+			background-image: none !important; 
+		}
+		@include breakpoint(medium) {
+			min-height: 480px; 
+		}
+		@include breakpoint(large) {
+			background-position: 0 0;
+		}
+		.ov {
+			background-color: white(0.65);
+			@include breakpoint(large) {
+				background-color: white(0.0);
+			}
+		}
+		&.odd {
+			.#{$kick}__entry {
+				@include breakpoint(large) {
+					@include grid-col-off(6);
+				}
+			}
+		}
+		&.even {
+			background-position: 500% 0;
+			@include breakpoint(large) {
+				background-position: 100% 0;
+			}
+		}
+	}
+	&__entry {
+		@include grid-col(12);
+		@include grid-col-pos(center);
+		color: darken($dark-gray, 40%); 
+		position: relative;
+		@include breakpoint(medium) {
+			@include grid-col(8);
+			@include grid-col-pos(center);
+		}
+		@include breakpoint(large) {
+			@include grid-col(6);
+			@include grid-col-unpos();
+			@include grid-column-end;
+		}
 	}
 	&__title {
 		color: $black;
@@ -20,16 +67,6 @@ $kick: c-sidekick;
 		background: url('#{$imgPath}/icon-dots.svg') no-repeat 1% 100%;
 		margin-bottom: 0.8em; 
 		padding-bottom: 0.5em;  
-	}
-	&__entry {
-		@include grid-col(12);
-		color: darken($dark-gray, 20%);
-		@include breakpoint(medium) {
-			@include grid-col(6);
-		}
-		&.odd {
-			@include grid-col-off(6);
-		}
 	}
 	&__points {
 		@include zero-out;
@@ -52,19 +89,30 @@ $kick: c-sidekick;
 }
 
 .c-promo {
-	background-color: $black; 
+	background-color: darken($black, 10%); 
+	background-image: url('#{$imgPath}/bck-promo-results.jpg'); 
+	background-position: 50% 0;
+	background-repeat: no-repeat;
 	position: relative;
 	* {
 		color: $white;
 	}
 	&__intro, &__exit {
-		@include grid-col(6);
+		@include grid-col(12);
 		text-align: center;
-		border: 1px solid $white; 
 		height: 400px;
 		position: relative;
+		@include breakpoint(large) {
+			@include grid-col(6);
+		}
 	}
 	&__entry {
 		@include center-align($ver: true, $hor: true, $pos: absolute);
+	}
+	&__intro {
+		* {
+			text-align: left;
+			display: block;
+		}
 	}
 }

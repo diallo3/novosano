@@ -1,12 +1,18 @@
-{% if options.facebook %}
-	<li class="c-menu__item sc fb"><a href="{{options.facebook}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-fb.svg" alt=""></a></li>
+{# vars #}
+{% set fb = options.facebook %}
+{% set tw = options.twitter %}
+{% set pn = options.pinterest %}
+{% set ig = options.instagram %}
+
+{% if fb %}
+	<li class="c-menu__item sc fb"><a href="{{fb}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-fb.svg" alt=""></a></li>
 {% endif %}
-{% if options.twitter %}
-	<li class="c-menu__item sc tw"><a href="{{options.twitter}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-tw.svg" alt=""></a></li>
+{% if tw %}
+	<li class="c-menu__item sc tw"><a href="{{tw}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-tw.svg" alt=""></a></li>
 {% endif %}
-{% if options.pinterest %}
-	<li class="c-menu__item sc pn"><a href="{{options.pinterest}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-pn.svg" alt=""></a></li>
+{% if pn %}
+	<li class="c-menu__item sc pn"><a href="{{pn}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-pn.svg" alt=""></a></li>
 {% endif %}
-{% if options.instagram %}
-	<li class="c-menu__item sc ig"><a href="{{options.instagram}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-ig.svg" alt=""></a></li>
+{% if ig %}
+	<li class="c-menu__item sc ig"><a href="{{ig}}" class="c-menu__link"><img src="{{ theme.link }}/assets/images/icon-ig.svg" alt=""></a></li>
 {% endif %}

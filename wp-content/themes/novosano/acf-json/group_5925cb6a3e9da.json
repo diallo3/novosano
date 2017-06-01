@@ -20,7 +20,7 @@
                     "key": "5925cbb233590",
                     "name": "sidekick_service",
                     "label": "Sidekick Service",
-                    "display": "block",
+                    "display": "row",
                     "sub_fields": [
                         {
                             "key": "field_5925cc0f3c54c",
@@ -69,7 +69,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -101,6 +101,30 @@
                             ]
                         },
                         {
+                            "key": "field_5925ede9f4d8f",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_5925d0d411956",
                             "label": "Service CTA",
                             "name": "service_cta",
@@ -127,8 +151,27 @@
                     "key": "5925cf2511951",
                     "name": "sidekick_ad",
                     "label": "Sidekick Ad",
-                    "display": "block",
+                    "display": "row",
                     "sub_fields": [
+                        {
+                            "key": "field_5925f17b216a3",
+                            "label": "Accent",
+                            "name": "accent",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Add Title Accent",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_5925cf4f11952",
                             "label": "Title",
@@ -247,5 +290,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1495650728
+    "modified": 1495658934
 }

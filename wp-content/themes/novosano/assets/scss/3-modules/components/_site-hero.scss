@@ -21,11 +21,17 @@ $hero: c-hero;
 			position: relative;
 		}
 	}
+	* {
+		position: relative;
+	}
 	&--main {
 		height: 100vh;
 		min-height: 600px;
 		.#{$hero}__entry {
-			@include center-align($ver: true, $hor: true, $pos: absolute);
+			@include breakpoint(medium) {
+				@include center-align($ver: true, $hor: true, $pos: absolute);
+			}
+			
 		}
 	}
 	&__header {
@@ -53,7 +59,10 @@ $hero: c-hero;
 		margin-bottom: rem-calc(50); 
 		padding-bottom: rem-calc(20); 
 		display: inline-block;
-		white-space: nowrap;
+		@include breakpoint(medium) {
+			white-space: nowrap;
+		}
+		
 	}
 	.#{$hero}__tag {
 		@include header-size(h6);

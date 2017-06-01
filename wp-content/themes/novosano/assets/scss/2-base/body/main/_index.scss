@@ -5,6 +5,10 @@
 
 $main: c-main;
 
+.ov {
+	@include abs-pos(0, 0, 0, 0);
+}
+
 .#{$main} {
 	background-color: $white; 
 }

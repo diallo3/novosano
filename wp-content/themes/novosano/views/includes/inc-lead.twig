@@ -1,12 +1,17 @@
+{# vars #}
+{% set l_accent = acf.lead_accent.value %}
+{% set l_title = acf.lead_title.value %}
+{% set l_entry = acf.lead_entry.value %}
+
 <div class="c-lead-container l-block">
 	<div class="l-wrap">
 		<div class="c-lead">
 			<header class="c-lead__header">
-				<span class="c-lead__accent">{{acf.lead_accent.value}}</span>
-				<h2 class="c-lead__title">{{acf.lead_title.value}}</h2>
+				<span class="c-lead__accent">{{l_accent}}</span>
+				<h2 class="c-lead__title">{{l_title}}</h2>
 			</header>
 		
-			{{acf.lead_entry.value}}
+			{{l_entry}}
 		</div>
 	</div>
 </div>
