@@ -13,6 +13,6 @@ a {
 [class*="__accent"] {
 	@include typi('accent');
 	@include heading-line($medium-gray);
-	font-family: $haviland; 
+	font-family: $ovo;
 	display: block;
 }

@@ -1,0 +1,24 @@
+{# vars #}
+{% set h_accent = acf.hero_accent.value %}
+{% set h_title  = acf.hero_title.value %}
+{% set h_cta    = acf.hero_cta.value %}
+{% set h_link   = acf.hero_link.value %}
+
+<article class="c-hero__entry">
+	<header class="c-hero__header">
+		<span class="c-hero__accent">{{h_accent}}</span>
+		<h1 class="c-hero__title">
+			{% if h_title %}
+				{{h_title}}
+			{% else %}
+				{{post.title}}
+			{% endif %}
+		</h1>
+	</header>
+	
+	{% if fn('is_front_page') %}
+		<div class="c-hero__cta">
+			<a href="" class="o-cta o-cta--hero">{{h_cta}}</a>
+		</div>
+	{% endif %}
+</article>

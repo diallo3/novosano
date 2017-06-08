@@ -21,9 +21,8 @@ $menu: c-menu;
 	&__link:not(.o-cta) {
 		@include animated-bottom($s-primary);
 		color: $white;
-		font-size: 0.85em ;
+		font-size: rem-calc(16);
 		font-weight: 500; 
-		text-transform: uppercase;
 		padding: .5em 0;
 		display: block;
 	}

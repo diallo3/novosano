@@ -22,7 +22,7 @@ CSS file.
      * 3. Prevent adjustments of font size after orientation changes in
      *    IE on Windows Phone and in iOS.
      */
-@import url("https://fonts.googleapis.com/css?family=Mr+De+Haviland|Muli:200,300,400,600");
+@import url("https://fonts.googleapis.com/css?family=ovo|Muli:200,300,400,600");
 html {
   font-family: sans-serif;
   /* 1 */
@@ -922,11 +922,11 @@ a:link, a:active, a:visited {
   text-decoration: none; }
 
 [class*="__accent"] {
-  font-size: 2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
   margin: 0 auto;
   overflow: hidden;
-  font-family: "Mr De Haviland", cursive;
+  font-family: "Ovo", serif;
   display: block; }
   [class*="__accent"]:before, [class*="__accent"]:after {
     content: "";
@@ -1256,9 +1256,8 @@ a:link, a:active, a:visited {
   .c-menu__link:not(.o-cta) {
     position: relative;
     color: #fff;
-    font-size: 0.85em;
+    font-size: 1rem;
     font-weight: 500;
-    text-transform: uppercase;
     padding: .5em 0;
     display: block; }
     .c-menu__link:not(.o-cta)::after {
@@ -1299,7 +1298,8 @@ a:link, a:active, a:visited {
   min-height: 65vh;
   width: 100%;
   display: block;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .c-hero:not(.c-hero--main) .c-hero__entry {
     max-width: 75rem;
     margin-right: auto;
@@ -1326,7 +1326,8 @@ a:link, a:active, a:visited {
     position: relative; }
   .c-hero--main {
     height: 100vh;
-    min-height: 600px; }
+    min-height: 600px;
+    position: relative; }
     @media print, screen and (min-width: 40em) {
       .c-hero--main .c-hero__entry {
         position: absolute;
@@ -1408,6 +1409,19 @@ a:link, a:active, a:visited {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.4); }
+  .o-ov--vid {
+    background: rgba(0, 0, 0, 0.6); }
+
+.c-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; }
+  @media print, screen and (min-width: 64em) {
+    .c-vid {
+      display: block; } }
 
 .c-content-container {
   background-color: #fff; }

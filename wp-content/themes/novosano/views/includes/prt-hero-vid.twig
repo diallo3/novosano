@@ -1,0 +1,14 @@
+{# vars #}
+{% set mp4  = acf.hero_video_mp4 %}
+{% set webm = acf.hero_video_webm %}
+{% set img  = TimberImage(acf.hero_poster_image.value).src %}
+<div class="c-hero {% if fn('is_front_page') %}c-hero--main{% endif %}">	
+	<div class="c-vid">
+	    <video loop muted autoplay poster="{{img}}" class="c-vid__bck">
+	        <source src="{{theme.path}}/assets/vids/vid-group-selfie.webm" type="video/webm">
+	        <source src="{{theme.path}}/assets/vids/vid-group-selfie-low.mp4" type="video/mp4">
+	    </video>
+	</div>
+	<div class="o-ov o-ov--vid"></div>
+	{% include "/includes/prt-hero-entry.twig" %}
+</div>

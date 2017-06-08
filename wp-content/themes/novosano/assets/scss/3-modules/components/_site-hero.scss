@@ -15,6 +15,7 @@ $hero: c-hero;
 	width: 100%;
 	display: block;
 	position: relative;
+	overflow: hidden;
 	&:not(.#{$hero}--main) {
 		.#{$hero}__entry {
 			@include grid-col-row;
@@ -27,6 +28,7 @@ $hero: c-hero;
 	&--main {
 		height: 100vh;
 		min-height: 600px;
+		position: relative;
 		.#{$hero}__entry {
 			@include breakpoint(medium) {
 				@include center-align($ver: true, $hor: true, $pos: absolute);
@@ -75,4 +77,19 @@ $hero: c-hero;
 .o-ov {
 	@include abs-pos($t:0, $r:0, $b:0, $l:0);
 	background: black(0.4); 
+	&--vid {
+		background: black(0.6); 
+	}
+}
+
+.c-vid {
+    @include breakpoint(large) {
+        display: block;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;  
+    width: 100%;
+    height: 100%;
+    display: none;
 }
