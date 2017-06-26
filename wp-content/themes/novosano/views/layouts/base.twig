@@ -8,14 +8,73 @@
 		
 <body class="{{ body_class }}" data-template="base.twig">
 
-	<div class="c-canvas">
+	<div class="c-canvas" >
 			
 		<div class="c-canvas__inner" data-off-canvas-wrapper>
+
+				<div id="offMain" class="c-canvas__menu" data-off-canvas>
+					<!-- Close button -->
+					<button class="close-button" aria-label="Close menu" type="button" data-close>
+					    <span aria-hidden="true">&times;</span>
+					</button>
+					
+					<!-- Menu -->
+					{% if mble %}
+						<menu id="mainMobile" class="c-menu c-menu--mobile" role="navigation">
+							{% if options.schedule %}
+								<li class="c-menu__schedule">
+									<a href="" class="c-menu__link">Schedule Today</a>
+								</li>
+							{% endif %}
+							{% for item in mble.get_items %}
+								<li class="c-menu__item {{item.classes | join(' ')}}">
+									<a href="{{item.link}}" class="c-menu__link">{{item.title}}</a>
+									{% if item.get_children %}
+										<ul class="c-menu--children">
+											{% for child in item.get_children %}
+											<li class="c-menu__s-item"><a href="{{child.get_children}}" class="c-menu__sub-link">{{child.title}}</a></li>
+											{% endfor %}
+										</ul>
+									{% endif %}
+								</li>
+							{% endfor %}
+						</menu>
+					{% endif %}
+					
+				</div>
 				
-				<div class="off-canvas-content" data-off-canvas-content>
+				<div class="c-canvas__content" data-off-canvas-content>
 					{# header #}
 					{% include 'includes/header.twig' %}
-					
+
+					{# <ul class="o-sidenav">
+						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Schedule</span></a></li>
+						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Shop</span></a></li>
+						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Live Chat</span></a></li>
+					</ul> #}
+
+					<!-- You can add more icons at http://fontawesome.io/icons/#brand -->
+					<ul class="o-sticky-bar">
+						<li class="o-sticky__icon">
+						    <a href="#"> 
+						      <i class="fa o-sched" aria-hidden="true"></i>
+						      <span class="o-sticky__text">Schedule</span>
+						    </a>
+					  	</li>
+					  	<li class="o-sticky__icon">
+						    <a href="#">
+						      <i class="fa o-shop" aria-hidden="true"></i>
+						      <span class="o-sticky__text">Shop</span>
+						    </a>
+					  	</li>
+					  	<li class="o-sticky__icon">
+					    	<a href="#">
+					      		<i class="fa o-chat" aria-hidden="true"></i>
+					      		<span class="o-sticky__text">Live Chat</span>
+					    	</a>
+					  	</li>
+					</ul>
+
 					<main id="main" class="c-main" role="main">
 					{% block content %}
 					{% endblock %}
@@ -25,11 +84,11 @@
 					
 				</div>  
 				{#  end .main-content #}
-			</div> 
-			{#  end .off-canvas-wrapper-inner #}
 		</div> 
+			{#  end .off-canvas-wrapper-inner #}
+	</div> 
 		{#  end .off-canvas-wrapper #}
 		{{ function('wp_footer') }}
-	</body>
+</body>
 </html> 
 {# end page #}

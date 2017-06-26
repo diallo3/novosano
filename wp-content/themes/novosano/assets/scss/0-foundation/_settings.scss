@@ -287,8 +287,8 @@ $closebutton-color-hover: $black;
 
 $drilldown-transition: transform 0.15s linear;
 $drilldown-arrows: true;
-$drilldown-arrow-color: $primary-color;
-$drilldown-background: $white;
+$drilldown-arrow-color: $white;
+$drilldown-background: $black;
 
 // 16. Dropdown
 // ------------
@@ -307,10 +307,10 @@ $dropdown-sizes: (
 // 17. Dropdown Menu
 // -----------------
 
-$dropdownmenu-arrows: true;
+$dropdownmenu-arrows: false;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-min-width: 200px;
-$dropdownmenu-background: $white;
+$dropdownmenu-background: none;
 $dropdownmenu-border: 1px solid $medium-gray;
 
 // 18. Flex Video
@@ -385,14 +385,15 @@ $menu-expand-max: 6;
 // 23. Off-canvas
 // --------------
 
-$offcanvas-size: 250px;
-$offcanvas-background: $light-gray;
+$offcanvas-size: 300px;
+$offcanvas-vertical-size: 100%;
+$offcanvas-background: $black;
 $offcanvas-zindex: -1;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
 $offcanvas-exit-background: rgba($white, 0.25);
-$maincontent-class: 'off-canvas-content';
+$maincontent-class: 'c-canvas__content';
 $maincontent-shadow: 0 0 10px rgba($black, 0.5);
 
 // 24. Orbit

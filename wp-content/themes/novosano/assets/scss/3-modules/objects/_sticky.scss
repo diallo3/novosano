@@ -1,0 +1,155 @@
+$social-bar-position: right; // Change this value to `right` for changing sidebar's position.
+$social-bar-transformation: rem-calc(140);
+$social-bar-width: rem-calc(175);
+$social-bar-background: $s-primary;
+$social-icon-color: $white;
+$social-icon-transition: all 0.3s ease-in-out;
+$social-icon-font-size: 1.1rem;
+$social-icon-padding: 0.5rem;
+$social-size: 2.2rem;
+
+// Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
+$social-brand-facebook: #3b5998;
+$social-brand-twitter: #55acee;
+$social-brand-linkedin: #007bb5;
+$social-brand-youtube: #bb0000;
+$social-brand-instagram: #125688;
+$social-brand-pinterest: #cb2027;
+
+.o-sticky-bar {
+    background-color: $social-bar-background;
+    padding: 0;
+    margin: 0; 
+    width: $social-bar-width;
+    transform: translateY(-50%);
+    position: fixed;
+    top: 50%;
+    z-index: 5; 
+	
+    @if $social-bar-position == left {
+    	left: $social-bar-transformation * -1;
+    }
+    @if $social-bar-position == right {
+    	right: $social-bar-transformation * -1;
+    }
+
+    .o-sticky__icon {
+        color: $social-icon-color;
+        font-size: $social-icon-font-size;
+        cursor: pointer;
+        list-style-type: none;
+        background-color: inherit;
+        border: 1px solid $medium-gray; 
+        border-width: 1px 0 0 1px; 
+        margin: 0;
+        padding: 0;
+        height: $social-size; 
+        transition: $social-icon-transition;
+        overflow: hidden;
+
+        // &:first-of-type {
+	       //  padding-top: 0.375rem;
+        // }
+        &:last-of-type {
+	        border-bottom-width: 1px;
+        }
+        
+        &:hover {
+            border: none; 
+            @if $social-bar-position == left {
+                transform:translateX($social-bar-transformation * 1);
+            }
+            @if $social-bar-position == right {
+                transform:translateX($social-bar-transformation * -1);
+            }
+
+            > a {
+                color: inherit;
+                background-color: inherit;
+            }
+        }
+
+        > a {
+          color: inherit;
+          background-color: inherit;
+
+            > .fa {
+                background-color: $white;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                -webkit-background-size: 50%; 
+                  -o-background-size: 50%; 
+                  background-size: 50%;   
+                padding: $social-icon-padding;
+                width: $social-size;
+                height: $social-size;
+
+                @if $social-bar-position == left {
+                    float: right;
+                    margin-left: 0;
+                }
+                @if $social-bar-position == right {
+                    float: left;
+                    margin-right: 0;
+                }
+
+                &.o-sched {
+                    background-image: url('#{$imgPath}/icon-schedule.svg'); 
+                }
+
+                &.o-shop {
+                    background-image: url('#{$imgPath}/icon-shop.svg'); 
+                }
+
+                &.o-chat {
+                    background-image: url('#{$imgPath}/icon-chat.svg'); 
+                }
+
+                // &.fa-facebook {
+                //     background-color: $social-brand-facebook;
+                // }
+                // &.fa-twitter {
+                //     background-color: $social-brand-twitter;
+                // }
+                // &.fa-linkedin {
+                //     background-color: $social-brand-linkedin;
+                // }
+                // &.fa-youtube {
+                //     background-color: $social-brand-youtube;
+                // }
+                // &.fa-instagram {
+                //     background-color: $social-brand-instagram;
+                // }
+                // &.fa-pinterest-p {
+                //     background-color: $social-brand-pinterest;
+                // }
+        }
+
+        > .o-sticky__text {
+            color: $social-icon-color;
+            font-size: 80%;
+            
+            text-transform: uppercase;
+            padding: .4rem .3rem 0; 
+            display: inline-block;
+            // @if $social-bar-position == left {
+            //     margin-right: 0.5rem;
+            // }
+            // @if $social-bar-position == right {
+            //     margin-left: 0.5rem;
+            // }
+        }
+    }
+
+    
+  }
+}
+
+.trg-overlay {
+    @include center-block;
+    background-color: white(.0) !important;
+    border: none !important;
+    left: 0;
+    right: 0;  
+}
+

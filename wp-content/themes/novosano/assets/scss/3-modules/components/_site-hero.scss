@@ -19,6 +19,8 @@ $hero: c-hero;
 	&:not(.#{$hero}--main) {
 		.#{$hero}__entry {
 			@include grid-col-row;
+			@include grid-col-end();
+			@include grid-col-pos(center);
 			position: relative;
 		}
 	}

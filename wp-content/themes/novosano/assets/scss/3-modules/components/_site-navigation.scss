@@ -1,30 +1,19 @@
 // Navigations
 $menu: c-menu;
+$off: c-canvas;
 
 .#{$menu} {
 	@include menu-nav;
 	&--main, &--social, &--recap {
 		@include menu-list;
 	}
-	&--main {
-		border-left: 3px solid $s-primary; 
-		margin: 1.8rem 0; 
-		padding-left: .5em; 
-		display: none;
-		@include breakpoint(large) {
-			display: block;
-		}
-		li {
-			margin-left: 1.5em; 
-		}
-	}
 	&__link:not(.o-cta) {
-		@include animated-bottom($s-primary);
 		color: $white;
 		font-size: rem-calc(16);
 		font-weight: 500; 
 		padding: .5em 0;
 		display: block;
+		position: relative;
 	}
 	&--social {
 		border-right: 1px solid white(0.8);
@@ -38,10 +27,92 @@ $menu: c-menu;
 			}
 		}
 	}
+	&--main {
+		@include foundation-dropdown-menu;
+		@include dropdown-menu-direction($dir: horizontal);
+		border-left: 3px solid $s-primary; 
+		margin: 1.8rem 0; 
+		padding-left: .5em; 
+		display: none;
+		@include breakpoint(large) {
+			display: block;
+		}
+		.#{$menu}__link {
+			@include animated-bottom($s-primary);
+		}
+		> .#{$menu}__item {
+			margin-left: 1.5em; 
+			&.is-active {
+				.#{$menu}__link {
+					&::before, &::after {
+						width: 100%; 
+					}
+				}
+			}
+		}
+		.#{$menu}--children {
+			padding-left: 0;
+			left: 0 !important;
+			right: auto;
+		}
+		.#{$menu}__sub-link {
+			color: $white;
+			padding: .5em .8em; 
+			display: block;
+			-webkit-transition: all ease .3s; 
+			-moz-transition: all ease .3s; 
+			-ms-transition: all ease .3s; 
+			-o-transition: all ease .3s; 
+			transition: all ease .3s; 
+			&:hover {
+				background-color: $s-primary; 
+			}
+		}
+	}
 	&--mobile {
 		display: block;
 		@include breakpoint(large) {
 			display: none;
 		}
 	}
+}
+
+// off-canvas
+.#{$off} {
+	@include off-canvas-basics;
+	.close-button {
+		color: $white;
+		font-size: 2em; 
+		text-align: right;
+		border-bottom: 1px solid white(0.3); 
+		padding: 0.3em 0.5em; 
+		width: 100%; 
+	}
+}
+
+.#{$off}__menu {
+	@include off-canvas-base;
+	@include off-canvas-position($position: right);
+}
+
+.#{$off}__content {
+	@include off-canvas-content;
+}
+
+// drilldown off canvas
+.#{$menu}--mobile {
+	@include foundation-drilldown-menu;
+	[class*="item"] {
+		@include flat-list;
+		a {
+			color: $white; 
+			border-bottom: 1px solid white(0.3);
+			padding: 0.8em 1.5em;  
+			display: block;
+		}
+	}
+}
+
+.#{$menu}--children {
+	@include flat-list;
 }

@@ -11,8 +11,12 @@
 }
 
 .c-social-header-container {
-	background-color: black(0.5); 
+	background-color: black(0.2); 
 	border-bottom: 1px solid white(0.8); 
+	display: none;
+	@include breakpoint(large) {
+		display: block;
+	}
 }
 
 .c-header-container {
@@ -32,9 +36,13 @@
 		-webkit-background-size: contain; 
 		-o-background-size: contain; 
 		background-size: contain; 
-		width: $logo-width;
-		height: $logo-height; 
+		width: $logo-sm-width;
+		height: $logo-sm-height; 
 		display: block;
 		overflow: hidden;
+		@include breakpoint(large) {
+			width: $logo-width;
+			height: $logo-height; 
+		}
 	}
 }

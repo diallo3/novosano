@@ -8,6 +8,22 @@ register_nav_menus(
 	)
 );
 
+
+// Mega menu call
+function mega_menu() {
+	return wp_nav_menu(array(
+        'echo'           => false,
+        'menu'           => 'primary',
+        'theme_location' => 'primary',
+        'depth'          => 3,
+        'container'      => false,
+        'menu_class'     => 'c-menu c-menu--main u-float-right',
+        'items_wrap'     => '<menu id="%1$s" class="%2$s">%3$s</menu>',
+        'fallback_cb'    => '',
+        'walker'         => new Opus_Walker_Default()
+    ));
+}
+
 // Add Foundation active class to menu
 function required_active_nav_class( $classes, $item ) {
     if ( $item->current == 1 || $item->current_item_ancestor == true ) {

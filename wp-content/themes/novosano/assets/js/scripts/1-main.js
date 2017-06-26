@@ -1,9 +1,25 @@
 (function($) {
 
-  // Foundation init
-  $(document).foundation();
+    $(document).ready(function() {
 
-  $(document).ready(function() {
+        /************************************************************
+
+            Foundation
+
+        ************************************************************/
+
+        // Foundation init
+        $(document).foundation();
+
+        var mainMenu = new Foundation.DropdownMenu($('#mainMenu'), {});
+        var offMain  = new Foundation.OffCanvas($('#offMain'), {
+            transition: 'detached'
+        });
+        var mainMobile = new Foundation.Drilldown($('#mainMobile'), {
+            animationEasing: 'linear',
+            contentScroll: false
+        });
+
         // Remove empty P tags created by WP inside of Accordion and Orbit
         $('.accordion p:empty, .orbit p:empty').remove();
 
@@ -18,6 +34,28 @@
                 $(this).wrap("<div class='flex-video'/>");
             }
         });
+
+        /************************************************************
+
+            Navigation
+
+        ************************************************************/
+
+        // hamburger
+        function hamburgerNav() {
+            var $hb = $('.hamburger');
+            $hb.on('click', function(e){
+                e.preventDefault();
+                $(this).toggleClass('is-active');
+            });
+        }
+        hamburgerNav();
+
+        /************************************************************
+
+            Homepage
+
+        ************************************************************/ 
 
         // CoverVid
         if($('.c-vid').length > 0) {
@@ -40,10 +78,6 @@
 
         }
         return skCount();
-
-        
-
-
 
   });
 

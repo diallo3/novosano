@@ -18,6 +18,7 @@ $ovo:  'Ovo', serif;
 $logo-width: 237px;
 $logo-height: 103px;
 $logo-sm-width: 180px;
+$logo-sm-height: 79px;
 
 
 // 4. Site Mixins
@@ -25,8 +26,8 @@ $logo-sm-width: 180px;
 //  animated border
 @mixin animated-bottom($color) {
 	position: relative;
-	&::after {
-		@include abs-pos($b:0, $l:0);
+	&::before, &::after {
+		@include abs-pos($t:0, $r:0);
 		content: "";
 		background: $color; 
 		width: 0;
@@ -37,7 +38,14 @@ $logo-sm-width: 180px;
 		-o-transition: width .2s; 
 		transition: width .2s; 
 	}
-	&:hover::after {
+	&::after {
+		position: absolute;
+		top: auto !important;
+		right: 0 !important;
+		bottom: 0 !important;
+		left: 0 !important; 
+	}
+	&:hover::before, &:hover::after {
 		width: 100%; 
 	}
 }

@@ -24,6 +24,7 @@ require_once(get_template_directory().'/assets/functions/cleanup.php');
 require_once(get_template_directory().'/assets/functions/enqueue-scripts.php'); 
 
 // Register custom menus and menu walkers
+require_once(get_template_directory().'/assets/functions/walkers.php');
 require_once(get_template_directory().'/assets/functions/menu.php'); 
 
 // Register sidebars/widget areas
