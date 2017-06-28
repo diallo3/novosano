@@ -1,0 +1,293 @@
+{
+    "key": "group_59529aa4ef477",
+    "title": "Services Options",
+    "fields": [
+        {
+            "key": "field_59531246fb34d",
+            "label": "Service Banner",
+            "name": "service_banner",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5952a74e12dad",
+            "label": "Body Area Choices",
+            "name": "body_area_choices",
+            "type": "select",
+            "instructions": "Choose associated areas",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Arms": "Arms",
+                "Back": "Back",
+                "Body": "Body",
+                "Buttocks": "Buttocks",
+                "Chest": "Chest",
+                "Chin": "Chin",
+                "Crows Feet": "Crows Feet",
+                "Eyebrows": "Eyebrows",
+                "Forehead": "Forehead",
+                "Full Face": "Full Face",
+                "Hands": "Hands",
+                "Head \/ Scalp": "Head \/ Scalp",
+                "Legs": "Legs",
+                "Neck": "Neck",
+                "Outer Hips": "Outer Hips",
+                "Scar Tissue": "Scar Tissue",
+                "Scars": "Scars",
+                "Stretch Marks": "Stretch Marks",
+                "Surgical": "Surgical",
+                "Thighs": "Thighs",
+                "Underarms": "Underarms",
+                "Upper Arms": "Upper Arms",
+                "Upper Lip": "Upper Lip"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "array",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5952b0511b7ed",
+            "label": "Body Area Text",
+            "name": "body_area_text",
+            "type": "text",
+            "instructions": "Optional Body Area Description",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Enter Body Area Description",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5952bc45594af",
+            "label": "Targeting",
+            "name": "targeting",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5952bd95594b0",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Target Item",
+            "sub_fields": [
+                {
+                    "key": "field_5952bd95594b0",
+                    "label": "Target Item",
+                    "name": "target_item",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Enter item",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5952f964594b1",
+            "label": "Explanation \/ Benefits",
+            "name": "explanation__benefits",
+            "type": "wysiwyg",
+            "instructions": "Add Explanations \/ Benefits",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5952faca594b2",
+            "label": "Include Extras",
+            "name": "include_extras",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5952fb50594b3",
+            "label": "Extras",
+            "name": "extras",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5952faca594b2",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5952fbb1594b4",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Extra",
+            "sub_fields": [
+                {
+                    "key": "field_5952fbb1594b4",
+                    "label": "Extras Title",
+                    "name": "extras_title",
+                    "type": "text",
+                    "instructions": "Add Extras Title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Add Extras Title",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5952fc24594b5",
+                    "label": "Extras Explanation \/ Benefits",
+                    "name": "extras_explanation__benefits",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5952fdbba388c",
+            "label": "Before After",
+            "name": "before_after",
+            "type": "gallery",
+            "instructions": "Add Before and After Photos",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "insert": "append",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "service"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1498616446
+}
