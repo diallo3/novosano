@@ -3,6 +3,44 @@
     "title": "Services Options",
     "fields": [
         {
+            "key": "field_59594da8065d2",
+            "label": "Service Alternative Title",
+            "name": "service_alternative_title",
+            "type": "text",
+            "instructions": "Alternative Service Title",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Alternative Service Title",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59594e91065d3",
+            "label": "Service Tag Line",
+            "name": "service_tag_line",
+            "type": "text",
+            "instructions": "Optional additional short note",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Service Tag  Line",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59531246fb34d",
             "label": "Service Banner",
             "name": "service_banner",
@@ -100,7 +138,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -130,6 +168,30 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_595afd0c80b1d",
+            "label": "Service Scheduling Image",
+            "name": "service_scheduling_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5952f964594b1",
@@ -271,7 +333,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 20,
     "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
@@ -288,6 +350,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1498616446
+    "description": "Services that tie into everything else",
+    "modified": 1499136492
 }

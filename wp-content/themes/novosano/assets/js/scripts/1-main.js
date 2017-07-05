@@ -35,6 +35,24 @@
             }
         });
 
+        $('.owl-carousel').owlCarousel({
+            autoplay: true,
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            dotsEach: true,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                900: {
+                    items: 2,
+                }
+            }
+        });
+
         /************************************************************
 
             Navigation

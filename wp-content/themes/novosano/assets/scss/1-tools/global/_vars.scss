@@ -23,6 +23,55 @@ $logo-sm-height: 79px;
 
 // 4. Site Mixins
 
+$pull-quote-maxwidth: 50%;
+$pull-quote-color: $s-primary;
+$pull-quote-offset-large: -15%;
+$pull-quote-offset-medium: -8%;
+$pull-quote-fontsize-medium-up: 1.25rem;
+$pull-quote-fontsize-small: 1.05rem;
+$pull-quote-gradient: false;
+
+@mixin pull-quote {
+	font-weight: 400;
+  	letter-spacing: 1.5px;
+  	font-style: normal;
+  	font-size: $pull-quote-fontsize-small;
+  	max-width: $pull-quote-maxwidth;
+  	line-height: 1.25em;
+  	text-transform: uppercase;
+  	color: $pull-quote-color;
+  	float: right;
+  	margin: 10px 0 0 20px;
+  	@if $pull-quote-gradient == true {
+    	background: linear-gradient($secondary-color, $pull-quote-color);
+  	} @else if $pull-quote-gradient == false {
+    	background: $pull-quote-color; // sets text color
+  	}
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+
+  	&:before {
+    	content: '';
+  	}
+
+  	&:after {
+    	content: '';
+  	}
+
+  	@include breakpoint(medium) {
+    	font-size: $pull-quote-fontsize-medium-up;
+    	max-width: calc(#{$pull-quote-maxwidth} - 5%);
+    	margin-right: $pull-quote-offset-medium;
+  	}
+
+  	@include breakpoint(large) {
+    	max-width: calc(#{$pull-quote-maxwidth} + 5%);
+    	margin-right: $pull-quote-offset-large;
+ 	}
+}
+
+
+
 //  animated border
 @mixin animated-bottom($color) {
 	position: relative;
@@ -70,6 +119,12 @@ $logo-sm-height: 79px;
 		left: 1.5em;
  		margin-right: -50%;
 	}
+}
+
+@mixin bottom-dots {
+	background: url('#{$imgPath}/icon-dots.svg') no-repeat 1% 100%;
+	margin-bottom: 0.8em; 
+	padding-bottom: 0.5em;  
 }
 
 // 5. Paths

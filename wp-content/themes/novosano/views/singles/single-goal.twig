@@ -1,0 +1,54 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero-goal.twig" %}
+
+	{# vars #}
+
+
+	<div class="c-lead-container l-block">
+		<div class="l-wrap">
+			<div class="c-lead">
+				{{post.content}}
+			</div>
+		</div>
+	</div>
+
+
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="c-article__content">
+				
+				<div class="c-relationship c-relationship--service">
+				    {% for item in post.get_field('goal_services') %}
+				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+							<div class="ov"></div>
+				        	<div class="c-relationship__entry">
+				        		<div class="c-relationship__content">
+				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
+				        			<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
+				        		</div>
+				        		<div class="c-relationship__cta">
+				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
+				        		</div>
+				        	</div>
+				            
+				            
+				        </div>
+				    {% endfor %}
+				</div>
+			</section>
+
+			<footer class="c-article__footer">
+				<p>At {{ site.name }} we are continuously striving to make our clients look and feel their absolute best! We have the tools to help you build the best version of you, as you've always wanted.</p>
+				
+				{# <ul class="o-action">
+					<li><a href="" class="o-cta"></a></li>
+					<li><a href="" class="o-cta"></a></li>
+				</ul> #}
+				<a href="#" class="o-cta">Schedule an Appointment Today!</a> 
+			</footer>
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}

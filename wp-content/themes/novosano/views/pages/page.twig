@@ -6,12 +6,69 @@
 	<div class="c-content__entry l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="c-article__content">
-				{% if fn('is_page','services') %} <h5>Hello world</h5> {% endif %}
 				{{post.get_content}}
 			</section>
 
-			<footer class="c-article__footer">
+			{# additions #}
+			{% if fn('is_page', 'services') %}
+				<div class="c-relationship c-relationship--service">
+
+					<h3 class="c-relationship__title">Featured Services</h3>
+
+				    {% for item in post.get_field('featured_services') %}
+				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+							<div class="ov"></div>
+				        	<div class="c-relationship__entry">
+				        		<div class="c-relationship__content">
+				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
+				        			{% if fn('is_singular', 'goal') %}
+				        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
+				        			{% else %}
+				        				<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
+				        			{% endif %}
+				        		</div>
+				        		<div class="c-relationship__cta">
+				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
+				        		</div>
+				        	</div>
+				            
+				            
+				        </div>
+				    {% endfor %}
+				</div>
+			{% elseif fn('is_page','goals') %}
+				<div class="c-relationship c-relationship--goals">
+
+					<h3 class="c-relationship__title">What's your goal?</h3>
+
+				    {% for item in post.get_field('featured_goals') %}
+				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+							<div class="ov"></div>
+				        	<div class="c-relationship__entry">
+				        		<div class="c-relationship__content">
+				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
 				
+				        			<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
+				        		</div>
+				        		<div class="c-relationship__cta">
+				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn More</a>
+				        		</div>
+				        	</div>
+				            
+				            
+				        </div>
+				    {% endfor %}
+				</div>
+			{% endif %}
+
+			<footer class="c-article__footer">
+				<p>At {{ site.name }} we are continuously striving to make our clients look and feel their absolute best! We have the tools to help you build the best version of you, as you've always wanted.</p>
+				
+				{# <ul class="o-action">
+					<li><a href="" class="o-cta"></a></li>
+					<li><a href="" class="o-cta"></a></li>
+				</ul> #}
+				<a href="#" class="o-cta">Schedule an Appointment Today!</a> 
 			</footer>
 		</article>
 	</div> 

@@ -31,6 +31,11 @@ $test: c-testimonial;
 		}
 		.c-profile__img {
 			@include circle(100px, $black);
+			background-position: 50% 50%;
+			background-repeat: no-repeat; 
+			-webkit-background-size: cover; 
+			-o-background-size: cover; 
+			background-size: cover;  
 			border: 2px solid $white; 
 			margin-bottom: 0.5em; 
 			overflow: hidden;
@@ -58,6 +63,7 @@ $test: c-testimonial;
 			border-radius: 5px;
 			margin: 0; 
 			padding: 0.8em; 
+			height: 165px;
 		}
 	}
     &__title {
@@ -87,7 +93,7 @@ $test: c-testimonial;
 	}
 	.o-slide {
 		&__item {
-			@include grid-col(6);
+			@include clearfix;
 		}
 	}
 }

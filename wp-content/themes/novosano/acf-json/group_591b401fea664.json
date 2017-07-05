@@ -161,6 +161,98 @@
             },
             "placement": "left",
             "endpoint": 0
+        },
+        {
+            "key": "field_595bc6f8d7359",
+            "label": "Call to Actions",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_595bc73dd735a",
+            "label": "Service Level CTA",
+            "name": "service_level_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Schedule",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_595bce1d026e4",
+            "label": "Service Level Entry",
+            "name": "service_level_entry",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Service Level Entry Paragraph",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_595bcebb6bac4",
+            "label": "Goal Level CTA",
+            "name": "goal_level_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Schedule",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_595bcef16bac5",
+            "label": "Goal Level Entry (copy)",
+            "name": "goal_level_entry",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Goal Level Entry Paragraph",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -172,13 +264,13 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 100,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1494962572
+    "description": "General Site Options",
+    "modified": 1499189011
 }

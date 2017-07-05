@@ -1,0 +1,47 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero-service.twig" %}
+
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="c-relationship c-relationship--archive">
+			{% for post in posts %}
+				{% if fn('post_type_exists', 'service') %}
+					<div class="c-relationship__item" style="background-image: url('{{TimberImage(post.service_banner).src}}')">
+						<div class="ov"></div>
+			        	<div class="c-relationship__entry">
+			        		<div class="c-relationship__content">
+			        			<h4 class="c-relationship__title"><a href="{{post.link}}">{{post.title}}</a></h4>
+			        			{% if fn('is_singular', 'goal') %}
+			        				<h5 class="c-relationship__tag">{{post.service_tag_line}}</h5>
+			        			{% else %}
+			        				<p class="c-relationship__tag">{{post.get_preview(false,false,false)}}</p>
+			        			{% endif %}
+			        		</div>
+			        		<div class="c-relationship__cta">
+			        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Learn about {{post.title}}</a>
+			        		</div>
+			        	</div>
+			            
+			            
+			        </div>
+				{% else %}
+					<p>{{post.title}} no service</p>
+				{% endif %}
+					
+			{% endfor %}
+			</div>
+			<footer class="c-article__footer">
+				<p>At {{ site.name }} we are continuously striving to make our clients look and feel their absolute best! We have the tools to help you build the best version of you, as you've always wanted.</p>
+				
+				{# <ul class="o-action">
+					<li><a href="" class="o-cta"></a></li>
+					<li><a href="" class="o-cta"></a></li>
+				</ul> #}
+				<a href="#" class="o-cta">Schedule an Appointment Today!</a> 
+			</footer>
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}

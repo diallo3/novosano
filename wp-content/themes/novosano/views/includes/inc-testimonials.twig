@@ -6,42 +6,22 @@
 				<span class="c-testimonial__accent">Listen to</span>
 				<h2 class="c-testimonial__title">Our Happy Clients</h2>
 			</header>
-			<div id="slideTestimonials" class="o-slide owl-carousel">
-				{# item #}
-				<div class="o-slide__item">
-					<div class="c-testimonial__profile">
-						<figure class="c-profile__img">
-							<img src="http://lorempixel.com/100/100/sports" />
-						</figure>
-						<cite class="c-profile__cite">
-							<p>Diallo</p>
-						</cite>
+			<div id="slideTestimonials" class="o-slide owl-carousel owl-theme">
+				{% for item in testimonial %}
+					{% set content = item.get_field('testimonial_content') %}
+					{% set img  = TimberImage(item.get_field('testimonial_image')).src('large') %}
+					<div class="o-slide__item">
+						<div class="c-testimonial__profile">
+							<figure class="c-profile__img" style="background-image: url('{{img}}');">&nbsp;</figure>
+							<cite class="c-profile__cite">
+								<p>{{item.title}}</p>
+							</cite>
+						</div>
+						<div class="c-testimonial__entry">
+							<blockquote class="">{{content|excerpt(30)}}</blockquote>
+						</div>
 					</div>
-					<div class="c-testimonial__entry">
-						<blockquote class="">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</blockquote>
-					</div>
-				</div>
-
-				{# item #}
-				<div class="o-slide__item">
-					<div class="c-testimonial__profile">
-						<figure class="c-profile__img">
-							<img src="http://lorempixel.com/100/100/sports" />
-						</figure>
-						<cite class="c-profile__cite">
-							<p>Diallo</p>
-						</cite>
-					</div>
-					<div class="c-testimonial__entry">
-						<blockquote>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-						</blockquote>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>

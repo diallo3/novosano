@@ -7,6 +7,15 @@ if ( ! class_exists( 'Timber' ) ) {
 	return;
 }
 
+$testi_args = array(
+	'post_type' => 'testimonial',
+	'posts_per_page' => -1,
+	'meta_query' => array(),
+	'orderby' => array(
+    	'date' => 'DESC'
+	)
+);
+
 class OpusWp extends TimberSite {
 	
 	function __construct() {  
@@ -21,13 +30,16 @@ class OpusWp extends TimberSite {
 
 	function add_to_context($context){
 	    /* this is where you can add your own data to Timber's context object */
-	    $context['foo'] = 'bar';
+	    $context['foo']   = 'bar';
 	    $context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['pri']   = new TimberMenu('primary');
 		$context['sec']   = new TimberMenu('secondary');
 		$context['mble']  = new TimberMenu('mobile');
-		$context['site'] = $this;
+
+		/* post types */
+		$context['testimonial'] = Timber::get_posts( $testi_args );
+		$context['site']  = $this;
 	    return $context;
 	}
 

@@ -11,6 +11,10 @@ a {
 	}
 }
 
+q {
+	@include pull-quote;
+}
+
 [class*="__accent"] {
 	@include typi('accent');
 	@include heading-line($medium-gray);

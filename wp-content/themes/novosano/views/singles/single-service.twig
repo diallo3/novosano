@@ -1,0 +1,103 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero-service.twig" %}
+
+	<div class="c-lead-container l-block">
+		<div class="l-wrap">
+			<div class="c-lead">
+				<p>{{post.get_preview(false,false,false)}}</p>
+			</div>
+		</div>
+	</div>
+
+	{# vars #}
+	{% set area 	  = post.get_field('body_area_choices') %}
+	{% set area_text  = post.get_field('body_area_text') %}
+	{% set target 	  = post.get_field('targeting') %}
+	{% set target_img = post.get_field('service_scheduling_image') %}
+	{% set ex_bene 	  = post.get_field('explanation__benefits') %}
+	{% set gallery    = post.get_field('before_after') %}
+
+
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="c-article__content">
+				{# Areas #}
+				<div class="o-content o-area">
+					<h3 class="o-content__title">TX Area</h3>
+					
+					
+					<dl class="o-area__list">
+						{% if area_text %}
+							<p>{{area_text}}</p>
+						{% else %}
+							{% for item in area %}
+								<dd class="o-area__item">{{item.label}}</dd>
+							{% endfor %}
+						{% endif %}
+						
+					</dl>
+
+				</div>
+				{# Targeting #}
+				<div class="o-content o-target">
+					<h3 class="o-content__title">Targeting / Specifically for:</h3>
+					
+					<div class="o-target__points">
+						<ul class="o-target__list">
+							{% for item in target %}
+								<li class="o-target__item">{{item.target_item}}</li>
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="o-target__cta">
+						
+						<div class="c-card c-card--schedule">
+							<div class="ov"></div>
+							{% if target_img %}
+								<img src="{{TimberImage(target_img)}}" alt="Schedule {{post.title}}">
+							{% else %}
+							<img src="http://www.zurb.com/blog/system/images/690/original/blue_bw_web.jpg?1354921642" alt="sweet foundation shirt" />
+							{% endif %}
+
+							<a href="#" class="o-cta o-cta--ghost">Schedule {{post.title}}</a>
+						</div>
+					</div>
+						
+				</div>
+
+				{# benefits #}
+				<div class="o-content o-benefit">
+					<h3 class="o-content__title">Explanation / Benefits</h3>
+
+					{{ex_bene}}
+				</div>
+				
+				{% if gallery|length > 0 %}
+				{# benefits #}
+				<div class="o-content o-gallery">
+					<h3 class="o-content__title">Before and after Gallery</h3>
+
+					<ul class="c-gallery c-gallery--services">
+						{% for img in gallery %}
+							<li class="c-gallery__item"><img src="{{ TimberImage(img) }}" alt=""></li>
+						{% endfor %}
+					</ul>
+				</div>
+				{% endif %}
+			</section>
+
+			<footer class="c-article__footer">
+				<p>At {{ site.name }} we are continuously striving to make our clients look and feel their absolute best! We have the tools to help you build the best version of you, as you've always wanted.</p>
+				
+				{# <ul class="o-action">
+					<li><a href="" class="o-cta"></a></li>
+					<li><a href="" class="o-cta"></a></li>
+				</ul> #}
+				<a href="#" class="o-cta">Schedule an Appointment Today!</a> 
+			</footer>
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}

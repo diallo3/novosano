@@ -1,0 +1,55 @@
+/*--------------------------------
+  
+  Relationship Components
+*/
+
+$related: c-relationship;
+
+.#{$related} {
+	margin-bottom: rem-calc(50); 
+	padding: rem-calc(50 0 20); 
+	border-bottom: 1px solid $medium-gray; 
+	&__item {
+		background-color: $black;
+		background-repeat: no-repeat ;
+		background-position: 50% 50%;
+		-webkit-background-size: cover; 
+	 	-o-background-size: cover; 
+	 	background-size: cover; 
+		margin-bottom: 1.2rem; 
+		padding: rem-calc(80 50); 
+		min-height: 280px; 
+		position: relative;
+		.ov {
+			background-color: black(0.3); 
+		}
+	}
+	&__entry {
+		@include grid-row;
+	}
+	&__content, &__cta {
+		@include grid-col(12);
+		@include breakpoint(medium) {
+			@include grid-col(6);
+		}
+		position: relative;
+	}
+	&__cta {
+		padding-top: rem-calc(42); 
+		.o-cta {
+			@include center-align($ver: false, $hor: true, $pos: relative);
+		}
+	}
+	&__title a {
+		@include animated-bottom($s-primary);
+		color: $white; 
+		font-weight: 700; 
+		padding: rem-calc(10 0); 
+	}
+	&__tag {
+		color: $white;
+		font-weight: 700;
+		font-style: italic; 
+	}
+
+}

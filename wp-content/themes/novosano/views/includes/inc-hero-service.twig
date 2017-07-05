@@ -1,0 +1,39 @@
+{# vars #}
+{% set bck = TimberImage(acf.service_banner.value).src %}
+{% set alt = acf.service_alternative_title.value %}
+{% set tag = acf.service_tag_line.value %}
+
+{% if fn('is_post_type_archive', 'service') %}
+	<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
+		<div class="o-ov"></div>
+		<article class="c-hero__entry">
+			<header class="c-hero__header">
+				<span class="c-hero__accent">All</span>
+				<h1 class="c-hero__title">Services</h1>
+			</header>
+		</article>
+	</div>
+{% else %}
+	<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
+		<div class="o-ov"></div>
+		<article class="c-hero__entry">
+			<header class="c-hero__header">
+				<span class="c-hero__accent">Service</span>
+				<h1 class="c-hero__title">
+					{% if alt %}
+						{{alt}}
+					{% else %}
+						{{post.title}}
+					{% endif %}
+				</h1>
+			</header>
+			
+			{% if tag %}
+				<div class="c-hero__tag">
+					<p>{{tag}}</p>
+				</div>
+			{% endif %}
+		</article>
+	</div>
+{% endif %}
+
