@@ -94,9 +94,8 @@
                 "Neck": "Neck",
                 "Outer Hips": "Outer Hips",
                 "Scar Tissue": "Scar Tissue",
-                "Scars": "Scars",
                 "Stretch Marks": "Stretch Marks",
-                "Surgical": "Surgical",
+                "Surgical Scars": "Surgical Scars",
                 "Thighs": "Thighs",
                 "Underarms": "Underarms",
                 "Upper Arms": "Upper Arms",
@@ -351,5 +350,5 @@
     ],
     "active": 1,
     "description": "Services that tie into everything else",
-    "modified": 1499136492
+    "modified": 1499224696
 }
