@@ -58,7 +58,7 @@
 				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
 									
 									<p class="c-relationship__tag">
-										{% if item.get_preview %}
+										{% if get_preview %}
 											{{item.get_preview(false,false,false)}}
 										{% else %}
 											{{item.get_content}}
