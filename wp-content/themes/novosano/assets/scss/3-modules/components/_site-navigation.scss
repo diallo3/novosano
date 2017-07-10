@@ -1,4 +1,8 @@
-// Navigations
+/*--------------------------------
+  
+  Navigation
+*/
+
 $menu: c-menu;
 $off: c-canvas;
 
@@ -54,6 +58,7 @@ $off: c-canvas;
 			padding-left: 0;
 			left: 0 !important;
 			right: auto;
+			display: none;
 		}
 		.#{$menu}__sub-link {
 			color: $white;

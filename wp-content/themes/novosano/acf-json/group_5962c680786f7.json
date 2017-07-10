@@ -1,0 +1,52 @@
+{
+    "key": "group_5962c680786f7",
+    "title": "Contact Page Options",
+    "fields": [
+        {
+            "key": "field_5962c6afc41d6",
+            "label": "Contact Form",
+            "name": "contact_form",
+            "type": "forms",
+            "instructions": "Choose a form",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "post_object",
+            "allow_null": 0,
+            "multiple": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "9"
+            }
+        ]
+    ],
+    "menu_order": 100,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "format",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "Gravity Form Field",
+    "modified": 1499656436
+}

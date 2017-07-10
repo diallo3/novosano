@@ -1,6 +1,6 @@
 {
     "key": "group_591ba257556b8",
-    "title": "Hero Options",
+    "title": "Page Hero Options",
     "fields": [
         {
             "key": "field_591ba2dce7cdc",
@@ -144,5 +144,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1496937583
+    "modified": 1499623492
 }

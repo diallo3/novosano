@@ -13,6 +13,16 @@
 			</header>
 		</article>
 	</div>
+{% elseif fn('is_tax', 'service_type') %}
+	<div class="c-hero c-hero--service" style="background-image: url({{tax}})">
+		<div class="o-ov"></div>
+		<article class="c-hero__entry">
+			<header class="c-hero__header">
+				<span class="c-hero__accent">Services</span>
+				<h1 class="c-hero__title">{{fn('single_term_title')}}</h1>
+			</header>
+		</article>
+	</div>
 {% else %}
 	<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
 		<div class="o-ov"></div>
@@ -23,7 +33,7 @@
 					{% if alt %}
 						{{alt}}
 					{% else %}
-						{{post.title}}
+						{{post.title}} 
 					{% endif %}
 				</h1>
 			</header>

@@ -11,6 +11,9 @@ $card: c-card;
 	border-bottom: 1px solid lighten($light-gray, 3%); 
 	margin-top: 2.5em;
 	padding-bottom: 2em;  
+	&:last-of-type {
+		border: none;
+	}
 	&__title {
 		@include bottom-dots;
 	}
@@ -72,6 +75,7 @@ $card: c-card;
 			background-color: black(0.2); 
 		}
 		img {
+			@include zero-out;
 			border: 5px solid lighten($light-gray, 80%);
 		}
 	}

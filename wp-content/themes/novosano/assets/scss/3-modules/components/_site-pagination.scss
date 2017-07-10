@@ -1,0 +1,56 @@
+/*--------------------------------
+  
+  Pagination
+*/
+
+$pg: c-pagination;
+
+.#{$pg} {
+	background: url('#{$imgPath}/icon-dots.svg') no-repeat 50% 50%;
+	border-top: 1px solid $medium-gray; 
+	margin: 3em 0 1em;
+	&__nav {
+		@include grid-row;
+		padding: 1em 0; 
+	}
+	&__prev, &__next {
+		@include grid-col(30%);
+		vertical-align: baseline; 
+		a {
+			display: table;
+		}
+	}
+
+	&__next {
+		a {
+			float: right;
+		}
+	}
+}
+.o-pg__title, .o-pg__dir {
+	vertical-align: top;
+	img {
+		@include zero-out;
+	}
+}
+.o-pg__title {
+	color: $s-primary;
+	font-size: rem-calc(12);
+	text-transform: uppercase;
+	margin: 0 0.3rem; 
+	padding: .5em 1em; 
+	display: none;
+	@include breakpoint(medium) {
+		display: table-cell;
+	}
+}
+
+.o-pg__dir {
+	width: 30px;
+	height: 30px;
+	display: table-cell;
+	img {
+		width: 100%;
+		max-width: 100%;
+	}
+}

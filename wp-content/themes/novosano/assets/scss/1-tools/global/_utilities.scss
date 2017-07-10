@@ -23,6 +23,10 @@ figure {
 	text-align: right;
 }
 
+.u-text-center {
+	text-align: center;
+}
+
 .u-no-margin {
 	@include zero-out;
 }

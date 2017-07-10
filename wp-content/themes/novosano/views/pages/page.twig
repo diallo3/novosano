@@ -5,9 +5,22 @@
 	{% include "/includes/inc-lead.twig" %}
 	<div class="c-content__entry l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="c-article__content">
-				{{post.get_content}}
-			</section>
+			
+			{% if fn('is_page', 'contact') %}
+				<section class="c-article__content">
+					{% filter shortcodes %}
+						[gravityform id="1" title="false" description="false"]
+					{% endfilter %}
+				</section>
+			{% else %}
+				<section class="c-article__content">
+					{{post.get_content}}
+				</section>
+			{% endif %}
+			
+			{% filter shortcodes %}
+				[wpsl]
+			{% endfilter %}
 
 			{# additions #}
 			{% if fn('is_page', 'services') %}
@@ -20,7 +33,7 @@
 							<div class="ov"></div>
 				        	<div class="c-relationship__entry">
 				        		<div class="c-relationship__content">
-				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
+				        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
 				        			{% if fn('is_singular', 'goal') %}
 				        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
 				        			{% else %}
@@ -61,15 +74,7 @@
 				</div>
 			{% endif %}
 
-			<footer class="c-article__footer">
-				<p>At {{ site.name }} we are continuously striving to make our clients look and feel their absolute best! We have the tools to help you build the best version of you, as you've always wanted.</p>
-				
-				{# <ul class="o-action">
-					<li><a href="" class="o-cta"></a></li>
-					<li><a href="" class="o-cta"></a></li>
-				</ul> #}
-				<a href="#" class="o-cta">Schedule an Appointment Today!</a> 
-			</footer>
+			{% include "includes/inc-end-cap.twig" %}
 		</article>
 	</div> 
 	{% include "includes/inc-testimonials.twig" %}

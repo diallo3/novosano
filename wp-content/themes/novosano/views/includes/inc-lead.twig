@@ -6,12 +6,20 @@
 <div class="c-lead-container l-block">
 	<div class="l-wrap">
 		<div class="c-lead">
-			<header class="c-lead__header">
-				<span class="c-lead__accent">{{l_accent}}</span>
-				<h2 class="c-lead__title">{{l_title}}</h2>
-			</header>
-		
-			{{l_entry}}
+			{% if fn('is_singular', 'post') %}
+				<p class="o-post__date">{{ post.date }}</p>
+			
+			{% else %}
+				
+				<header class="c-lead__header">
+					<span class="c-lead__accent">{{l_accent}}</span>
+					<h2 class="c-lead__title">{{l_title}}</h2>
+				</header>
+			
+				{{l_entry}}
+
+			{% endif %}
+
 		</div>
 	</div>
 </div>

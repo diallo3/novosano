@@ -1,0 +1,64 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero-service.twig" %}
+	
+	{% if term.description %}
+		{% include "/includes/inc-lead-a-service.twig" %}
+	{% endif %}
+
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="c-relationship c-relationship--archive">
+			{% for post in posts %}
+				{% if fn('post_type_exists', 'service') %}
+					<div class="c-relationship__item" style="background-image: url('{{TimberImage(post.service_banner).src}}')">
+						<div class="ov"></div>
+			        	<div class="c-relationship__entry">
+			        		<div class="c-relationship__content">
+			        			<h4 class="c-relationship__title"><a href="{{post.link}}" class="c-relationship__link">{{post.title}}</a></h4>
+			        			{% if fn('is_singular', 'goal') %}
+			        				<h5 class="c-relationship__tag">{{post.service_tag_line}}</h5>
+			        			{% else %}
+			        				<p class="c-relationship__tag">{{post.get_preview(false,false,false)}}</p>
+			        			{% endif %}
+			        		</div>
+			        		<div class="c-relationship__cta">
+			        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Learn about {{post.title}}</a>
+			        		</div>
+			        	</div>
+			            
+			            
+			        </div>
+				{% else %}
+					<p>{{post.title}} no service</p>
+				{% endif %}
+					
+			{% endfor %}
+			</div>
+
+			<div class="tool-pagination">
+			    {% if posts.pagination.prev %}
+			        <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+			    {% endif %}
+			    <ul class="pages">
+			        {% for page in posts.pagination.pages %}
+			            <li>
+			                {% if page.link %}
+			                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+			                {% else %}
+			                    <span class="{{page.class}}">{{page.title}}</span>
+			                {% endif %}
+			            </li>
+			        {% endfor %}
+			    </ul>
+			    {% if posts.pagination.next %}
+			        <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+			    {% endif %}
+			</div>
+
+			{% include "includes/inc-end-cap.twig" %}
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}

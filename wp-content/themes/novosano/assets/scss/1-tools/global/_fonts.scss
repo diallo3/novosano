@@ -1,4 +1,8 @@
-// Google Fonts
+/*--------------------------------
+  
+  Fonts
+*/
+
 @import url('https://fonts.googleapis.com/css?family=ovo|Muli:200,300,400,600');
 
 $typi: (
@@ -43,6 +47,26 @@ $typi: (
       medium: 25px,
       large:  30px,
     ),
+    entry_h1: (
+      null:   20px,
+      small:  20px,
+      medium: 24px,
+      large:  28px,
+    ),
+
+    entry_h2: (
+      null:   18px,
+      small:  18px,
+      medium: 22px,
+      large:  24px,
+    ),
+
+    entry_h3: (
+      null:   17px,
+      small:  17px,
+      medium: 20px,
+      large:  22px,
+    )
 );
 
 @include headings() {

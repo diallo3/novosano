@@ -1,5 +1,7 @@
 <article class="c-hero__entry">
+
 	{% if fn('is_front_page') %}
+
 		{# vars home #}
 		{% set h_accent = acf.hero_accent.value %}
 		{% set h_title  = acf.hero_title.value %}
@@ -19,7 +21,23 @@
 		<div class="c-hero__cta">
 			<a href="" class="o-cta o-cta--hero">{{h_cta}}</a>
 		</div>
+
+	{% elseif fn('is_archive') %}
+
+		<header class="c-hero__header">
+			<span class="c-hero__accent">{{h_accent}}</span>
+			<h1 class="c-hero__title">{{fn('single_cat_title')}}</h1>
+		</header>
+
+	{% elseif fn('is_home') %}
+
+		<header class="c-hero__header">
+			<span class="c-hero__accent">Novosano</span>
+			<h1 class="c-hero__title">Insights</h1>
+		</header>
+
 	{% else %}
+
 		{# vars #}
 		{% set h_accent = acf.title_accent.value %}
 		{% set h_title  = acf.alternative_title.value %}

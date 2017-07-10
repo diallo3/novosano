@@ -1,0 +1,34 @@
+{# vars #}
+{% set tmb = post.thumbnail.src %}
+{% set bck = TimberImage(acf.hero_background.value).src %}
+{% set h_accent = acf.title_accent.value %}
+{% set h_title  = acf.alternative_title.value %}
+
+<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
+	<div class="o-ov"></div>
+	<article class="c-hero__entry">
+		<header class="c-hero__header">
+			<span class="c-hero__accent">
+				{% if h_accent %}
+					{{h_accent}}
+				{% else %}
+					Insights
+				{% endif %}
+			</span>
+			<h1 class="c-hero__title">
+				{% if h_title %}
+					{{h_title}}
+				{% else %}
+					{{post.title}}
+				{% endif %}
+			</h1>
+		</header>
+		
+		{% if tag %}
+			<div class="c-hero__tag">
+				<p>{{tag}}</p>
+			</div>
+		{% endif %}
+	</article>
+</div>
+

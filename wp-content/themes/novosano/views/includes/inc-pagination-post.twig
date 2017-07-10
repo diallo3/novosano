@@ -1,0 +1,26 @@
+<div class="c-pagination c-pagination--single">
+    <nav class="c-pagination__nav">
+	    {# Note that the TimberPost Object passes the data for your previous and next links. How awesome is that? #}
+	    <div class="c-pagination__prev">
+	    	{% if post.prev.link %}
+	    	<a href="{{post.prev.link}}">
+	    		<span class="o-pg__dir">
+	    			<img src="{{ theme.path }}/assets/images/icon-pg-left.svg" alt="{{post.prev.title}}">
+	    		</span> 
+	    		<span class="o-pg__title">{{post.prev.title}}</span>
+	    	</a>
+	    	{% endif %}
+	    </div>
+	    <div class="c-pagination__next">
+	    	{% if post.next.link %}
+	    	<a href="{{post.next.link}}">
+	    		<span class="o-pg__title">{{post.next.title}}</span>
+	    		<span class="o-pg__dir">
+	    			<img src="{{ theme.path }}/assets/images/icon-pg-right.svg" alt="{{post.next.title}}">
+	    		</span> 
+	    	</a>
+	    {% endif %}                                                        
+	    </div>
+	</nav>
+</div>
+					

@@ -15,30 +15,26 @@
  */
 
 $templates = array('/views/archives/archive.twig');
+if ($post->post_type == "service") {
+	array_unshift($templates, '/views/archives/archive-service.twig');
+}
 
-$context['title'] = 'Archive';
-if (is_day()){
-	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
-} else if (is_month()){
-	$context['title'] = 'Archive: '.get_the_date( 'M Y' );
-} else if (is_year()){
-	$context['title'] = 'Archive: '.get_the_date( 'Y' );
-} else if (is_tag()){
-	$context['title'] = single_tag_title('', false);
-} else if (is_category()){
-	$context['title'] = single_cat_title('', false);
-	array_unshift($templates, 'archive-'.get_query_var('cat').'.twig');
-} else if (is_post_type_archive()){
-	$context['title'] = post_type_archive_title('', false);
-	array_unshift($templates, 'archive-'.get_post_type().'.twig');
+if (function_exists('category_image_src')) {
+	$category_image = category_image_src( array( 'size' => 'full' ) , false ); 
+} else {
+	$category_image = '';
 }
 
 $context = Timber::get_context(); 
 $post = new TimberPost(); 
 $context["post"] = $post;
+$context['term'] = new TimberTerm();
 /* post types */
 $context['testimonial'] = Timber::get_posts( $testi_args );
 $context["acf"] = get_field_objects($data["post"]->ID); 
+
+/* custom function */
+$context["tax"] = $category_image;
 
 
 Timber::render($templates, $context);

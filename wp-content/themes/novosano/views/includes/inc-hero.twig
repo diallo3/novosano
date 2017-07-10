@@ -6,32 +6,3 @@
 {% else %}
 	{% include "/includes/prt-hero-img.twig" %}
 {% endif %}
-
-{# <div class="c-hero {% if fn('is_front_page') %}c-hero--main{% endif %}" style="background-image: url({{bck}})"
->	<div class="c-vid">
-	    <video loop muted autoplay poster="assets/img/img-header.jpg" class="c-vid__bck">
-	        <source src="{{theme.path}}/assets/vids/vid-group-selfie.webm" type="video/webm">
-	        <source src="{{theme.path}}/assets/vids/vid-group-selfie-low.mp4" type="video/mp4">
-	    </video>
-	</div>
-
-	<div class="o-ov"></div>
-	<article class="c-hero__entry">
-		<header class="c-hero__header">
-			<span class="c-hero__accent">{{h_accent}}</span>
-			<h1 class="c-hero__title">
-				{% if h_title %}
-					{{h_title}}
-				{% else %}
-					{{post.title}}
-				{% endif %}
-			</h1>
-		</header>
-		
-		{% if fn('is_front_page') %}
-			<div class="c-hero__cta">
-				<a href="" class="o-cta o-cta--hero">Start Now</a>
-			</div>
-		{% endif %}
-	</article>
-</div> #}

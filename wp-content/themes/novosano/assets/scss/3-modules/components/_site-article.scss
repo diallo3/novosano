@@ -1,13 +1,26 @@
-// Article
+/*--------------------------------
+  
+  Article
+*/
+
 
 $con: c-content;
+$art: c-article;
+
+.#{$art} {
+	padding: rem-calc(30 0);
+	&__content {
+		blockquote {
+			@include pull-quote;
+		}
+	}
+}
 
 .#{$con}-container {
 	background-color: $white;
 }
 
 .#{$con} {
-	padding: rem-calc(80 0); 
 	&--index {
 		text-align: center;
 	}
@@ -31,16 +44,41 @@ $con: c-content;
 			  	margin: 0 auto;
 			}
 		}
+
+		img {
+			margin-bottom: 2em;
+		}
+
+		@include headings() {
+			padding-bottom: rem-calc(10); 
+		}
+
 		h1 {
-			@include header-size(h1);
+			// @include header-size(h1);
+			@include typi('entry_h1');
 		}
 		h2 {
-			@include header-size(h2);
+			// @include header-size(h3);
+			@include typi('entry_h2');
+		}
+		h3 {
+			@include typi('entry_h3');
 		}
 	}
 }
 
 .c-article__footer {
 	text-align: center;
+	border-top: 1px solid $medium-gray;
 	padding: rem-calc(30 0 50); 
+}
+
+.o-post {
+	&__date {
+		color: $dark-gray;
+		font-family: $ovo; 
+		border: 1px solid $light-gray;
+		padding: .5em; 
+		display: inline-block; 
+	}
 }

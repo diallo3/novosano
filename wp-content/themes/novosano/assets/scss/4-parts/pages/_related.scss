@@ -7,8 +7,12 @@ $related: c-relationship;
 
 .#{$related} {
 	margin-bottom: rem-calc(50); 
-	padding: rem-calc(50 0 20); 
-	border-bottom: 1px solid $medium-gray; 
+	// padding: rem-calc(50 0 20); 
+	border-bottom: 1px solid $medium-gray;
+	position: relative;
+	&:last-of-type {
+		border: none;
+	} 
 	&__item {
 		background-color: $black;
 		background-repeat: no-repeat ;
@@ -26,7 +30,28 @@ $related: c-relationship;
 	}
 	&__entry {
 		@include grid-row;
+		.#{$related}__title {
+			margin-bottom: 0; 
+			position: relative;
+			.#{$related}__link {
+				@include animated-bottom($s-primary);
+				color: $white; 
+				font-weight: 700; 
+				text-align: left;
+				padding: rem-calc(10 0); 
+				display: block;
+			}
+		}
+		.o-term {
+			@include abs-pos($t:-35%);
+			font-size: rem-calc(12); 
+			text-transform: capitalize;
+			&__link {
+				color: $white;
+			}
+		}
 	}
+	
 	&__content, &__cta {
 		@include grid-col(12);
 		@include breakpoint(medium) {
@@ -40,12 +65,16 @@ $related: c-relationship;
 			@include center-align($ver: false, $hor: true, $pos: relative);
 		}
 	}
-	&__title a {
-		@include animated-bottom($s-primary);
-		color: $white; 
-		font-weight: 700; 
-		padding: rem-calc(10 0); 
-	}
+	// &__title {
+	// 	margin-bottom: 0;
+	// 	position: relative;
+	// 	a {
+	// 		@include animated-bottom($s-primary);
+	// 		color: $white; 
+	// 		font-weight: 700; 
+	// 		padding: rem-calc(10 0); 
+	// 	}
+	// }
 	&__tag {
 		color: $white;
 		font-weight: 700;

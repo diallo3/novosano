@@ -1,4 +1,8 @@
-// Hero Headers
+/*--------------------------------
+  
+  Heros Headers
+*/
+
 
 $hero: c-hero;
 
@@ -49,6 +53,7 @@ $hero: c-hero;
 	.#{$hero}__accent {
 		@include heading-line($white);
 		color: $white;
+		font-size: rem-calc(14); 
 		display: block;
 	}
 	.#{$hero}__title {
