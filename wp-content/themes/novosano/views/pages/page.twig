@@ -48,20 +48,21 @@
 			{% elseif fn('is_page','goals') %}
 				<div class="c-relationship c-relationship--goals">
 
-					<h3 class="c-relationship__title">What's your goal?</h3>
+					<h3 class="c-relationship__title u-text-center">What's your goal?</h3>
 
 				    {% for item in post.get_field('featured_goals') %}
 				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
 							<div class="ov"></div>
 				        	<div class="c-relationship__entry">
 				        		<div class="c-relationship__content">
-				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
-									
-									<p class="c-relationship__tag">
+				        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
+				
 										{% if get_preview %}
-											{{item.get_preview(false,false,false)}}
+											<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
 										{% else %}
-											{{item.get_content}}
+											<div class="c-relationship__tag">
+												{{item.get_content}}
+											</div>
 										{% endif %}
 				        			</p>
 				        		</div>
