@@ -17,10 +17,6 @@
 					{{post.get_content}}
 				</section>
 			{% endif %}
-			
-			{% filter shortcodes %}
-				[wpsl]
-			{% endfilter %}
 
 			{# additions #}
 			{% if fn('is_page', 'services') %}
@@ -60,8 +56,14 @@
 				        	<div class="c-relationship__entry">
 				        		<div class="c-relationship__content">
 				        			<h4 class="c-relationship__title"><a href="{{item.link}}">{{item.title}}</a></h4>
-				
-				        			<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
+									
+									<p class="c-relationship__tag">
+										{% if item.get_preview %}
+											{{item.get_preview(false,false,false)}}
+										{% else %}
+											{{item.get_content}}
+										{% endif %}
+				        			</p>
 				        		</div>
 				        		<div class="c-relationship__cta">
 				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn More</a>
@@ -72,6 +74,10 @@
 				        </div>
 				    {% endfor %}
 				</div>
+			{% elseif fn('is_page', 'store-locator') %}
+				{% filter shortcodes %}
+					[wpsl]
+				{% endfilter %}
 			{% endif %}
 
 			{% include "includes/inc-end-cap.twig" %}
