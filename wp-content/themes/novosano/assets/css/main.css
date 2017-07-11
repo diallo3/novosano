@@ -3136,7 +3136,7 @@ input.datepicker_with_icon {
     min-height: 280px;
     position: relative; }
     .c-relationship__item .ov {
-      background-color: rgba(0, 0, 0, 0.3); }
+      background-color: rgba(0, 0, 0, 0.5); }
   .c-relationship__entry {
     max-width: 75rem;
     margin-right: auto;
