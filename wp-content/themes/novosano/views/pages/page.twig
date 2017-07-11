@@ -9,7 +9,7 @@
 			{% if fn('is_page', 'contact') %}
 				<section class="c-article__content">
 					{% filter shortcodes %}
-						[gravityform id="3" title="false" description="false"]
+						[gravityform id="1" title="false" description="false"]
 					{% endfilter %}
 				</section>
 			{% else %}
@@ -51,7 +51,7 @@
 					<h3 class="c-relationship__title u-text-center">What's your goal?</h3>
 
 				    {% for item in post.get_field('featured_goals') %}
-				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.goal_banner).src}}')">
 							<div class="ov"></div>
 				        	<div class="c-relationship__entry">
 				        		<div class="c-relationship__content">
