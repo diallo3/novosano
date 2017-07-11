@@ -42,7 +42,13 @@
 		{% set h_accent = acf.title_accent.value %}
 		{% set h_title  = acf.alternative_title.value %}
 		<header class="c-hero__header">
-			<span class="c-hero__accent">{{h_accent}}</span>
+			<span class="c-hero__accent">
+				{% if h_accent %}
+					{{h_accent}}
+				{% else %}
+					Novosano
+				{% endif %}
+			</span>
 			<h1 class="c-hero__title">
 				{% if h_title %}
 					{{h_title}}
