@@ -1623,6 +1623,7 @@ q {
 .c-hero {
   text-align: center;
   background: #0d0d0d;
+  background-image: url("../images/bck-hero-main.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;

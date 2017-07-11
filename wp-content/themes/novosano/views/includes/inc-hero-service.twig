@@ -4,7 +4,7 @@
 {% set tag = acf.service_tag_line.value %}
 
 {% if fn('is_post_type_archive', 'service') %}
-	<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
+	<div class="c-hero c-hero--service" {% if bck %} style="background-image: url({{bck}}) {% endif %}">
 		<div class="o-ov"></div>
 		<article class="c-hero__entry">
 			<header class="c-hero__header">
@@ -24,7 +24,7 @@
 		</article>
 	</div>
 {% else %}
-	<div class="c-hero c-hero--service" style="background-image: url({{bck}})">
+	<div class="c-hero c-hero--service" {% if bck %} style="background-image: url({{bck}}) {% endif %}">
 		<div class="o-ov"></div>
 		<article class="c-hero__entry">
 			<header class="c-hero__header">

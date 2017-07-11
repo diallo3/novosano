@@ -9,6 +9,7 @@ $hero: c-hero;
 .#{$hero} {
 	text-align: center;
 	background: $black;
+	background-image: url('#{$imgPath}/bck-hero-main.jpg');
 	background-repeat: no-repeat;
 	background-position: 50% 50%; 
 	-webkit-background-size: cover; 
