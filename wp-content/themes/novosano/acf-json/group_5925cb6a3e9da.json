@@ -96,6 +96,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_5967a136abd77",
+            "label": "Hero Summary",
+            "name": "hero_summary",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Hero Summary",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": "wpautop"
+        },
+        {
             "key": "field_593982a5bc3ae",
             "label": "Hero CTA",
             "name": "hero_cta",
@@ -569,5 +588,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1496944292
+    "modified": 1499963745
 }

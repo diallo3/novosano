@@ -60,7 +60,7 @@
 						<div class="c-promo__exit">
 							<div class="c-promo__entry">
 								<div class="c-promo__cta">
-									<a href="{{home_item.ad_cta}}" class="o-cta o-cta--ghost">Schedule a Consultation</a>
+									<a href="{{options.schedule}}" class="o-cta o-cta--ghost" target="_blank">Schedule a Consultation</a>
 								</div>
 							</div>
 						</div>
@@ -68,9 +68,10 @@
 				</div>
 	    {% endif %}
 	{% endfor %}
-
-
-
+	
+	<div class="c-content__entry l-wrap">
+		{% include "includes/inc-end-cap.twig" %}
+	</div>
 
 	{% include "includes/inc-testimonials.twig" %}
 {% endblock %}

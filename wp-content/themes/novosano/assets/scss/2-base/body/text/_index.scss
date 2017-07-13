@@ -18,6 +18,6 @@ q {
 [class*="__accent"] {
 	@include typi('accent');
 	@include heading-line($medium-gray);
-	font-family: $ovo;
+	font-family: $muli;
 	display: block;
 }

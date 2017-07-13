@@ -12,36 +12,7 @@
 			
 		<div class="c-canvas__inner" data-off-canvas-wrapper>
 
-				<div id="offMain" class="c-canvas__menu" data-off-canvas>
-					<!-- Close button -->
-					<button class="close-button" aria-label="Close menu" type="button" data-close>
-					    <span aria-hidden="true">&times;</span>
-					</button>
-					
-					<!-- Menu -->
-					{% if mble %}
-						<menu id="mainMobile" class="c-menu c-menu--mobile" role="navigation">
-							{% if options.schedule %}
-								<li class="c-menu__schedule">
-									<a href="" class="c-menu__link">Schedule Today</a>
-								</li>
-							{% endif %}
-							{% for item in mble.get_items %}
-								<li class="c-menu__item {{item.classes | join(' ')}}">
-									<a href="{{item.link}}" class="c-menu__link">{{item.title}}</a>
-									{% if item.get_children %}
-										<ul class="c-menu--children">
-											{% for child in item.get_children %}
-											<li class="c-menu__s-item"><a href="{{child.get_children}}" class="c-menu__sub-link">{{child.title}}</a></li>
-											{% endfor %}
-										</ul>
-									{% endif %}
-								</li>
-							{% endfor %}
-						</menu>
-					{% endif %}
-					
-				</div>
+				{% include 'includes/inc-off-canvas.twig' %}
 				
 				<div class="c-canvas__content" data-off-canvas-content>
 					{# header #}
@@ -87,8 +58,8 @@
 		</div> 
 			{#  end .off-canvas-wrapper-inner #}
 	</div> 
-		{#  end .off-canvas-wrapper #}
-		{{ function('wp_footer') }}
+	{#  end .off-canvas-wrapper #}
+	{{ function('wp_footer') }}
 </body>
 </html> 
 {# end page #}

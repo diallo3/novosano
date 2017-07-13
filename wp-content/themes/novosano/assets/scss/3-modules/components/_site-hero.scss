@@ -36,6 +36,9 @@ $hero: c-hero;
 		height: 100vh;
 		min-height: 600px;
 		position: relative;
+		@include breakpoint(small only) {
+			height: auto; 
+		}
 		.#{$hero}__entry {
 			@include breakpoint(medium) {
 				@include center-align($ver: true, $hor: true, $pos: absolute);
@@ -73,6 +76,12 @@ $hero: c-hero;
 			white-space: nowrap;
 		}
 		
+	}
+	.#{$hero}__summary {
+		margin-bottom: 2.5em; 
+		* {
+			color: $white;
+		}
 	}
 	.#{$hero}__tag {
 		@include header-size(h6);

@@ -6,13 +6,16 @@
 	<div class="c-social-header l-wrap">
 		<nav class="l-menu u-float-right">
 			<menu class="c-menu c-menu--social">
+				<li class="c-menu__item"><a href="tel:{{options.main_phone}}" class="c-menu__link"><strong>{{options.main_phone}}</strong></a></li>
 				{% if login %}
 					<li class="c-menu__item"><a href="" class="c-menu__link">Guest Login</a></li>
 				{% endif %}
 				{% if chat %}
 					<li class="c-menu__item"><a href="" class="c-menu__link">Live Chat</a></li>
 				{% endif %}
-				<li class="c-menu__item"><a href="{{ site.url }}/store-locator" class="c-menu__link">Store Locator</a></li>
+				{% if options.store_locator %}
+					<li class="c-menu__item"><a href="{{options.store_locator}}" class="c-menu__link">Store Locator</a></li>
+				{% endif %}
 				{% include "/includes/inc-social.twig" %}
 
 			</menu>

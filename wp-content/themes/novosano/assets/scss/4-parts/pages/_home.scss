@@ -93,7 +93,18 @@ $kick: c-sidekick;
 	background-image: url('#{$imgPath}/bck-promo-results.jpg'); 
 	background-position: 50% 0;
 	background-repeat: no-repeat;
+	-webkit-background-size: cover; 
+	-o-background-size: cover; 
+	background-size: cover; 
 	position: relative;
+	@include breakpoint(large) {
+		-webkit-background-size: contain; 
+		-o-background-size: contain; 
+		background-size: contain; 
+	}
+	.ov {
+		background-color: black(0.5); 
+	}
 	* {
 		color: $white;
 	}

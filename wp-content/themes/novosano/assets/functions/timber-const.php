@@ -36,6 +36,8 @@ class OpusWp extends TimberSite {
 		$context['pri']   = new TimberMenu('primary');
 		$context['sec']   = new TimberMenu('secondary');
 		$context['mble']  = new TimberMenu('mobile');
+		$context['ftl']   = new TimberMenu('footer_left');
+		$context['ftr']   = new TimberMenu('footer_right');
 
 		/* post types */
 		$context['testimonial'] = Timber::get_posts( $testi_args );

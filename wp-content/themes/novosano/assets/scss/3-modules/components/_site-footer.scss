@@ -14,7 +14,7 @@ $credits: c-credits;
 	@include grid-col(12);
 	text-align: center;
 	@include breakpoint(large) {
-		@include grid-column(1 of 5);
+		@include grid-column(1 of 4);
 		text-align: left;
 	}
 	
@@ -22,9 +22,15 @@ $credits: c-credits;
 
 .#{$site} {
 	.o-logo {
+		margin-bottom: 2em; 
 		&__brand {
+			margin: 0 auto;
 			width: 180px;
-			height: 79px;	
+			height: 79px;
+			display: block;
+			@include breakpoint(medium) {
+				margin: 0;
+			}
 		} 
 	}
 	&__general, &__service, &__contact {
@@ -44,12 +50,21 @@ $credits: c-credits;
 		}
 	}
 	&__social {
+		.c-menu__item {
+			display: inline-block;
+		}
 		.c-menu__link {
 			@include circle(40px, lighten($black, 15%));
+			&:hover {
+				background-color: $s-primary; 
+			}
 			img {
 				@include abs-pos($t: 0, $r: 0, $b: 0, $l: 0);
 			}
 		}
+	}
+	.o-location__links {
+		@include flat-list;
 	}
 }
 

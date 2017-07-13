@@ -155,6 +155,19 @@ if (window.jQuery) {
             }
         });
 
+        // Header
+        function stickyHeader() {
+            $(window).scroll(function() {
+                var $header = $('.c-header-wrap');
+                if ($(this).scrollTop() >= 10) {
+                    $header.addClass('sticky');
+                } else {
+                $header.removeClass('sticky');
+                }   
+            });
+        }
+        stickyHeader();
+
         $('.owl-carousel').owlCarousel({
             autoplay: true,
             loop: true,

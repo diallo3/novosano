@@ -28,6 +28,9 @@ $off: c-canvas;
 			}
 			.#{$menu}__link {
 				padding: .5em !important; 
+				&:hover {
+					background-color: $s-primary; 
+				}
 			}
 		}
 	}
@@ -55,10 +58,35 @@ $off: c-canvas;
 			}
 		}
 		.#{$menu}--children {
+			background-color: black(0.8);
+			border-width: 0; 
 			padding-left: 0;
+			top: 57px !important;
 			left: 0 !important;
 			right: auto;
 			display: none;
+			&::before, &::after {
+				content: " ";
+				border: solid transparent;
+				width: 0;
+				height: 0;
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				pointer-events: none;
+			}
+			&::before {
+				border-color: rgba(0, 0, 0, 0);
+				border-bottom-color: none;
+				border-width: 10px;
+				margin-left: -10px;
+			}
+			&::after {
+				border-color: rgba(0, 0, 0, 0);
+				border-bottom-color: black(.8);
+				border-width: 10px;
+				margin-left: -80px;
+			}
 		}
 		.#{$menu}__sub-link {
 			color: $white;
@@ -74,7 +102,7 @@ $off: c-canvas;
 			}
 		}
 	}
-	&--mobile {
+	&--btn-mobile {
 		display: block;
 		@include breakpoint(large) {
 			display: none;
@@ -93,6 +121,19 @@ $off: c-canvas;
 		padding: 0.3em 0.5em; 
 		width: 100%; 
 	}
+	&__item {
+		* {
+			color: $white; 
+		}
+		p {
+			font-size: rem-calc(24); 
+			text-align: center;
+			span {
+				font-size: rem-calc(12); 
+				display: block;
+			}
+		}
+	}
 }
 
 .#{$off}__menu {
@@ -107,17 +148,33 @@ $off: c-canvas;
 // drilldown off canvas
 .#{$menu}--mobile {
 	@include foundation-drilldown-menu;
+	margin-bottom: 2em;
 	[class*="item"] {
 		@include flat-list;
 		a {
 			color: $white; 
+			text-align: center;
 			border-bottom: 1px solid white(0.3);
 			padding: 0.8em 1.5em;  
 			display: block;
+		}
+	}
+	.#{$menu}__schedule {
+		.#{$menu}__link {
+			text-align: center;
+			text-transform: uppercase;
+			background-color: $s-primary; 
 		}
 	}
 }
 
 .#{$menu}--children {
 	@include flat-list;
+}
+
+.#{$menu}--btn-mobile {
+	.hamburger, .hamburger:hover, .hamburger:focus {
+		background-color: transparent !important; 
+		outline: none;
+	}
 }

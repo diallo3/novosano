@@ -11,15 +11,23 @@
 				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
 			</nav>
 		</div>
-		<div class="c-footer__service">
-			<nav role="navigation">
-				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
-			</nav>
-		</div>
 		<div class="c-footer__contact">
-			<nav role="navigation">
-				{% include "/includes/menu-footer.twig" with {'footer': footer.get_items} %}
+			{# <h5 class="c-footer__title"></h5> #}
+			<nav class="o-location" role="navigation">
+				<ul class="o-location__links footer-nav">
+				{% for item in options.locations %}
+			        <li class="o-location__item">{{item.city}}, {{item.state}}</li>
+			    {% endfor %}
+			    	<li class="o-location__item"><em>More locations coming soon!</em></li>
+			    	{% if options.store_locator %}
+				    	<li class="o-location__item">
+				    		<a href="{{options.store_locator}}" class="nav-link">Store Locator</a>
+				    	</li>
+			    	{% endif %}
+			    </ul>
 			</nav>
+
+
 		</div>
 		<div class="c-footer__social">
 			<nav class="l-menu">
