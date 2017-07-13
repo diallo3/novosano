@@ -423,6 +423,25 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_5967abaf00158",
+                            "label": "Service CTA Name",
+                            "name": "service_cta_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "Service CTA Name",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_5925d0d411956",
                             "label": "Service CTA",
                             "name": "service_cta",
@@ -588,5 +607,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1499963745
+    "modified": 1499966475
 }

@@ -15,6 +15,7 @@
 	    	{% set desc  = home_item.description %}
 			{% set pts   = home_item.bullet_points %}
 			{% set cta   = home_item.service_cta %}
+			{% set name  = home_item.service_cta_name %}
 			{% set img   = TimberImage(home_item.image).src %}
 
 	    	<div class="c-sidekick">
@@ -38,7 +39,15 @@
 						</div>
 
 						<footer class="c-sidekick__footer">
-							<p><a href="{{home_item.service_cta}}" class="o-cta">More about this service</a></p>
+							<p>
+								<a href="{{home_item.service_cta}}" class="o-cta">
+									{% if name %}
+										{{name}}
+									{% else %}
+										Learn More
+									{% endif %}
+								</a>
+							</p>
 						</footer>
 					</section>
 				</article>
