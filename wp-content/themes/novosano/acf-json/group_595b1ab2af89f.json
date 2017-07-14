@@ -68,7 +68,7 @@
             "key": "field_595b1b20d58a3",
             "label": "Goal Services",
             "name": "goal_services",
-            "type": "relationship",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -77,19 +77,61 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "service"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search"
-            ],
-            "elements": [
-                "featured_image"
-            ],
-            "min": "",
-            "max": "",
-            "return_format": "object"
+            "collapsed": "field_596866d5919cd",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Service Section",
+            "sub_fields": [
+                {
+                    "key": "field_596866d5919cd",
+                    "label": "Services Type",
+                    "name": "services_type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Services Type",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5968675f919ce",
+                    "label": "Services Items",
+                    "name": "services_items",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "service"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
+                }
+            ]
         }
     ],
     "location": [
@@ -109,5 +151,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Goals and Service Relationship",
-    "modified": 1500005537
+    "modified": 1500014474
 }
