@@ -25,7 +25,7 @@
             "key": "field_595bef81c2beb",
             "label": "Featured Services",
             "name": "featured_services",
-            "type": "relationship",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,20 +34,61 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "service"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search",
-                "taxonomy"
-            ],
-            "elements": [
-                "featured_image"
-            ],
-            "min": "",
-            "max": "",
-            "return_format": "object"
+            "collapsed": "field_5968470fe7aa0",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Service Section",
+            "sub_fields": [
+                {
+                    "key": "field_5968470fe7aa0",
+                    "label": "Services Type",
+                    "name": "services_type",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Services Type",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59684743e7aa1",
+                    "label": "Services Items",
+                    "name": "services_items",
+                    "type": "relationship",
+                    "instructions": "Pick specific services",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "service"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": "",
+                    "max": "",
+                    "return_format": "object"
+                }
+            ]
         }
     ],
     "location": [
@@ -67,5 +108,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "For the Services Page Template",
-    "modified": 1499222440
+    "modified": 1500006314
 }

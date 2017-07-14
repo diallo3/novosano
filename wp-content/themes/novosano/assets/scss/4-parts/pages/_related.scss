@@ -6,6 +6,7 @@
 $related: c-relationship;
 
 .#{$related} {
+	@include clearfix;
 	margin-bottom: rem-calc(50); 
 	// padding: rem-calc(50 0 20); 
 	border-bottom: 1px solid $medium-gray;
@@ -16,16 +17,15 @@ $related: c-relationship;
 	&__item {
 		background-color: $black;
 		background-repeat: no-repeat ;
-		background-position: 50% 50%;
+		background-position: 50% 0;
 		-webkit-background-size: cover; 
 	 	-o-background-size: cover; 
 	 	background-size: cover; 
-		margin-bottom: 1.2rem; 
-		padding: rem-calc(80 50); 
-		min-height: 280px; 
+		padding: rem-calc(40 20); 
+		height: 280px; 
 		position: relative;
 		.ov {
-			background-color: black(0.5); 
+			background-color: black(0.6); 
 		}
 	}
 	&__entry {
@@ -54,31 +54,31 @@ $related: c-relationship;
 	
 	&__content, &__cta {
 		@include grid-col(12);
-		@include breakpoint(medium) {
-			@include grid-col(6);
-		}
+		// @include breakpoint(medium) {
+		// 	@include grid-col(6);
+		// }
 		position: relative;
 	}
-	&__cta {
-		padding-top: rem-calc(42); 
-		.o-cta {
-			@include center-align($ver: false, $hor: true, $pos: relative);
-		}
-	}
-	// &__title {
-	// 	margin-bottom: 0;
-	// 	position: relative;
-	// 	a {
-	// 		@include animated-bottom($s-primary);
-	// 		color: $white; 
-	// 		font-weight: 700; 
-	// 		padding: rem-calc(10 0); 
-	// 	}
-	// }
 	&__tag {
 		color: $white;
 		font-weight: 700;
 		font-style: italic; 
+	}
+
+	&__block {
+		@include clearfix;
+		border-bottom: 1px solid $light-gray; 
+		margin-bottom: rem-calc(30); 
+		padding-bottom: rem-calc(30); 
+		&:last-of-type {
+			@include zero-out;
+			border: none;
+		}
+	}
+
+	&__type {
+		text-align: center;
+		background: url('#{$imgPath}/icon-dots.svg') no-repeat 50% 100%;
 	}
 
 }

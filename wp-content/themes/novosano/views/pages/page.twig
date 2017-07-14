@@ -20,58 +20,70 @@
 
 			{# additions #}
 			{% if fn('is_page', 'services') %}
+				{# services #}
 				<div class="c-relationship c-relationship--service">
 
-					<h3 class="c-relationship__title">Featured Services</h3>
+					{# <h3 class="c-relationship__title u-text-center">Featured Services</h3> #}
+					{% for service in post.get_field('featured_services') %}
 
-				    {% for item in post.get_field('featured_services') %}
-				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
-							<div class="ov"></div>
-				        	<div class="c-relationship__entry">
-				        		<div class="c-relationship__content">
-				        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-				        			{% if fn('is_singular', 'goal') %}
-				        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
-				        			{% else %}
-				        				<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
-				        			{% endif %}
-				        		</div>
-				        		<div class="c-relationship__cta">
-				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
-				        		</div>
-				        	</div>
-				            
-				            
-				        </div>
-				    {% endfor %}
+					    <div class="c-relationship__block">
+
+					    	<h3 class="c-relationship__type"> {{ service.services_type }} </h3>
+					    	
+					    	{% for item in service.services_items %}
+					    	    <div class="l-column__block">
+							        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+										<div class="ov"></div>
+							        	<div class="c-relationship__entry">
+							        		<div class="c-relationship__content">
+							        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
+							        			{% if fn('is_singular', 'goal') %}
+							        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
+							        			{% else %}
+							        				<p class="c-relationship__tag">{{item.get_preview(10, true, false)}}</p>
+							        			{% endif %}
+							        		</div>
+							        		<div class="c-relationship__cta">
+							        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
+							        		</div>
+							        	</div> 
+							        </div>
+							    </div>
+					    	{% endfor %}
+					    </div>
+
+					{% endfor %}
+
 				</div>
-			{% elseif fn('is_page','goals') %}
-				<div class="c-relationship c-relationship--goals">
 
-					<h3 class="c-relationship__title u-text-center">What's your goal?</h3>
+			{% elseif fn('is_page','goals') %}
+
+				{# goals #}
+				<div class="c-relationship c-relationship--goals">
+					{# <h3 class="c-relationship__title u-text-center">What's your goal?</h3> #}
 
 				    {% for item in post.get_field('featured_goals') %}
-				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.goal_banner).src}}')">
-							<div class="ov"></div>
-				        	<div class="c-relationship__entry">
-				        		<div class="c-relationship__content">
-				        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-				
-										{% if get_preview %}
-											<p class="c-relationship__tag">{{item.get_preview(false,false,false)}}</p>
-										{% else %}
-											<div class="c-relationship__tag">
-												{{item.get_content}}
-											</div>
-										{% endif %}
-				        			</p>
-				        		</div>
-				        		<div class="c-relationship__cta">
-				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn More</a>
-				        		</div>
-				        	</div>
-				            
-				            
+				    	<div class="l-column__block">
+					        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.goal_banner).src}}')">
+								<div class="ov"></div>
+					        	<div class="c-relationship__entry">
+					        		<div class="c-relationship__content">
+					        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
+					
+											{% if get_preview %}
+												<p class="c-relationship__tag">{{item.get_preview(20,false,false)}}</p>
+											{% else %}
+												<div class="c-relationship__tag">
+													{{item.get_content|excerpt(10)}}
+												</div>
+											{% endif %}
+					        			</p>
+					        		</div>
+					        		<div class="c-relationship__cta">
+					        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn More</a>
+					        		</div>
+					        	</div> 
+					        </div>
 				        </div>
 				    {% endfor %}
 				</div>

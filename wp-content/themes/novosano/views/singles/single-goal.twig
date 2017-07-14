@@ -18,22 +18,21 @@
 	<div class="c-content__entry l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="c-article__content">
-				
 				<div class="c-relationship c-relationship--service">
 				    {% for item in post.get_field('goal_services') %}
-				        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
-							<div class="ov"></div>
-				        	<div class="c-relationship__entry">
-				        		<div class="c-relationship__content">
-				        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-				        			<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
-				        		</div>
-				        		<div class="c-relationship__cta">
-				        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
-				        		</div>
-				        	</div>
-				            
-				            
+				    	<div class="l-column__block">
+					        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
+								<div class="ov"></div>
+					        	<div class="c-relationship__entry">
+					        		<div class="c-relationship__content">
+					        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
+					        			<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
+					        		</div>
+					        		<div class="c-relationship__cta">
+					        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
+					        		</div>
+					        	</div>
+					        </div>
 				        </div>
 				    {% endfor %}
 				</div>

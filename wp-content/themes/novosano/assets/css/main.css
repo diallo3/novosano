@@ -878,6 +878,25 @@ p {
       .l-menu--main:last-child:not(:first-child) {
         float: right; } }
 
+.l-column__block {
+  width: 100%;
+  float: left;
+  padding-right: 0;
+  padding-left: 0;
+  margin-bottom: 0.3125rem; }
+  .l-column__block:last-child:not(:first-child) {
+    float: right; }
+  @media print, screen and (min-width: 40em) {
+    .l-column__block {
+      width: 50%;
+      float: left;
+      padding-right: 0.15625rem;
+      padding-left: 0.15625rem; }
+      .l-column__block:last-child:not(:first-child) {
+        float: right; }
+      .l-column__block:last-child:last-child {
+        float: left; } }
+
 /*--------------------------------
   
   Utilities
@@ -1698,10 +1717,10 @@ q {
   background: #0d0d0d;
   background-image: url("../images/bck-hero-main.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 20%;
   background-size: cover;
-  padding: 12rem 3rem;
-  min-height: 65vh;
+  padding: 12rem 3rem 3rem;
+  min-height: 35vh;
   width: 100%;
   display: block;
   position: relative;
@@ -1830,7 +1849,7 @@ q {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.4); }
+  background: rgba(0, 0, 0, 0.5); }
   .o-ov--vid {
     background: rgba(0, 0, 0, 0.6); }
 
@@ -3210,19 +3229,23 @@ input.datepicker_with_icon {
   margin-bottom: 3.125rem;
   border-bottom: 1px solid #cacaca;
   position: relative; }
+  .c-relationship:before, .c-relationship:after {
+    content: "";
+    display: table; }
+  .c-relationship:after {
+    clear: both; }
   .c-relationship:last-of-type {
     border: none; }
   .c-relationship__item {
     background-color: #0d0d0d;
     background-repeat: no-repeat;
-    background-position: 50% 50%;
+    background-position: 50% 0;
     background-size: cover;
-    margin-bottom: 1.2rem;
-    padding: 5rem 3.125rem;
-    min-height: 280px;
+    padding: 2.5rem 1.25rem;
+    height: 280px;
     position: relative; }
     .c-relationship__item .ov {
-      background-color: rgba(0, 0, 0, 0.5); }
+      background-color: rgba(0, 0, 0, 0.6); }
   .c-relationship__entry {
     max-width: 75rem;
     margin-right: auto;
@@ -3285,29 +3308,26 @@ input.datepicker_with_icon {
         padding-left: 0.9375rem; } }
     .c-relationship__content:last-child:not(:first-child), .c-relationship__cta:last-child:not(:first-child) {
       float: right; }
-    @media print, screen and (min-width: 40em) {
-      .c-relationship__content, .c-relationship__cta {
-        width: 50%;
-        float: left;
-        padding-right: 0.625rem;
-        padding-left: 0.625rem; } }
-  @media print, screen and (min-width: 40em) and (min-width: 40em) {
-    .c-relationship__content, .c-relationship__cta {
-      padding-right: 0.9375rem;
-      padding-left: 0.9375rem; } }
-    @media print, screen and (min-width: 40em) {
-        .c-relationship__content:last-child:not(:first-child), .c-relationship__cta:last-child:not(:first-child) {
-          float: right; } }
-  .c-relationship__cta {
-    padding-top: 2.625rem; }
-    .c-relationship__cta .o-cta {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%); }
   .c-relationship__tag {
     color: #fff;
     font-weight: 700;
     font-style: italic; }
+  .c-relationship__block {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 1.875rem;
+    padding-bottom: 1.875rem; }
+    .c-relationship__block:before, .c-relationship__block:after {
+      content: "";
+      display: table; }
+    .c-relationship__block:after {
+      clear: both; }
+    .c-relationship__block:last-of-type {
+      margin: 0;
+      padding: 0;
+      border: none; }
+  .c-relationship__type {
+    text-align: center;
+    background: url("../images/icon-dots.svg") no-repeat 50% 100%; }
 
 /*--------------------------------
   

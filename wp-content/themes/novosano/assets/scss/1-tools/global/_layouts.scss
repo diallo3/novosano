@@ -33,3 +33,12 @@
 		
 	}
 }
+
+.l-column__block {
+	@include grid-col(12, 0);
+	margin-bottom: rem-calc(5); 
+	@include breakpoint(medium) {
+		@include grid-col(6, 5);
+		@include grid-col-end;
+	}
+}
