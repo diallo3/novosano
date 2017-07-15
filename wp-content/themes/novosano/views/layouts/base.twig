@@ -18,32 +18,40 @@
 					{# header #}
 					{% include 'includes/header.twig' %}
 
-					{# <ul class="o-sidenav">
-						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Schedule</span></a></li>
-						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Shop</span></a></li>
-						<li class="o-sidenav__item"><a href="" class="o-sidenav__link"><span>Live Chat</span></a></li>
-					</ul> #}
-
 					<!-- You can add more icons at http://fontawesome.io/icons/#brand -->
 					<ul class="o-sticky-bar">
+						{% if options.schedule %}
 						<li class="o-sticky__icon">
-						    <a href="#"> 
-						      <i class="fa o-sched" aria-hidden="true"></i>
+						    <a href="{{options.schedule}}" target="_blank"> 
+						      <i class="fa o-sched" aria-hidden="true">Plan</i>
 						      <span class="o-sticky__text">Schedule</span>
 						    </a>
 					  	</li>
+					  	{% endif %}
+					  	{% if options.guest_login %}
 					  	<li class="o-sticky__icon">
-						    <a href="#">
-						      <i class="fa o-shop" aria-hidden="true"></i>
+						    <a href="{{guest_login}}">
+						      <i class="fa o-shop" aria-hidden="true">Shop</i>
 						      <span class="o-sticky__text">Shop</span>
 						    </a>
 					  	</li>
+					  	{% endif %}
+					  	{% if options.main_phone %}
 					  	<li class="o-sticky__icon">
-					    	<a href="#">
-					      		<i class="fa o-chat" aria-hidden="true"></i>
+					    	<a href="tel:{{options.main_phone}}">
+					      		<i class="fa o-call" aria-hidden="true">Call</i>
+					      		<span class="o-sticky__text">Call Us</span>
+					    	</a>
+					  	</li>
+					  	{% endif %}
+					  	{% if options.live_chat %}
+					  	<li class="o-sticky__icon">
+					    	<a href="{{options.live_chat}}">
+					      		<i class="fa o-chat" aria-hidden="true">Chat</i>
 					      		<span class="o-sticky__text">Live Chat</span>
 					    	</a>
 					  	</li>
+					  	{% endif %}
 					</ul>
 
 					<main id="main" class="c-main" role="main">

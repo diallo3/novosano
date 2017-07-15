@@ -2890,60 +2890,70 @@ input.datepicker_with_icon {
         float: right; } }
 
 .o-sticky-bar {
-  background-color: #bf0413;
+  background-color: transparent;
   padding: 0;
   margin: 0;
-  width: 10.9375rem;
+  width: 12.5rem;
   transform: translateY(-50%);
+  display: none;
   position: fixed;
   top: 50%;
   z-index: 5;
   right: -8.75rem; }
+  @media print, screen and (min-width: 64em) {
+    .o-sticky-bar {
+      display: block; } }
   .o-sticky-bar .o-sticky__icon {
     color: #fff;
     font-size: 1.1rem;
     cursor: pointer;
     list-style-type: none;
-    background-color: inherit;
-    border: 1px solid #cacaca;
-    border-width: 1px 0 0 1px;
-    margin: 0;
+    background-color: #bf0413;
     padding: 0;
-    height: 2.2rem;
+    height: 3.8rem;
     transition: all 0.3s ease-in-out;
-    overflow: hidden; }
-    .o-sticky-bar .o-sticky__icon:last-of-type {
-      border-bottom-width: 1px; }
+    overflow: hidden;
+    position: relative; }
     .o-sticky-bar .o-sticky__icon:hover {
-      border: none;
       transform: translateX(-8.75rem); }
       .o-sticky-bar .o-sticky__icon:hover > a {
         color: inherit;
         background-color: inherit; }
     .o-sticky-bar .o-sticky__icon > a {
       color: inherit;
-      background-color: inherit; }
+      background-color: inherit;
+      display: block; }
       .o-sticky-bar .o-sticky__icon > a > .fa {
+        color: #8a8a8a;
+        font-size: 0.875rem;
+        font-style: normal;
+        text-align: center;
         background-color: #fff;
         background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: 50%;
-        padding: 0.5rem;
-        width: 2.2rem;
-        height: 2.2rem;
+        background-position: 50% 30%;
+        background-size: 35%;
+        border-bottom: 1px solid #e6e6e6;
+        padding: 2rem 0.8rem 1rem;
+        width: 3.8rem;
+        height: 3.8rem;
+        display: block;
+        position: relative;
         float: left;
         margin-right: 0; }
         .o-sticky-bar .o-sticky__icon > a > .fa.o-sched {
           background-image: url("../images/icon-schedule.svg"); }
         .o-sticky-bar .o-sticky__icon > a > .fa.o-shop {
           background-image: url("../images/icon-shop.svg"); }
+        .o-sticky-bar .o-sticky__icon > a > .fa.o-call {
+          background-image: url("../images/icon-phone.svg");
+          background-size: 28%; }
         .o-sticky-bar .o-sticky__icon > a > .fa.o-chat {
           background-image: url("../images/icon-chat.svg"); }
       .o-sticky-bar .o-sticky__icon > a > .o-sticky__text {
         color: #fff;
         font-size: 80%;
         text-transform: uppercase;
-        padding: .4rem .3rem 0;
+        padding: 1.3rem 1rem;
         display: inline-block; }
 
 .trg-overlay {

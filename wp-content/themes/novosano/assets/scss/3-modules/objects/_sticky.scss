@@ -1,12 +1,12 @@
 $social-bar-position: right; // Change this value to `right` for changing sidebar's position.
 $social-bar-transformation: rem-calc(140);
-$social-bar-width: rem-calc(175);
-$social-bar-background: $s-primary;
+$social-bar-width: rem-calc(200);
+$social-bar-background: transparent;
 $social-icon-color: $white;
 $social-icon-transition: all 0.3s ease-in-out;
 $social-icon-font-size: 1.1rem;
-$social-icon-padding: 0.5rem;
-$social-size: 2.2rem;
+$social-icon-padding: 2rem .8rem 1rem;;
+$social-size: 3.8rem;
 
 // Source: https://designpieces.com/2012/12/social-media-colours-hex-and-rgb/
 $social-brand-facebook: #3b5998;
@@ -22,6 +22,10 @@ $social-brand-pinterest: #cb2027;
     margin: 0; 
     width: $social-bar-width;
     transform: translateY(-50%);
+    display: none;
+    @include breakpoint(large) {
+        display: block;
+    }
     position: fixed;
     top: 50%;
     z-index: 5; 
@@ -38,24 +42,13 @@ $social-brand-pinterest: #cb2027;
         font-size: $social-icon-font-size;
         cursor: pointer;
         list-style-type: none;
-        background-color: inherit;
-        border: 1px solid $medium-gray; 
-        border-width: 1px 0 0 1px; 
-        margin: 0;
+        background-color: $s-primary;
         padding: 0;
         height: $social-size; 
         transition: $social-icon-transition;
         overflow: hidden;
-
-        // &:first-of-type {
-	       //  padding-top: 0.375rem;
-        // }
-        &:last-of-type {
-	        border-bottom-width: 1px;
-        }
-        
+        position: relative;
         &:hover {
-            border: none; 
             @if $social-bar-position == left {
                 transform:translateX($social-bar-transformation * 1);
             }
@@ -70,20 +63,26 @@ $social-brand-pinterest: #cb2027;
         }
 
         > a {
-          color: inherit;
-          background-color: inherit;
-
+            color: inherit;
+            background-color: inherit;
+            display: block;
             > .fa {
+                color: $dark-gray;
+                font-size: rem-calc(14); 
+                font-style: normal; 
+                text-align: center;
                 background-color: $white;
                 background-repeat: no-repeat;
-                background-position: 50% 50%;
-                -webkit-background-size: 50%; 
-                  -o-background-size: 50%; 
-                  background-size: 50%;   
+                background-position: 50% 30%;
+                -webkit-background-size: 35%; 
+                  -o-background-size: 35%; 
+                  background-size: 35%; 
+                border-bottom: 1px solid $light-gray;  
                 padding: $social-icon-padding;
                 width: $social-size;
                 height: $social-size;
-
+                display: block;
+                position: relative;
                 @if $social-bar-position == left {
                     float: right;
                     margin-left: 0;
@@ -99,6 +98,11 @@ $social-brand-pinterest: #cb2027;
 
                 &.o-shop {
                     background-image: url('#{$imgPath}/icon-shop.svg'); 
+                }
+
+                &.o-call {
+                    background-image: url('#{$imgPath}/icon-phone.svg'); 
+                    background-size: 28%;
                 }
 
                 &.o-chat {
@@ -130,7 +134,7 @@ $social-brand-pinterest: #cb2027;
             font-size: 80%;
             
             text-transform: uppercase;
-            padding: .4rem .3rem 0; 
+            padding: 1.3rem 1rem; 
             display: inline-block;
             // @if $social-bar-position == left {
             //     margin-right: 0.5rem;
