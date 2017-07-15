@@ -2908,7 +2908,7 @@ input.datepicker_with_icon {
     font-size: 1.1rem;
     cursor: pointer;
     list-style-type: none;
-    background-color: #bf0413;
+    background-color: #8a8a8a;
     padding: 0;
     height: 3.8rem;
     transition: all 0.3s ease-in-out;
@@ -2924,15 +2924,17 @@ input.datepicker_with_icon {
       background-color: inherit;
       display: block; }
       .o-sticky-bar .o-sticky__icon > a > .fa {
-        color: #8a8a8a;
+        color: #717171;
+        color: #fff;
         font-size: 0.875rem;
         font-style: normal;
+        font-weight: 600;
         text-align: center;
-        background-color: #fff;
+        background-color: #fafafa;
+        background-color: #b50412;
         background-repeat: no-repeat;
         background-position: 50% 30%;
         background-size: 35%;
-        border-bottom: 1px solid #e6e6e6;
         padding: 2rem 0.8rem 1rem;
         width: 3.8rem;
         height: 3.8rem;
@@ -2952,6 +2954,7 @@ input.datepicker_with_icon {
       .o-sticky-bar .o-sticky__icon > a > .o-sticky__text {
         color: #fff;
         font-size: 80%;
+        font-weight: 600;
         text-transform: uppercase;
         padding: 1.3rem 1rem;
         display: inline-block; }
