@@ -38,12 +38,14 @@
 			</div>
 
 			<div class="tool-pagination">
-			    {% if posts.pagination.prev %}
-			        <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
-			    {% endif %}
-			    <ul class="pages">
+			    <ul class="c-pagination c-pagination__posts">
+			    	<li class="c-pag__prev">
+			    		 {% if posts.pagination.prev %}
+					        <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}"><< prev</a>
+					    {% endif %}
+			    	</li>
 			        {% for page in posts.pagination.pages %}
-			            <li>
+			            <li class="c-pag__num">
 			                {% if page.link %}
 			                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
 			                {% else %}
@@ -51,10 +53,13 @@
 			                {% endif %}
 			            </li>
 			        {% endfor %}
+			        <li class="c-pag__next">
+			        	{% if posts.pagination.next %}
+					        <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">next >></a>
+					    {% endif %}
+			        </li>
 			    </ul>
-			    {% if posts.pagination.next %}
-			        <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
-			    {% endif %}
+			    
 			</div>
 
 			{% include "includes/inc-end-cap.twig" %}

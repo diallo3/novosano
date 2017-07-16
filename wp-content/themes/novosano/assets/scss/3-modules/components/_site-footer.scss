@@ -28,7 +28,7 @@ $credits: c-credits;
 			width: 180px;
 			height: 79px;
 			display: block;
-			@include breakpoint(medium) {
+			@include breakpoint(large) {
 				margin: 0;
 			}
 		} 

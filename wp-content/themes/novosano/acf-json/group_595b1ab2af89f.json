@@ -87,8 +87,8 @@
                     "key": "field_596866d5919cd",
                     "label": "Services Type",
                     "name": "services_type",
-                    "type": "text",
-                    "instructions": "",
+                    "type": "select",
+                    "instructions": "Select a Service Type",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -96,11 +96,20 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "Services Type",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "choices": {
+                        "med": "Medical Aesthetics",
+                        "ene": "Energy Based Treatments",
+                        "vit": "Vitamin Hydration Therapy"
+                    },
+                    "default_value": [
+                        "Medical Aesthetics"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "return_format": "label",
+                    "placeholder": ""
                 },
                 {
                     "key": "field_5968675f919ce",
@@ -151,5 +160,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Goals and Service Relationship",
-    "modified": 1500014474
+    "modified": 1500243009
 }

@@ -18,10 +18,8 @@
 		background-color: black(0.8); 
 		border-bottom: 1px solid white(0.5); 
 		width: 100%;
-		@include breakpoint(small) {
-			height: 75px;
-		}
-		@include breakpoint(medium) {
+		height: 75px;
+		@include breakpoint(large) {
 			height: 140px;
 		}
 		position: fixed;

@@ -54,3 +54,44 @@ $pg: c-pagination;
 		max-width: 100%;
 	}
 }
+
+.#{$pg}__posts {
+	@include pagination-container;
+	text-align: center;
+	background: none; 
+	border: none;
+	padding: 0;
+	.page-number {
+		@include pagination-item-current;
+		color: $dark-gray;
+		background-color: $white;
+		border: 1px solid $medium-gray;  
+		-webkit-border-radius: 50%; 
+		border-radius: 50%; 
+		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
+		&:hover {
+			color: $white;
+			background-color: $medium-gray; 
+		}
+		&.current {
+			color: $white;
+			background-color: $s-primary; 
+			display: block;
+		}
+	}
+}
+
+.c-pag__next, .c-pag__prev {
+	width: 75px;  
+	a {
+		color: darken($dark-gray, 5%);
+		display: block;
+		&:hover {
+			color: $s-primary;
+			background-color: transparent; 
+		}	
+	}
+}
