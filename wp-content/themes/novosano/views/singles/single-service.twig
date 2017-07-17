@@ -17,6 +17,7 @@
 	{% set target 	  = post.get_field('targeting') %}
 	{% set target_img = post.get_field('service_scheduling_image') %}
 	{% set ex_bene 	  = post.get_field('explanation__benefits') %}
+	{% set extras     = post.get_field('extras') %}
 	{% set gallery    = post.get_field('before_after') %}
 
 
@@ -28,6 +29,16 @@
 					<h3 class="o-content__title">Explanation / Benefits</h3>
 
 					{{ex_bene}}
+					
+					{% if extras %}
+						<hr class="u-divide">
+						{% for item in extras %}
+					        <section class="">
+					            <h4 class="o-extras__title">With: {{item.extras_title}}</h4>
+					            {{item.extras_explanation__benefits}}
+					        </section>
+					    {% endfor %}
+				    {% endif %}
 				</div>
 
 				{# Targeting #}

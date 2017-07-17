@@ -924,7 +924,8 @@ figure {
   padding: 0; }
 
 .u-divide {
-  margin: 5rem 0; }
+  border-top: 1px solid #e6e6e6;
+  margin: 2.5rem 0; }
 
 /*--------------------------------
   
