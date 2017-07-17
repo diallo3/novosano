@@ -23,6 +23,9 @@ $card: c-card;
 }
 
 .#{$are} {
+	&__title {
+		margin-bottom: 0;
+	}
 	&__list {
 		@include zero-out;
 		
@@ -45,7 +48,7 @@ $card: c-card;
 }
 
 .#{$tar} {
-	&__list, &__cta {
+	&__points, &__cta {
 		@include grid-col(12);
 		@include breakpoint(large) {
 			@include grid-col(6);
@@ -54,11 +57,13 @@ $card: c-card;
 	&__points {
 		.#{$tar}__list {
 			@include flat_list;
-			
+			border-bottom: 1px solid $light-gray; 
+			margin-bottom: 0.8em; 
+			padding-bottom: 0.5em;
 			.#{$tar}__item {
 				font-style: italic; 
 				font-weight: 600; 
-				padding-left: 1.85em;
+				padding-left: 1em;
 				margin-bottom: rem-calc(10); 
 				&::before {
 					content: "\25CF";
@@ -66,7 +71,7 @@ $card: c-card;
 					font-style: normal; 
 					padding-right: 0.5em; 
 					position: absolute;
-					left: rem-calc(10); 
+					left: 0; 
 				}  
 			}
 		}

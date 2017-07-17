@@ -15,7 +15,7 @@
 	</div>
 
 
-	<div class="c-content__entry l-wrap">
+	<div class="c-content__entry c-content__wide l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 
 			<div class="c-relationship c-relationship--service">
@@ -34,11 +34,11 @@
 							        	<div class="c-relationship__entry">
 							        		<div class="c-relationship__content">
 							        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-							        			{% if get_preview %}
+							        			{# {% if get_preview %}
 							        				<p class="c-relationship__tag">{{item.get_preview(10, true, false)}}</p>
 							        			{% else %}
 							        				<p class="c-relationship__tag">{{item.get_field('explanation__benefits')|excerpt(10)}}</p>
-							        			{% endif %}
+							        			{% endif %} #}
 							        		</div>
 							        		<div class="c-relationship__cta">
 							        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>

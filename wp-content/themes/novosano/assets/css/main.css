@@ -3457,6 +3457,9 @@ input.datepicker_with_icon {
         max-width: calc(50% + 5%);
         margin-right: -15%; } }
 
+.o-area__title {
+  margin-bottom: 0; }
+
 .o-area__list {
   margin: 0;
   padding: 0; }
@@ -3472,42 +3475,45 @@ input.datepicker_with_icon {
   .o-area__item:last-of-type::after {
     content: ""; }
 
-.o-target__list, .o-target__cta {
+.o-target__points, .o-target__cta {
   width: 100%;
   float: left;
   padding-right: 0.625rem;
   padding-left: 0.625rem; }
   @media print, screen and (min-width: 40em) {
-    .o-target__list, .o-target__cta {
+    .o-target__points, .o-target__cta {
       padding-right: 0.9375rem;
       padding-left: 0.9375rem; } }
-  .o-target__list:last-child:not(:first-child), .o-target__cta:last-child:not(:first-child) {
+  .o-target__points:last-child:not(:first-child), .o-target__cta:last-child:not(:first-child) {
     float: right; }
   @media print, screen and (min-width: 64em) {
-    .o-target__list, .o-target__cta {
+    .o-target__points, .o-target__cta {
       width: 50%;
       float: left;
       padding-right: 0.625rem;
       padding-left: 0.625rem; } }
   @media print, screen and (min-width: 64em) and (min-width: 40em) {
-    .o-target__list, .o-target__cta {
+    .o-target__points, .o-target__cta {
       padding-right: 0.9375rem;
       padding-left: 0.9375rem; } }
   @media print, screen and (min-width: 64em) {
-      .o-target__list:last-child:not(:first-child), .o-target__cta:last-child:not(:first-child) {
+      .o-target__points:last-child:not(:first-child), .o-target__cta:last-child:not(:first-child) {
         float: right; } }
 
 .o-target__points .o-target__list {
   margin: 0;
   padding: 0;
-  list-style-type: none; }
+  list-style-type: none;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 0.8em;
+  padding-bottom: 0.5em; }
   .o-target__points .o-target__list li {
     float: none;
     position: relative; }
   .o-target__points .o-target__list .o-target__item {
     font-style: italic;
     font-weight: 600;
-    padding-left: 1.85em;
+    padding-left: 1em;
     margin-bottom: 0.625rem; }
     .o-target__points .o-target__list .o-target__item::before {
       content: "\25CF";
@@ -3515,7 +3521,7 @@ input.datepicker_with_icon {
       font-style: normal;
       padding-right: 0.5em;
       position: absolute;
-      left: 0.625rem; }
+      left: 0; }
 
 .o-target .c-card--schedule .ov {
   background-color: rgba(0, 0, 0, 0.2); }

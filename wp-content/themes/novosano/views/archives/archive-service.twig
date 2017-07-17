@@ -18,11 +18,11 @@
 				        	<div class="c-relationship__entry">
 				        		<div class="c-relationship__content">
 				        			<h4 class="c-relationship__title"><a href="{{post.link}}" class="c-relationship__link">{{post.title}}</a></h4>
-				        			{% if fn('is_singular', 'goal') %}
+				        			{# {% if fn('is_singular', 'goal') %}
 				        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
 				        			{% else %}
 				        				<p class="c-relationship__tag">{{item.get_preview(10, true, false)}}</p>
-				        			{% endif %}
+				        			{% endif %} #}
 				        		</div>
 				        		<div class="c-relationship__cta">
 				        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Learn about {{post.title}}</a>
