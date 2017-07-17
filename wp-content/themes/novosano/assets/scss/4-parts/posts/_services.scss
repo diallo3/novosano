@@ -58,14 +58,15 @@ $card: c-card;
 			.#{$tar}__item {
 				font-style: italic; 
 				font-weight: 600; 
-				padding-left: 1.7em;
-				text-indent: -0.1em;
+				padding-left: 1.85em;
 				margin-bottom: rem-calc(10); 
 				&::before {
 					content: "\25CF";
 					color: $s-primary;
 					font-style: normal; 
 					padding-right: 0.5em; 
+					position: absolute;
+					left: rem-calc(10); 
 				}  
 			}
 		}

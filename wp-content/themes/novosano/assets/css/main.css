@@ -3506,14 +3506,15 @@ input.datepicker_with_icon {
   .o-target__points .o-target__list .o-target__item {
     font-style: italic;
     font-weight: 600;
-    padding-left: 1.7em;
-    text-indent: -0.1em;
+    padding-left: 1.85em;
     margin-bottom: 0.625rem; }
     .o-target__points .o-target__list .o-target__item::before {
       content: "\25CF";
       color: #bf0413;
       font-style: normal;
-      padding-right: 0.5em; }
+      padding-right: 0.5em;
+      position: absolute;
+      left: 0.625rem; }
 
 .o-target .c-card--schedule .ov {
   background-color: rgba(0, 0, 0, 0.2); }

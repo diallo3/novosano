@@ -3,13 +3,13 @@
 {% block content %}
 	{% include "/includes/inc-hero-service.twig" %}
 
-	<div class="c-lead-container l-block">
+	{# <div class="c-lead-container l-block">
 		<div class="l-wrap">
 			<div class="c-lead">
 				<p>{{post.get_preview(false,false,false)}}</p>
 			</div>
 		</div>
-	</div>
+	</div> #}
 
 	{# vars #}
 	{% set area 	  = post.get_field('body_area_choices') %}
@@ -23,23 +23,13 @@
 	<div class="c-content__entry l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="c-article__content">
-				{# Areas #}
-				<div class="o-content o-area">
-					<h3 class="o-content__title">TX Area</h3>
-					
-					
-					<dl class="o-area__list">
-						{% if area_text %}
-							<p>{{area_text}}</p>
-						{% else %}
-							{% for item in area %}
-								<dd class="o-area__item">{{item.label}}</dd>
-							{% endfor %}
-						{% endif %}
-						
-					</dl>
+				{# benefits #}
+				<div class="o-content o-benefit">
+					<h3 class="o-content__title">Explanation / Benefits</h3>
 
+					{{ex_bene}}
 				</div>
+
 				{# Targeting #}
 				<div class="o-content o-target">
 					<h3 class="o-content__title">Targeting / Specifically for:</h3>
@@ -63,15 +53,24 @@
 
 							<a href="#" class="o-cta o-cta--ghost">Schedule {{post.title}}</a>
 						</div>
-					</div>
-						
+					</div>	
 				</div>
 
-				{# benefits #}
-				<div class="o-content o-benefit">
-					<h3 class="o-content__title">Explanation / Benefits</h3>
-
-					{{ex_bene}}
+				{# Areas #}
+				<div class="o-content o-area">
+					<h3 class="o-content__title">TX Area</h3>
+					
+					
+					<dl class="o-area__list">
+						{% if area_text %}
+							<p>{{area_text}}</p>
+						{% else %}
+							{% for item in area %}
+								<dd class="o-area__item">{{item.label}}</dd>
+							{% endfor %}
+						{% endif %}
+						
+					</dl>
 				</div>
 				
 				{% if gallery|length > 0 %}
