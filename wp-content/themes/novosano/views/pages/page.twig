@@ -44,9 +44,9 @@
 							        			{% endif %} #}
 							        		</div>
 							        		<div class="c-relationship__cta">
-							        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
+							        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title|truncate(2)}}</a>
 							        		</div>
-							        	</div> 
+							        	</div>
 							        </div>
 							    </div>
 					    	{% endfor %}
