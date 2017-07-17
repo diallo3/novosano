@@ -31,6 +31,7 @@ $related: c-relationship;
 	&__entry {
 		@include grid-row;
 		.#{$related}__title {
+			letter-spacing: 0.05em; 
 			margin-bottom: 0; 
 			position: relative;
 			.#{$related}__link {

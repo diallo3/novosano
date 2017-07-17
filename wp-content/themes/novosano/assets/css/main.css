@@ -3334,6 +3334,7 @@ input.datepicker_with_icon {
     .c-relationship__entry:after {
       clear: both; }
     .c-relationship__entry .c-relationship__title {
+      letter-spacing: 0.05em;
       margin-bottom: 0;
       position: relative; }
       .c-relationship__entry .c-relationship__title .c-relationship__link {
