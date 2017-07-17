@@ -34,10 +34,10 @@
 							        	<div class="c-relationship__entry">
 							        		<div class="c-relationship__content">
 							        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-							        			{% if fn('is_singular', 'goal') %}
-							        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
-							        			{% else %}
+							        			{% if get_preview %}
 							        				<p class="c-relationship__tag">{{item.get_preview(10, true, false)}}</p>
+							        			{% else %}
+							        				<p class="c-relationship__tag">{{item.get_field('explanation__benefits')|excerpt(10)}}</p>
 							        			{% endif %}
 							        		</div>
 							        		<div class="c-relationship__cta">
