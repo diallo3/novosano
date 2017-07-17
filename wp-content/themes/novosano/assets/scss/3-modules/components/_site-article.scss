@@ -73,6 +73,10 @@ $art: c-article;
 	padding: rem-calc(30 0 50); 
 }
 
+.home .c-article__footer {
+	border: none;
+}
+
 .o-post {
 	&__date {
 		color: $dark-gray;
