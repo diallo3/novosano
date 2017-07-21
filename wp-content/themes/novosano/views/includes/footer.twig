@@ -21,7 +21,13 @@
 			    	<li class="o-location__item"><em>More locations coming soon!</em></li>
 			    	{% if options.store_locator %}
 				    	<li class="o-location__item">
-				    		<a href="{{options.store_locator}}" class="nav-link">Store Locator</a>
+				    		<a href="{{options.store_locator}}" class="c-menu__link">
+							{% if locator %}
+								{{locator}}
+							{% else %}
+								Store Locator
+							{% endif %}
+							</a>
 				    	</li>
 			    	{% endif %}
 			    </ul>

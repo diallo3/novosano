@@ -8,6 +8,13 @@
 		{% set h_summary = acf.hero_summary.value %}
 		{% set h_cta     = acf.hero_cta.value %}
 		{% set h_link    = acf.hero_link.value %}
+
+		{% set l_cta  = acf.left_cta.value %}
+		{% set l_link = acf.left_link.value %}
+
+		{% set r_cta  = acf.right_cta.value %}
+		{% set r_link = acf.right_link.value %}
+
 		<header class="c-hero__header">
 			<span class="c-hero__accent">{{h_accent}}</span>
 			<h1 class="c-hero__title">
@@ -26,9 +33,9 @@
 		{% endif %}
 	
 		<div class="c-hero__cta">
-			<a href="{{ site.url }}/services/" class="o-cta o-cta--sm">My Partner</a>
+			<a href="{{l_link}}" class="o-cta o-cta--sm">{{l_cta}}</a>
 			<a href="{{h_link}}" class="o-cta o-cta--hero">{{h_cta}}</a>
-			<a href="{{ site.url }}/safety/" class="o-cta o-cta--sm">My Safety</a>
+			<a href="{{r_link}}" class="o-cta o-cta--sm">{{r_cta}}</a>
 		</div>
 
 	{% elseif fn('is_archive') %}

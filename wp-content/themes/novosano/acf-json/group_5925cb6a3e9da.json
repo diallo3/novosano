@@ -183,6 +183,142 @@
             "multiple": 0
         },
         {
+            "key": "field_59723f05526b6",
+            "label": "Left CTA",
+            "name": "left_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "vid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "img"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Hero CTA",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59723f33526b7",
+            "label": "Left Link",
+            "name": "left_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "vid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "img"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_59723f8851734",
+            "label": "Right CTA",
+            "name": "right_cta",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "vid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "img"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Hero CTA",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59723f6b51733",
+            "label": "Right Link",
+            "name": "right_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "vid"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_5938abbb22edf",
+                        "operator": "==",
+                        "value": "img"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
             "key": "field_5938ae25cbf88",
             "label": "Hero Video MP4",
             "name": "hero_video_mp4",
@@ -607,5 +743,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1499966475
+    "modified": 1500662938
 }

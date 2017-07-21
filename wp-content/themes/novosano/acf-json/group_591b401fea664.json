@@ -115,6 +115,25 @@
             ]
         },
         {
+            "key": "field_59723c2676026",
+            "label": "Locator Label",
+            "name": "locator_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Locator Label",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59677b0f9a9fb",
             "label": "Store Locator",
             "name": "store_locator",
@@ -123,7 +142,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -389,5 +408,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "General Site Options",
-    "modified": 1499954171
+    "modified": 1500659023
 }
