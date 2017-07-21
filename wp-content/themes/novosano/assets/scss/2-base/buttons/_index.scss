@@ -37,6 +37,11 @@
 		@include typi('call-to-action');
 		padding: 1rem 3rem;
 	}
+	&--sm {
+		color: $white;
+		border-color: $white; 
+		padding: 1em 1em !important;
+	}
 
 }
 

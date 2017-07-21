@@ -1055,6 +1055,10 @@ q {
     @media all and (min-width: 1024px) {
       .o-cta--hero {
         font-size: 1.125rem; } }
+  .o-cta--sm {
+    color: #fff;
+    border-color: #fff;
+    padding: 1em 1em !important; }
 
 /*!
  * Hamburgers
