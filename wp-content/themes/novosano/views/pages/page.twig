@@ -37,14 +37,11 @@
 							        	<div class="c-relationship__entry">
 							        		<div class="c-relationship__content">
 							        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-							        			{# {% if fn('is_singular', 'goal') %}
+							        			{% if fn('is_singular', 'goal') %}
 							        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
 							        			{% else %}
-							        				<p class="c-relationship__tag">{{item.get_preview(10, true, false)}}</p>
-							        			{% endif %} #}
-							        		</div>
-							        		<div class="c-relationship__cta">
-							        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title|truncate(2)}}</a>
+							        				<p class="c-relationship__tag">{{item.get_preview(10,true,false)}}</p>
+							        			{% endif %}
 							        		</div>
 							        	</div>
 							        </div>
@@ -69,20 +66,13 @@
 					        	<div class="c-relationship__entry">
 					        		<div class="c-relationship__content">
 					        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
-					
-											{# {% if get_preview %}
-												<p class="c-relationship__tag">{{item.get_preview(10,true,false)}}</p>
-											{% else %}
-												<div class="c-relationship__tag">
-													{{item.get_content|excerpt(10)}}
-												</div>
-											{% endif %} #}
-					        			</p>
+					        			{% if fn('is_singular', 'goal') %}
+					        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
+					        			{% else %}
+					        				<p class="c-relationship__tag">{{item.get_preview(10,true,false)}}</p>
+					        			{% endif %}
 					        		</div>
-					        		<div class="c-relationship__cta">
-					        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn More</a>
-					        		</div>
-					        	</div> 
+					        	</div>
 					        </div>
 				        </div>
 				    {% endfor %}

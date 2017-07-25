@@ -6,14 +6,24 @@
 $kick: c-sidekick;
 
 .#{$kick} {
+	background-color: $white;
+	background-repeat: no-repeat;
+		background-position: 50% 50%;
+		-webkit-background-size: cover; 
+		-o-background-size: cover; 
+		background-size: cover;  
 	border-bottom: 1px solid $medium-gray;
+	position: relative;
+	.ov {
+		@include abs-pos($t:0, $r:0, $b:0, $l:0);
+		background-color: $white;
+		@include breakpoint(large) {
+			background-color: white(0.8);
+		}
+	}
 	&__block {
-		background-image: url('#{$imgPath}/bck-temp-home.jpg');
-		background-repeat: no-repeat;
-		background-position: 250% 0;
-		-webkit-background-size: contain; 
-		-o-background-size: contain; 
-		background-size: contain; 
+		// background-image: url('#{$imgPath}/bck-temp-home.jpg');
+		
 		padding: rem-calc(60 20); 
 		position: relative;
 		@include breakpoint(small only) {
@@ -25,12 +35,7 @@ $kick: c-sidekick;
 		@include breakpoint(large) {
 			background-position: 0 0;
 		}
-		.ov {
-			background-color: white(0.65);
-			@include breakpoint(large) {
-				background-color: white(0.0);
-			}
-		}
+		
 		&.odd {
 			.#{$kick}__entry {
 				@include breakpoint(large) {
@@ -63,7 +68,8 @@ $kick: c-sidekick;
 	&__title {
 		color: $black;
 		font-size: rem-calc(26); 
-		font-weight: 200; 
+		font-weight: 200;
+		text-shadow: 1px 1px 1px $white;  
 		background: url('#{$imgPath}/icon-dots.svg') no-repeat 1% 100%;
 		margin-bottom: 0.8em; 
 		padding-bottom: 0.5em;  

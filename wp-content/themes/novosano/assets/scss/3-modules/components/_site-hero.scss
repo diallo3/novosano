@@ -22,29 +22,15 @@ $type: post-type-archive;
 	display: block;
 	position: relative;
 	overflow: hidden;
-	&:not(.#{$hero}--main) {
-		.#{$hero}__entry {
-			@include grid-col-row;
-			@include grid-col-end();
-			@include grid-col-pos(center);
-			position: relative;
-		}
-	}
 	* {
 		position: relative;
 	}
 	&--main {
-		height: 100vh;
-		min-height: 600px;
+		height: auto;
+		min-height: 100vh;
 		position: relative;
 		@include breakpoint(small only) {
 			height: auto; 
-		}
-		.#{$hero}__entry {
-			@include breakpoint(medium) {
-				@include center-align($ver: true, $hor: true, $pos: absolute);
-			}
-			
 		}
 	}
 	&__header {
@@ -55,10 +41,20 @@ $type: post-type-archive;
 	&__footer {
 		padding: rem-calc(100 20 30); 
 	}
+	.#{$hero}__entry {
+		@include grid-col-row;
+		@include grid-col-end ;
+		@include grid-col-pos(center);
+		@include breakpoint(medium) {
+			max-width: 66.66667%;
+		}
+		position: relative;
+		
+	}
 	.#{$hero}__accent {
 		@include heading-line($white);
 		color: $white;
-		font-size: rem-calc(14); 
+		font-size: rem-calc(17); 
 		display: block;
 	}
 	.#{$hero}__title {

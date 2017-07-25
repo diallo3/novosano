@@ -16,18 +16,15 @@
 
 			    {% for item in post.get_field('featured_services') %}
 			        <section class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
-						<div class="ov"></div>
+						{# <div class="ov"></div> #}
 			        	<div class="c-relationship__entry">
 			        		<div class="c-relationship__content">
 			        			<h4 class="c-relationship__title"><a href="{{item.link}}" class="c-relationship__link">{{item.title}}</a></h4>
 			        			{% if fn('is_singular', 'goal') %}
 			        				<h5 class="c-relationship__tag">{{item.service_tag_line}}</h5>
 			        			{% else %}
-			        				<p>{{item.get_preview(false,false,false)}}</p>
+			        				<p>{{item.get_preview(10,true,false)}}</p>
 			        			{% endif %}
-			        		</div>
-			        		<div class="c-relationship__cta">
-			        			<a href="{{item.link}}" class="o-cta o-cta--ghost">Learn about {{item.title}}</a>
 			        		</div>
 			        	</div>
 			        </section>

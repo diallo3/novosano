@@ -16,7 +16,11 @@
 		{% set r_link = acf.right_link.value %}
 
 		<header class="c-hero__header">
-			<span class="c-hero__accent">{{h_accent}}</span>
+			{% if h_accent %}
+				<span class="c-hero__accent">{{h_accent}}</span>
+			{% else %}
+				<hr>
+			{% endif %}
 			<h1 class="c-hero__title">
 				{% if h_title %}
 					{{h_title}}
@@ -58,13 +62,12 @@
 		{% set h_accent = acf.title_accent.value %}
 		{% set h_title  = acf.alternative_title.value %}
 		<header class="c-hero__header">
-			<span class="c-hero__accent">
-				{% if h_accent %}
-					{{h_accent}}
-				{% else %}
-					Novosano
-				{% endif %}
-			</span>
+			{% if h_accent %}
+				<span class="c-hero__accent">{{h_accent}}</span>
+			{% else %}
+				<hr>
+			{% endif %}
+			
 			<h1 class="c-hero__title">
 				{% if h_title %}
 					{{h_title}}

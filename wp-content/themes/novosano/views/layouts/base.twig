@@ -20,14 +20,14 @@
 
 					<!-- You can add more icons at http://fontawesome.io/icons/#brand -->
 					<ul class="o-sticky-bar">
-						{% if options.schedule %}
+						
 						<li class="o-sticky__icon">
-						    <a href="{{options.schedule}}" target="_blank"> 
+						    <a href="{% if options.schedule %}{{options.schedule}}{% else %}{{site.url}}/contact{% endif %}" target="_blank"> 
 						      <i class="fa o-sched" aria-hidden="true">Plan</i>
 						      <span class="o-sticky__text">Schedule</span>
 						    </a>
 					  	</li>
-					  	{% endif %}
+					  	
 					  	{% if options.guest_login %}
 					  	<li class="o-sticky__icon">
 						    <a href="{{guest_login}}">

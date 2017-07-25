@@ -1028,7 +1028,7 @@ q {
   border-color: #bf0413;
   border-width: 1px;
   border-style: solid;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-bottom: 0;
   padding: 1.5em 2em;
   width: auto; }
@@ -1047,18 +1047,31 @@ q {
     .o-cta--nav:hover {
       background-color: #bf0413; }
   .o-cta--hero {
-    font-size: 0.9375rem;
-    padding: 1rem 3rem; }
+    font-size: 0.875rem;
+    text-align: center;
+    background-color: #0d0d0d;
+    border-radius: 50%;
+    border-width: 2px;
+    padding: 1.75rem 0.5rem;
+    width: 100px;
+    height: 100px; }
     @media all and (min-width: 640px) {
       .o-cta--hero {
-        font-size: 1rem; } }
+        font-size: 0.9375rem; } }
     @media all and (min-width: 1024px) {
       .o-cta--hero {
-        font-size: 1.125rem; } }
+        font-size: 1rem; } }
+    @media print, screen and (min-width: 40em) {
+      .o-cta--hero {
+        margin: 0 1em; } }
   .o-cta--sm {
+    font-size: 0.8rem;
+    text-align: center;
     color: #fff;
     border-color: #fff;
-    padding: 1em 1em !important; }
+    padding: 1.75em 0.5rem !important;
+    width: 80px;
+    height: 80px; }
 
 /*!
  * Hamburgers
@@ -1730,50 +1743,15 @@ q {
   display: block;
   position: relative;
   overflow: hidden; }
-  .c-hero:not(.c-hero--main) .c-hero__entry {
-    max-width: 75rem;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100%;
-    float: left;
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-    margin-right: auto;
-    margin-left: auto;
-    position: relative; }
-    .c-hero:not(.c-hero--main) .c-hero__entry:before, .c-hero:not(.c-hero--main) .c-hero__entry:after {
-      content: "";
-      display: table; }
-    .c-hero:not(.c-hero--main) .c-hero__entry:after {
-      clear: both; }
-    @media print, screen and (min-width: 40em) {
-      .c-hero:not(.c-hero--main) .c-hero__entry {
-        padding-right: 0.9375rem;
-        padding-left: 0.9375rem; } }
-    .c-hero:not(.c-hero--main) .c-hero__entry:last-child:not(:first-child) {
-      float: right; }
-    .c-hero:not(.c-hero--main) .c-hero__entry, .c-hero:not(.c-hero--main) .c-hero__entry:last-child {
-      float: none; }
-    .c-hero:not(.c-hero--main) .c-hero__entry:last-child:last-child {
-      float: left; }
-    .c-hero:not(.c-hero--main) .c-hero__entry, .c-hero:not(.c-hero--main) .c-hero__entry:last-child:not(:first-child) {
-      float: none;
-      clear: both; }
   .c-hero * {
     position: relative; }
   .c-hero--main {
-    height: 100vh;
-    min-height: 600px;
+    height: auto;
+    min-height: 100vh;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
       .c-hero--main {
         height: auto; } }
-    @media print, screen and (min-width: 40em) {
-      .c-hero--main .c-hero__entry {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%); } }
   .c-hero__header {
     margin-right: auto;
     margin-left: auto;
@@ -1786,11 +1764,43 @@ q {
       clear: both; }
   .c-hero__footer {
     padding: 6.25rem 1.25rem 1.875rem; }
+  .c-hero .c-hero__entry {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative; }
+    .c-hero .c-hero__entry:before, .c-hero .c-hero__entry:after {
+      content: "";
+      display: table; }
+    .c-hero .c-hero__entry:after {
+      clear: both; }
+    @media print, screen and (min-width: 40em) {
+      .c-hero .c-hero__entry {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .c-hero .c-hero__entry:last-child:not(:first-child) {
+      float: right; }
+    .c-hero .c-hero__entry, .c-hero .c-hero__entry:last-child {
+      float: none; }
+    .c-hero .c-hero__entry:last-child:last-child {
+      float: left; }
+    .c-hero .c-hero__entry, .c-hero .c-hero__entry:last-child:not(:first-child) {
+      float: none;
+      clear: both; }
+    @media print, screen and (min-width: 40em) {
+      .c-hero .c-hero__entry {
+        max-width: 66.66667%; } }
   .c-hero .c-hero__accent {
     margin: 0 auto;
     overflow: hidden;
     color: #fff;
-    font-size: 0.875rem;
+    font-size: 1.0625rem;
     display: block; }
     .c-hero .c-hero__accent:before, .c-hero .c-hero__accent:after {
       content: "";
@@ -3109,12 +3119,24 @@ input.datepicker_with_icon {
   Home
 */
 .c-sidekick {
-  border-bottom: 1px solid #cacaca; }
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-bottom: 1px solid #cacaca;
+  position: relative; }
+  .c-sidekick .ov {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff; }
+    @media print, screen and (min-width: 64em) {
+      .c-sidekick .ov {
+        background-color: rgba(255, 255, 255, 0.8); } }
   .c-sidekick__block {
-    background-image: url("../images/bck-temp-home.jpg");
-    background-repeat: no-repeat;
-    background-position: 250% 0;
-    background-size: contain;
     padding: 3.75rem 1.25rem;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
@@ -3126,11 +3148,6 @@ input.datepicker_with_icon {
     @media print, screen and (min-width: 64em) {
       .c-sidekick__block {
         background-position: 0 0; } }
-    .c-sidekick__block .ov {
-      background-color: rgba(255, 255, 255, 0.65); }
-      @media print, screen and (min-width: 64em) {
-        .c-sidekick__block .ov {
-          background-color: rgba(255, 255, 255, 0); } }
     @media print, screen and (min-width: 64em) {
       .c-sidekick__block.odd .c-sidekick__entry {
         margin-left: 50%; } }
@@ -3198,6 +3215,7 @@ input.datepicker_with_icon {
     color: #0d0d0d;
     font-size: 1.625rem;
     font-weight: 200;
+    text-shadow: 1px 1px 1px #fff;
     background: url("../images/icon-dots.svg") no-repeat 1% 100%;
     margin-bottom: 0.8em;
     padding-bottom: 0.5em; }
@@ -3326,15 +3344,22 @@ input.datepicker_with_icon {
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
-    padding: 2.5rem 1.25rem;
     height: 280px;
     position: relative; }
     .c-relationship__item .ov {
-      background-color: rgba(0, 0, 0, 0.6); }
+      background-color: rgba(0, 0, 0, 0.3); }
   .c-relationship__entry {
     max-width: 75rem;
     margin-right: auto;
-    margin-left: auto; }
+    margin-left: auto;
+    margin: auto;
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: auto;
+    width: 100%;
+    height: 115px; }
     .c-relationship__entry:before, .c-relationship__entry:after {
       content: "";
       display: table; }
@@ -3343,6 +3368,7 @@ input.datepicker_with_icon {
     .c-relationship__entry .c-relationship__title {
       letter-spacing: 0.05em;
       margin-bottom: 0;
+      padding-bottom: 0 !important;
       position: relative; }
       .c-relationship__entry .c-relationship__title .c-relationship__link {
         position: relative;
@@ -3396,6 +3422,7 @@ input.datepicker_with_icon {
       float: right; }
   .c-relationship__tag {
     color: #fff;
+    font-size: 0.875rem;
     font-weight: 700;
     font-style: italic; }
   .c-relationship__block {

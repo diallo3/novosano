@@ -18,13 +18,13 @@
 			{% set name  = home_item.service_cta_name %}
 			{% set img   = TimberImage(home_item.image).src %}
 
-	    	<div class="c-sidekick">
-				<article class="c-sidekick__block l-wrap" style="background-image: url('{{img}}');">
+	    	<div class="c-sidekick" style="background-image: url('{{img}}');">
+	    		<div class="ov"></div>
+				<article class="c-sidekick__block l-wrap" >
 					<section class="c-sidekick__entry">
 						<header class="c-sidekick__header">
 							<h3 class="c-sidekick__title">{{title}}</h3>
 						</header>
-
 						<div class="c-sidekick__content">
 							{{desc}}
 							
