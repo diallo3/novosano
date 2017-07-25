@@ -15,8 +15,9 @@
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
 	&.sticky {
-		background-color: black(0.8); 
-		border-bottom: 1px solid white(0.5); 
+		background-color: black(0.8);
+		background-color: $white; 
+		border-bottom: 1px solid $light-gray; 
 		width: 100%;
 		height: 75px;
 		@include breakpoint(large) {
@@ -25,6 +26,26 @@
 		position: fixed;
 		top: 0;
 		left: 0; 
+		.o-logo__brand {
+			background-image: url(#{$imgPath}/logo-drk.svg); 
+		}
+		.c-menu__link:not(.o-cta) {
+			color: darken($dark-gray, 30%);
+		}
+		.o-cta--nav {
+			color: $s-primary;
+			border-color: $s-primary; 
+			&:hover {
+				color: $white;
+			} 
+		}
+
+		.c-social-header-container {
+			background-color: $black; 
+			.c-menu__link {
+				color: $white;
+			}
+		}
 	}
 }
 

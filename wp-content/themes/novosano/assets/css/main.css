@@ -1045,6 +1045,7 @@ q {
   .o-cta--nav {
     padding: .75em 1em; }
     .o-cta--nav:hover {
+      color: #fff;
       background-color: #bf0413; }
   .o-cta--hero {
     font-size: 0.875rem;
@@ -1166,7 +1167,8 @@ q {
   transition: all 0.5s ease-in-out; }
   .c-header-wrap.sticky {
     background-color: rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
     width: 100%;
     height: 75px;
     position: fixed;
@@ -1175,6 +1177,19 @@ q {
     @media print, screen and (min-width: 64em) {
       .c-header-wrap.sticky {
         height: 140px; } }
+    .c-header-wrap.sticky .o-logo__brand {
+      background-image: url(../images/logo-drk.svg); }
+    .c-header-wrap.sticky .c-menu__link:not(.o-cta) {
+      color: #3e3e3e; }
+    .c-header-wrap.sticky .o-cta--nav {
+      color: #bf0413;
+      border-color: #bf0413; }
+      .c-header-wrap.sticky .o-cta--nav:hover {
+        color: #fff; }
+    .c-header-wrap.sticky .c-social-header-container {
+      background-color: #0d0d0d; }
+      .c-header-wrap.sticky .c-social-header-container .c-menu__link {
+        color: #fff; }
 
 .c-social-header-container {
   background-color: rgba(0, 0, 0, 0.2);
@@ -2031,7 +2046,7 @@ q {
   display: inline-block; }
 
 .c-testimonial-container {
-  background-color: #bf0413;
+  background-color: #8a8a8a;
   padding: 1em; }
 
 .c-testimonial {
@@ -3135,7 +3150,7 @@ input.datepicker_with_icon {
     background-color: #fff; }
     @media print, screen and (min-width: 64em) {
       .c-sidekick .ov {
-        background-color: rgba(255, 255, 255, 0.8); } }
+        background-color: rgba(255, 255, 255, 0.2); } }
   .c-sidekick__block {
     padding: 3.75rem 1.25rem;
     position: relative; }

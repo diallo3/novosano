@@ -18,7 +18,7 @@ $kick: c-sidekick;
 		@include abs-pos($t:0, $r:0, $b:0, $l:0);
 		background-color: $white;
 		@include breakpoint(large) {
-			background-color: white(0.8);
+			background-color: white(0.2);
 		}
 	}
 	&__block {

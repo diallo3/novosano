@@ -30,6 +30,7 @@
 	&--nav {
 		padding: .75em 1em;
 		&:hover {
+			color: $white;
 			background-color: $s-primary;
 		}
 	}
