@@ -40,11 +40,14 @@
 		background-color: $black; 
 		border-radius: 50%;
 		border-width: 2px; 
-		padding: 1.75rem 0.5rem;
-		width: 100px;
-		height: 100px; 
+		padding: 1.3rem 0.5rem;
+		width: 80px;
+		height: 80px; 
 		@include breakpoint(medium) {
 			margin: 0 1em; 
+			padding: 1.75rem 0.5rem;
+			width: 100px;
+			height: 100px; 
 		}
 	}
 	&--sm {
@@ -55,7 +58,10 @@
 		padding: 1.75em 0.5rem !important;
 		width: 80px;
 		height: 80px; 
+		visibility: hidden;
+		@include breakpoint(medium) {
+			visibility: visible;
+		}
 	}
-
 }
 

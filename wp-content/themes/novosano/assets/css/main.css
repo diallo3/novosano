@@ -1053,9 +1053,9 @@ q {
     background-color: #0d0d0d;
     border-radius: 50%;
     border-width: 2px;
-    padding: 1.75rem 0.5rem;
-    width: 100px;
-    height: 100px; }
+    padding: 1.3rem 0.5rem;
+    width: 80px;
+    height: 80px; }
     @media all and (min-width: 640px) {
       .o-cta--hero {
         font-size: 0.9375rem; } }
@@ -1064,7 +1064,10 @@ q {
         font-size: 1rem; } }
     @media print, screen and (min-width: 40em) {
       .o-cta--hero {
-        margin: 0 1em; } }
+        margin: 0 1em;
+        padding: 1.75rem 0.5rem;
+        width: 100px;
+        height: 100px; } }
   .o-cta--sm {
     font-size: 0.8rem;
     text-align: center;
@@ -1072,7 +1075,11 @@ q {
     border-color: #fff;
     padding: 1.75em 0.5rem !important;
     width: 80px;
-    height: 80px; }
+    height: 80px;
+    visibility: hidden; }
+    @media print, screen and (min-width: 40em) {
+      .o-cta--sm {
+        visibility: visible; } }
 
 /*!
  * Hamburgers
@@ -1125,6 +1132,9 @@ q {
     top: -8px; }
   .hamburger-inner::after {
     bottom: -8px; }
+
+.sticky .hamburger-inner, .sticky .hamburger-inner::before, .sticky .hamburger-inner::after {
+  background-color: #0d0d0d; }
 
 /*
    * Slider
@@ -1752,7 +1762,7 @@ q {
   background-repeat: no-repeat;
   background-position: 50% 20%;
   background-size: cover;
-  padding: 12rem 3rem 3rem;
+  padding: 12rem 1rem 3rem;
   min-height: 35vh;
   width: 100%;
   display: block;
@@ -1808,9 +1818,6 @@ q {
     .c-hero .c-hero__entry, .c-hero .c-hero__entry:last-child:not(:first-child) {
       float: none;
       clear: both; }
-    @media print, screen and (min-width: 40em) {
-      .c-hero .c-hero__entry {
-        max-width: 66.66667%; } }
   .c-hero .c-hero__accent {
     margin: 0 auto;
     overflow: hidden;
@@ -1832,7 +1839,7 @@ q {
       left: 1.5em;
       margin-right: -50%; }
   .c-hero .c-hero__title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-size: 5rem;
     color: #fff;
     font-weight: 200;
@@ -1845,10 +1852,10 @@ q {
     display: inline-block; }
     @media all and (min-width: 0) {
       .c-hero .c-hero__title {
-        font-size: 2.5rem; } }
+        font-size: 2rem; } }
     @media all and (min-width: 640px) {
       .c-hero .c-hero__title {
-        font-size: 3rem; } }
+        font-size: 2.625rem; } }
     @media all and (min-width: 1024px) {
       .c-hero .c-hero__title {
         font-size: 4rem; } }
@@ -1856,7 +1863,10 @@ q {
       .c-hero .c-hero__title {
         white-space: nowrap; } }
   .c-hero .c-hero__summary {
-    margin-bottom: 2.5em; }
+    margin: 0 auto 2.5em; }
+    @media print, screen and (min-width: 40em) {
+      .c-hero .c-hero__summary {
+        max-width: 66.66667%; } }
     .c-hero .c-hero__summary * {
       color: #fff; }
   .c-hero .c-hero__tag {
@@ -3239,17 +3249,28 @@ input.datepicker_with_icon {
     padding: 0;
     list-style: none;
     border-top: 1px solid #cacaca;
-    padding: 1em 0 2em; }
+    padding: 1em 0 2em 1em; }
     .c-sidekick__points li {
       font-style: italic;
       font-weight: 600;
-      padding-left: 1.7em;
-      text-indent: -0.1em; }
+      padding-left: 1em;
+      text-indent: -0.1em;
+      position: relative; }
       .c-sidekick__points li::before {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        right: auto;
+        bottom: auto;
+        left: 0;
         content: "\25CF";
         color: #bf0413;
-        font-style: normal;
-        padding-right: 0.5em; }
+        font-style: normal; }
+  .c-sidekick__footer {
+    text-align: center; }
+    @media print, screen and (min-width: 40em) {
+      .c-sidekick__footer {
+        text-align: left; } }
 
 .c-promo {
   background-color: black;
@@ -3412,6 +3433,8 @@ input.datepicker_with_icon {
           left: 0 !important; }
         .c-relationship__entry .c-relationship__title .c-relationship__link:hover::before, .c-relationship__entry .c-relationship__title .c-relationship__link:hover::after {
           width: 100%; }
+        .c-relationship__entry .c-relationship__title .c-relationship__link:hover {
+          background-color: rgba(0, 0, 0, 0.3); }
     .c-relationship__entry .o-term {
       margin: auto;
       position: absolute;

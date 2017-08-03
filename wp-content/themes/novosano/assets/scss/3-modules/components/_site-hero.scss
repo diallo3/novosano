@@ -16,7 +16,7 @@ $type: post-type-archive;
 	-webkit-background-size: cover; 
 	-o-background-size: cover; 
 	background-size: cover; 
-	padding: 12rem 3rem 3rem; 
+	padding: 12rem 1rem 3rem; 
 	min-height: 35vh;
 	width: 100%;
 	display: block;
@@ -45,9 +45,6 @@ $type: post-type-archive;
 		@include grid-col-row;
 		@include grid-col-end ;
 		@include grid-col-pos(center);
-		@include breakpoint(medium) {
-			max-width: 66.66667%;
-		}
 		position: relative;
 		
 	}
@@ -75,7 +72,10 @@ $type: post-type-archive;
 		
 	}
 	.#{$hero}__summary {
-		margin-bottom: 2.5em; 
+		margin: 0 auto 2.5em;
+		@include breakpoint(medium) {
+			max-width: 66.66667%;
+		} 
 		* {
 			color: $white;
 		}

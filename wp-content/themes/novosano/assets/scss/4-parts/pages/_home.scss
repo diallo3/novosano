@@ -78,18 +78,25 @@ $kick: c-sidekick;
 		@include zero-out;
 		list-style: none;
 		border-top: 1px solid $medium-gray;
-		padding: 1em 0 2em;  
+		padding: 1em 0 2em 1em;  
 		li {
 			font-style: italic; 
 			font-weight: 600; 
-			padding-left: 1.7em;
+			padding-left: 1em;
 			text-indent: -0.1em;
+			position: relative;
 			&::before {
+				@include abs-pos($t:0, $l:0);
 				content: "\25CF";
 				color: $s-primary;
 				font-style: normal; 
-				padding-right: 0.5em; 
 			}  
+		}
+	}
+	&__footer {
+		text-align: center;
+		@include breakpoint(medium) {
+			text-align: left;
 		}
 	}
 }

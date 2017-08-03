@@ -45,6 +45,9 @@ $related: c-relationship;
 				text-align: left;
 				padding: rem-calc(10 0); 
 				display: block;
+				&:hover {
+					background-color: black(0.3);
+				}
 			}
 		}
 		.o-term {
