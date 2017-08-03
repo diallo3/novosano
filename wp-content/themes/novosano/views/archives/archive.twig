@@ -17,12 +17,10 @@
 			        			{% if fn('is_singular', 'goal') %}
 			        				<h5 class="c-relationship__tag">{{post.service_tag_line}}</h5>
 			        			{% else %}
-			        				<p class="c-relationship__tag">{{post.get_preview(false,false,false)}}</p>
+			        				<p class="c-relationship__tag">{{post.get_preview(10,true,false)}}</p>
 			        			{% endif %}
 			        		</div>
-			        		<div class="c-relationship__cta">
-			        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Learn about {{post.title}}</a>
-			        		</div>
+
 			        	</div>
 			            
 			            
