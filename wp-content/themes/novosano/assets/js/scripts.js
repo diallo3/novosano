@@ -195,9 +195,14 @@ if (window.jQuery) {
         // hamburger
         function hamburgerNav() {
             var $hb = $('.hamburger');
+            var $cl = $('#offMain .close-button');
             $hb.on('click', function(e){
                 e.preventDefault();
                 $(this).toggleClass('is-active');
+            });
+
+            $cl.on('click', function() {
+                $hb.removeClass('is-active');
             });
         }
         hamburgerNav();
