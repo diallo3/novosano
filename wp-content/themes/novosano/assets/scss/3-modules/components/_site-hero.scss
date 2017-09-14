@@ -86,6 +86,10 @@ $type: post-type-archive;
 		font-weight: 500; 
 		text-transform: uppercase;
 		text-shadow: 1px 1px black(0.3); 
+		@include breakpoint(medium) {
+			margin: 0 auto;
+			max-width: 60%;
+		}
 	}	
 }
 

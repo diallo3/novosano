@@ -1,0 +1,39 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero.twig" %}
+	{% include "/includes/inc-lead.twig" %}
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			
+			<section class="c-article__content">
+				{{post.get_content}}
+			</section>
+
+			<div class="c-relationship c-relationship--faq">
+				<div class="c-faq">
+					<ul id="faq" class="c-faq__accordion" data-accordion>
+						{% for item in post.get_field('frequently_asked_questions') %}
+						{% set q = item.question %}
+						{% set a = item.answer %}
+						<li class="c-faq__item" data-accordion-item>
+						    <!-- Accordion tab title -->
+						    <a href="#" class="c-faq__link">{{q}}</a>
+
+						    <!-- Accordion tab content: it would start in the open state due to using the `is-active` state class. -->
+						    <div class="c-faq__content" data-tab-content>{{a}}</div>
+					  	</li>
+					  	{% endfor %}
+					</ul>
+				</div>
+				
+			</div>
+
+				
+
+			{% include "includes/inc-end-cap.twig" %}
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}
+

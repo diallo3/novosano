@@ -2,7 +2,7 @@
 /*
  * Template Name: Page Service
  
- * The template for displaying the home page.
+ * The template for displaying Services.
  *
  * @package  WordPress
  * @subpackage  Opus

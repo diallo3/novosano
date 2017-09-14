@@ -1,0 +1,26 @@
+/*--------------------------------
+  
+  FAQs
+*/
+
+$faq: c-faq;
+
+.#{$faq} {
+	&__accordion {
+		@include accordion-container;
+		@include zero-out;
+		list-style-type: none;
+	}
+	&__item {
+		@include accordion-item;
+	}
+	&__link {
+		@include accordion-title;
+		color: $black;
+		font-size: rem-calc(18); 
+	}
+	&__content {
+		@include accordion-content;
+		color: darken($dark-gray, 30%);
+	}
+}

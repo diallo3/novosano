@@ -140,6 +140,9 @@ $social-brand-pinterest: #cb2027;
             text-transform: uppercase;
             padding: 1.3rem 1rem; 
             display: inline-block;
+            * {
+                color: $social-icon-color;
+            }
             // @if $social-bar-position == left {
             //     margin-right: 0.5rem;
             // }

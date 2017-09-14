@@ -44,14 +44,12 @@
 					    	</a>
 					  	</li>
 					  	{% endif %}
-					  	{% if options.live_chat %}
 					  	<li class="o-sticky__icon">
-					    	<a href="{{options.live_chat}}">
+					    	<a href="/">
 					      		<i class="fa o-chat" aria-hidden="true">Chat</i>
-					      		<span class="o-sticky__text">Live Chat</span>
+					      		<span class="o-sticky__text">{% include "includes/inc-bold-chat.twig" %}</span>
 					    	</a>
 					  	</li>
-					  	{% endif %}
 					</ul>
 
 					<main id="main" class="c-main" role="main">

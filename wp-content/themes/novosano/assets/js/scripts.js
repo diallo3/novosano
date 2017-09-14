@@ -135,10 +135,13 @@ if (window.jQuery) {
         var offMain  = new Foundation.OffCanvas($('#offMain'), {
             transition: 'detached'
         });
+        var faq      = new Foundation.Accordion($('#faq'),{});
         var mainMobile = new Foundation.Drilldown($('#mainMobile'), {
             animationEasing: 'linear',
             contentScroll: false
         });
+
+        $('#faq li:first-of-type').addClass('is-active').children('[data-tab-content]').show();
 
         // Remove empty P tags created by WP inside of Accordion and Orbit
         $('.accordion p:empty, .orbit p:empty').remove();

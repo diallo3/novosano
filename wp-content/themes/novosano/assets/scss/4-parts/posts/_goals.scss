@@ -1,0 +1,81 @@
+/*--------------------------------
+  
+  Goals Single
+*/
+
+$lead: c-lead;
+
+.#{$lead} {
+	&--reasons {
+		@include grid-col(10);
+		@include grid-column-position(center);
+		@include breakpoint(large) {
+			@include grid-col(9);
+			@include grid-column-position(center);
+		}
+	}
+	&__quote {
+		@include grid-col(12);
+		@include breakpoint(medium) {
+			@include grid-col(6);
+			text-align: left;
+		}
+	}
+	&__qtitle {
+		font-weight: 500; 
+		letter-spacing: 0; 
+		margin-bottom: rem-calc(5); 
+	}
+	&__qcontent {
+		color: darken($dark-gray, 30%);
+		font-style: italic; 
+		border-left: 1px solid $medium-gray; 
+		// padding: 0 rem-calc(5) 0 rem-calc(15); 
+		margin-left: rem-calc(20); 
+		padding: 0 0 0 rem-calc(30);
+		position: relative;
+		// &::before, &::after {
+		// 	@include abs-pos($t:0, $l:rem-calc(-4));
+		// 	content: "\201C";
+		// 	color: $dark-gray;
+		// 	font-family: georgia;
+		// 	font-size: rem-calc(24);
+		// }
+		// &::after {
+		// 	content: "\201D";
+		// 	right: rem-calc(-14);
+		// 	left: auto; 
+		// }
+		&::before {
+			content: "";
+			background: $white url('#{$imgPath}/icon-quote-lt-gry.svg') no-repeat 0 0;
+	    	-webkit-background-size: contain; 
+	    	-o-background-size: contain; 
+	    	background-size: contain; 
+			width: 40px;
+			height: 40px;
+			display: block;
+			@include abs-pos($t:0, $l:-1.1rem);
+		}
+	}
+	&__mid {
+		@include grid-col(12);
+		padding: 2em 0; 
+		@include breakpoint(medium) {
+			@include grid-col(2);
+			padding: 2em 0;
+		};
+		.o-circle {
+			@include circle(60px, $s-primary);
+			@include center-block;
+			background-image: url("#{$imgPath}/icon-quote-lt-wht.svg");
+			background-position: 50% 50%; 
+			background-repeat: no-repeat;
+			-webkit-background-size: 50%; 
+			 -o-background-size: 50%; 
+			 background-size: 50%;  
+			border: 2px solid $medium-gray; 
+			display: block;
+		}
+	}
+}

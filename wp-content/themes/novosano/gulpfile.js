@@ -66,7 +66,7 @@ gulp.task('foundation-js', function() {
           './bower_components/foundation-sites/js/foundation.offcanvas.js',
 
           // './bower_components/foundation-sites/js/foundation.abide.js',
-          // './bower_components/foundation-sites/js/foundation.accordion.js',
+          './bower_components/foundation-sites/js/foundation.accordion.js',
           // './bower_components/foundation-sites/js/foundation.accordionMenu.js',
           './bower_components/foundation-sites/js/foundation.drilldown.js',
           // './bower_components/foundation-sites/js/foundation.dropdown.js',

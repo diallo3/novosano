@@ -15,7 +15,7 @@
 	$context = Timber::get_context();
 	$context['posts'] = Timber::get_posts();
 	$context['pagination'] = Timber::get_pagination();
-    print_r($context['pagination']);
+    // print_r($context['pagination']);
 
 	/* post types */
 	$context['testimonial'] = Timber::get_posts( $testi_args );

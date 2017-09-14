@@ -8,8 +8,21 @@
 
 	<div class="c-lead-container l-block">
 		<div class="l-wrap">
-			<div class="c-lead">
-				{{post.content}}
+			<div class="c-lead c-lead--reasons">
+				{# <span class="c-lead__accent">accent</span> #}
+				{# {{post.content}} #}
+
+				<div class="c-lead__quote">
+					<h4 class="c-lead__qtitle">What you tell us:</h4>
+					<p class="c-lead__qcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis repellat, qui alias iusto suscipit nihil nam quo eum, aperiam earum ipsam.</p>
+				</div>
+				{# <div class="c-lead__mid">
+					<span class="o-circle">&nbsp;</span>	
+				</div> #}
+				<div class="c-lead__quote">
+					<h4 class="c-lead__qtitle">Our team responds:</h4>
+					<p class="c-lead__qcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, aspernatur, magni. Sunt sint quas animi minima perferendis quisquam dolores.</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -28,7 +41,8 @@
 					    	<h3 class="c-relationship__type"> {{ service.services_type }} </h3>
 					    	
 					    	{% for item in service.services_items %}
-					    	    <div class="l-column__block">
+					    		
+					    	    <div class="{% if (loop.first) and  (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
 							        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
 										<div class="ov"></div>
 							        	<div class="c-relationship__entry">

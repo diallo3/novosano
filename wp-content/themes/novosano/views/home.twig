@@ -7,8 +7,8 @@
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<div class="c-relationship c-relationship--index">
 				{% for post in posts %}
-
-				<section class="c-relationship__item" style="background-image: url('{{TimberImage(post.thumb).src}}')">
+				{% set bck = TimberImage(acf.hero_background.value).src %}
+				<section class="c-relationship__item" style="background-image: url('{{bck}}')">
 					<div class="ov"></div>
 					<div class="c-relationship__entry">
 		        		<div class="c-relationship__content">
@@ -24,9 +24,9 @@
 							<p class="c-relationship__tag">{{post.get_preview(20,true,false)}}</p>
 
 		        		</div>
-		        		<div class="c-relationship__cta">
-		        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Read More</a>
-		        		</div>
+		        		{# <div class="c-relationship__cta">
+		        			<a href="{{post.link}}" class="o-cta o-cta--ghost">Read More...</a>
+		        		</div> #}
 		        	</div>
 				</section>
 				{% endfor %}

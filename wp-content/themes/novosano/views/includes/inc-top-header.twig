@@ -1,6 +1,5 @@
 {# vars #}
 {% set login   = options.guest_login %}
-{% set chat    = options.live_chat %}
 {% set locator = options.locator_label %}
 
 <div class="c-social-header-container">
@@ -11,9 +10,7 @@
 				{% if login %}
 					<li class="c-menu__item"><a href="" class="c-menu__link">Guest Login</a></li>
 				{% endif %}
-				{% if chat %}
-					<li class="c-menu__item"><a href="" class="c-menu__link">Live Chat</a></li>
-				{% endif %}
+				<li class="c-menu__item">{% include "includes/inc-bold-chat.twig" %}</li>
 				{% if options.store_locator %}
 					<li class="c-menu__item">
 						<a href="{{options.store_locator}}" class="c-menu__link">

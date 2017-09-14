@@ -38,16 +38,19 @@ $pull-quote-fontsize-small: 1.05rem;
 $pull-quote-gradient: false;
 
 @mixin pull-quote {
+	color: $pull-quote-color;
 	font-weight: 400;
-  	letter-spacing: 1.5px;
   	font-style: normal;
   	font-size: $pull-quote-fontsize-small;
   	max-width: $pull-quote-maxwidth;
   	line-height: 1.25em;
+  	letter-spacing: 1.5px;
   	text-transform: uppercase;
-  	color: $pull-quote-color;
+  	border-left: 1px solid $medium-gray; 
   	float: right;
   	margin: 10px 0 0 20px;
+  	padding: 0 0 0 1em; 
+  	position: relative;
   	@if $pull-quote-gradient == true {
     	background: linear-gradient($secondary-color, $pull-quote-color);
   	} @else if $pull-quote-gradient == false {
@@ -58,6 +61,16 @@ $pull-quote-gradient: false;
 
   	&:before {
     	content: '';
+    	background: $white url('#{$imgPath}/icon-quote-lt-gry.svg') no-repeat 0 0;
+    	-webkit-background-size: contain; 
+    	-o-background-size: contain; 
+    	background-size: contain; 
+    	width: 18px;
+    	height: 18px;
+    	display: block;
+    	position: absolute;
+    	top: 0; 
+    	left: -10px; 
   	}
 
   	&:after {

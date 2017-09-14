@@ -11,7 +11,7 @@ $off: c-canvas;
 	&--main, &--social, &--recap {
 		@include menu-list;
 	}
-	&__link:not(.o-cta) {
+	&__link:not(.o-cta), .bcText a {
 		color: $white;
 		font-size: rem-calc(16);
 		font-weight: 500; 
@@ -26,7 +26,7 @@ $off: c-canvas;
 			&.sc {
 				border-left: 1px solid white(0.8);
 			}
-			.#{$menu}__link {
+			.#{$menu}__link, .bcText a {
 				padding: .5em !important; 
 				&:hover {
 					background-color: $s-primary; 
