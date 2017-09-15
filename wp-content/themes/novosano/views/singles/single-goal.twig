@@ -15,14 +15,14 @@
 
 				<div class="c-lead__quote">
 					<h4 class="c-lead__qtitle">What you tell us:</h4>
-					<p class="c-lead__qcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis repellat, qui alias iusto suscipit nihil nam quo eum, aperiam earum ipsam.</p>
+					<p class="c-lead__qcontent">{{tell}}</p>
 				</div>
 				{# <div class="c-lead__mid">
 					<span class="o-circle">&nbsp;</span>	
 				</div> #}
 				<div class="c-lead__quote">
 					<h4 class="c-lead__qtitle">Our team responds:</h4>
-					<p class="c-lead__qcontent">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, aspernatur, magni. Sunt sint quas animi minima perferendis quisquam dolores.</p>
+					<p class="c-lead__qcontent">{{resp}}</p>
 				</div>
 			</div>
 		</div>
@@ -43,7 +43,7 @@
 					    	
 					    	{% for item in service.services_items %}
 					    		
-					    	    <div class="{% if (loop.first) and (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
+					    	    <div class="{% if (loop.first) and not (loop.length is divisible by(2)) %}l-column__block-one{% else %}l-column__block{% endif %}">
 							        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
 										<div class="ov"></div>
 							        	<div class="c-relationship__entry">
