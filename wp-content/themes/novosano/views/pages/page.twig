@@ -31,7 +31,7 @@
 					    	<h3 class="c-relationship__type"> {{ service.services_type }} </h3>
 					    	
 					    	{% for item in service.services_items %}
-					    	    <div class="{% if (loop.first) and  (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
+					    	    <div class="{% if (loop.first) not (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
 							        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.service_banner).src}}')">
 										<div class="ov"></div>
 							        	<div class="c-relationship__entry">
@@ -60,7 +60,7 @@
 					{# <h3 class="c-relationship__title u-text-center">What's your goal?</h3> #}
 
 				    {% for item in post.get_field('featured_goals') %}
-				    	<div class="{% if (loop.first) and  (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
+				    	<div class="{% if (loop.first) not (loop.length is divisible by(3)) %}l-column__block-one{% else %}l-column__block{% endif %}">
 					        <div class="c-relationship__item" style="background-image: url('{{TimberImage(item.goal_banner).src}}')">
 								<div class="ov"></div>
 					        	<div class="c-relationship__entry">
