@@ -2,6 +2,13 @@
   
   Main
 */
+
+hr {
+	border-color: $light-gray;
+	border-style: solid; 
+	border-width: 1px 0 0; 
+	margin: 1em 0 2em; 
+}
 // wordpress 
 .alignleft, img.alignleft { 
 	margin-right: 1.5em; 

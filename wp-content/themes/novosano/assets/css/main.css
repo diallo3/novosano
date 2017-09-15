@@ -953,6 +953,12 @@ figure {
   
   Main
 */
+hr {
+  border-color: #e6e6e6;
+  border-style: solid;
+  border-width: 1px 0 0;
+  margin: 1em 0 2em; }
+
 .alignleft, img.alignleft {
   margin-right: 1.5em;
   display: inline;
