@@ -945,6 +945,18 @@ figure {
   border-top: 1px solid #e6e6e6;
   margin: 2.5rem 0; }
 
+.u-show-tablet {
+  display: block; }
+  @media print, screen and (min-width: 64em) {
+    .u-show-tablet {
+      display: none; } }
+
+.u-show-mobile {
+  display: block; }
+  @media print, screen and (min-width: 40em) {
+    .u-show-mobile {
+      display: none; } }
+
 /*--------------------------------
   
   Base
@@ -1690,6 +1702,9 @@ q {
     font-size: 0.75rem;
     display: block; }
 
+.c-canvas .is-drilldown {
+  min-height: auto !important; }
+
 .c-canvas__menu {
   position: fixed;
   z-index: 1;
@@ -2161,16 +2176,25 @@ q {
       font-size: 0.75rem;
       font-style: normal; }
     .c-testimonial__profile .c-profile__img {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       background: #0d0d0d;
-      border-radius: 50px;
+      border-radius: 35px;
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       border: 2px solid #fff;
       margin: 0 auto 0.5em;
       overflow: hidden; }
+      @media print, screen and (min-width: 64em) {
+        .c-testimonial__profile .c-profile__img {
+          width: 100px;
+          height: 100px;
+          background: #0d0d0d;
+          border-radius: 50px;
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover; } }
   .c-testimonial__entry {
     width: 75%;
     float: left;
@@ -2193,11 +2217,15 @@ q {
       right: 98%;
       pointer-events: none; }
     .c-testimonial__entry blockquote {
+      font-size: 0.875rem;
       background-color: #fff;
       border-radius: 5px;
       margin: 0;
       padding: 0.8em;
       height: 165px; }
+      @media print, screen and (min-width: 64em) {
+        .c-testimonial__entry blockquote {
+          font-size: 1rem; } }
   .c-testimonial__title {
     font-size: 1.25rem; }
     @media print, screen and (min-width: 40em) {

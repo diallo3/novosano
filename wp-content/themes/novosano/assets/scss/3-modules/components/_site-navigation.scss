@@ -134,6 +134,9 @@ $off: c-canvas;
 			}
 		}
 	}
+	.is-drilldown {
+		min-height: auto !important;
+	}
 }
 
 .#{$off}__menu {

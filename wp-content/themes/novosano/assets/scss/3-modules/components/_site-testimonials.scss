@@ -30,7 +30,7 @@ $test: c-testimonial;
 			font-style: normal; 
 		}
 		.c-profile__img {
-			@include circle(100px, $black);
+			@include circle(70px, $black);
 			background-position: 50% 50%;
 			background-repeat: no-repeat; 
 			-webkit-background-size: cover; 
@@ -39,6 +39,14 @@ $test: c-testimonial;
 			border: 2px solid $white; 
 			margin: 0 auto 0.5em; 
 			overflow: hidden;
+			@include breakpoint(large) {
+				@include circle(100px, $black);
+				background-position: 50% 50%;
+				background-repeat: no-repeat; 
+				-webkit-background-size: cover; 
+				-o-background-size: cover; 
+				background-size: cover;  
+			}
 		}
 	}
 	&__entry {
@@ -59,11 +67,15 @@ $test: c-testimonial;
 			pointer-events: none;
 		}
 		blockquote {
+			font-size: rem-calc(14); 
 			background-color: $white; 
 			border-radius: 5px;
 			margin: 0; 
 			padding: 0.8em; 
 			height: 165px;
+			@include breakpoint(large) {
+				font-size: rem-calc(16); 
+			}
 		}
 	}
     &__title {

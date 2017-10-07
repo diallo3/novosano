@@ -9,11 +9,9 @@
 	<!-- Menu -->
 	{% if mble %}
 		<menu id="mainMobile" class="c-menu c-menu--mobile" role="navigation">
-			{% if options.schedule %}
-				<li class="c-menu__schedule">
-					<a href="" class="c-menu__link">Schedule Today</a>
-				</li>
-			{% endif %}
+			<li class="c-menu__schedule">
+				<a href="{% if options.schedule %}{{options.schedule}} {% else %} {{site.url}}/contact {% endif %}" class="c-menu__link">Schedule Today</a>
+			</li>
 			{% for item in mble.get_items %}
 				<li class="c-menu__item {{item.classes | join(' ')}}">
 					<a href="{{item.link}}" class="c-menu__link">{{item.title}}</a>
@@ -38,21 +36,24 @@
 		    	</li>
 	    	{% endif %}
 		</menu>
+
+		<div class="c-canvas__item">
+			<p>
+				<span>Call Us:</span>
+				<a href="tel:{{options.main_phone}}" class="o-cta o-cta--nav"><strong>{{options.main_phone}}</strong></a>
+			</p>
+		</div>
+
+		<div class="c-footer__social">
+			<nav class="l-menu">
+				<menu class="c-menu">
+					{% include "/includes/inc-social.twig" %}
+				</menu>
+			</nav>
+		</div>
+
 	{% endif %}
 
-	<div class="c-canvas__item">
-		<p>
-			<span>Call Us:</span>
-			<a href="tel:{{options.main_phone}}" class="c-menu__link"><strong>{{options.main_phone}}</strong></a>
-		</p>
-	</div>
-
-	<div class="c-footer__social">
-		<nav class="l-menu">
-			<menu class="c-menu">
-				{% include "/includes/inc-social.twig" %}
-			</menu>
-		</nav>
-	</div>
+	
 	
 </div>

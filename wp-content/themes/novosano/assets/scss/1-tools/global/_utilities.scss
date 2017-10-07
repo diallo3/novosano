@@ -36,3 +36,17 @@ figure {
 	margin: rem-calc(40 0);
 }
 
+.u-show-tablet {
+	display: block;
+	@include breakpoint(large) {
+		display: none;
+	}
+}
+
+.u-show-mobile {
+	display: block;
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+
