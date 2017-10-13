@@ -1864,6 +1864,8 @@ q {
       clear: both; }
   .c-hero__footer {
     padding: 6.25rem 1.25rem 1.875rem; }
+  .c-hero__line {
+    margin: 0; }
   .c-hero .c-hero__entry {
     max-width: 75rem;
     margin-right: auto;

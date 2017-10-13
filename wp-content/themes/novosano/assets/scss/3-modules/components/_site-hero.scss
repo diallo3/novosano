@@ -41,6 +41,9 @@ $type: post-type-archive;
 	&__footer {
 		padding: rem-calc(100 20 30); 
 	}
+	&__line {
+		margin: 0;
+	}
 	.#{$hero}__entry {
 		@include grid-col-row;
 		@include grid-col-end ;
