@@ -26,11 +26,15 @@ $type: post-type-archive;
 		position: relative;
 	}
 	&--main {
+		padding: 0;
 		height: auto;
 		min-height: 100vh;
 		position: relative;
 		@include breakpoint(small only) {
 			height: auto; 
+		}
+		.#{$hero}__entry {
+			padding-top: 10rem;
 		}
 	}
 	&__header {

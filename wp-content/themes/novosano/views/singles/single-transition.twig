@@ -1,11 +1,22 @@
 {% extends 'layouts/base.twig' %}
+{% set thumb = post.thumbnail.src %}
 
 {% block content %}
 	{% include "/includes/inc-hero-trans.twig" %}
 	<div class="c-content__entry l-wrap">
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="c-article__content">
-				{{post.content}}
+				{% if thumb %}
+					<div class="c-article__thumb">
+						<img src="{{ thumb }}" class="my-thumb-class" alt="Image for {{ post.title }}" />
+					</div>
+					<div class="c-article__copy">
+						{{post.content}}
+					</div>
+				{% else %}
+					{{post.content}}
+				{% endif %}
+				
 			</section>
 
 			{% include "includes/inc-pagination-post.twig" %}		

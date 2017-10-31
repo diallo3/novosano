@@ -98,7 +98,7 @@
 
         // CoverVid
         if($('.c-vid').length > 0) {
-            $('.c-vid__bck').coverVid(1920, 1080);
+            $('.c-vid__bck').coverVid(640, 360);
         }
         
 

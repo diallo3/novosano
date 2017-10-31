@@ -10,8 +10,21 @@ $art: c-article;
 .#{$art} {
 	padding: rem-calc(30 0);
 	&__content {
+		@include clearfix;
 		blockquote {
 			@include pull-quote;
+		}
+	}
+	&__thumb {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(3);
+		}
+	}
+	&__copy {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(9);
 		}
 	}
 }

@@ -1846,12 +1846,15 @@ q {
   .c-hero * {
     position: relative; }
   .c-hero--main {
+    padding: 0;
     height: auto;
     min-height: 100vh;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
       .c-hero--main {
         height: auto; } }
+    .c-hero--main .c-hero__entry {
+      padding-top: 10rem; }
   .c-hero__header {
     margin-right: auto;
     margin-left: auto;
@@ -1994,6 +1997,11 @@ q {
 */
 .c-article {
   padding: 1.875rem 0; }
+  .c-article__content:before, .c-article__content:after {
+    content: "";
+    display: table; }
+  .c-article__content:after {
+    clear: both; }
   .c-article__content blockquote {
     color: #bf0413;
     font-weight: 400;
@@ -2032,6 +2040,54 @@ q {
       .c-article__content blockquote {
         max-width: calc(50% + 5%);
         margin-right: -15%; } }
+  .c-article__thumb {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      .c-article__thumb {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .c-article__thumb:last-child:not(:first-child) {
+      float: right; }
+    @media print, screen and (min-width: 64em) {
+      .c-article__thumb {
+        width: 25%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-article__thumb {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media print, screen and (min-width: 64em) {
+        .c-article__thumb:last-child:not(:first-child) {
+          float: right; } }
+  .c-article__copy {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      .c-article__copy {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .c-article__copy:last-child:not(:first-child) {
+      float: right; }
+    @media print, screen and (min-width: 64em) {
+      .c-article__copy {
+        width: 75%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-article__copy {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media print, screen and (min-width: 64em) {
+        .c-article__copy:last-child:not(:first-child) {
+          float: right; } }
 
 .c-content-container {
   background-color: #fff; }
