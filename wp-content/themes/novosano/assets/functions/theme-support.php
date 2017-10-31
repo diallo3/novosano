@@ -66,3 +66,10 @@ function opus_timber_context( $context ) {
     $context['options'] = get_fields('option');
     return $context;
 }
+
+// Change Featured Image for Transitions
+add_action( 'admin_head', 'remove_my_meta_boxen' );
+function remove_my_meta_boxen() {
+    remove_meta_box( 'postimagediv', 'transition', 'side' );
+    add_meta_box('postimagediv', __('Add Company Logo'), 'post_thumbnail_meta_box', 'transition', 'side');
+}
