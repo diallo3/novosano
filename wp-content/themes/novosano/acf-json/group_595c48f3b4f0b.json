@@ -7,6 +7,7 @@
             "label": "Featured Goals",
             "name": "featured_goals",
             "type": "relationship",
+            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -38,6 +39,13 @@
                 "operator": "==",
                 "value": "58"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "transition"
+            }
         ]
     ],
     "menu_order": 5,
@@ -48,5 +56,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Options for Goals Page",
-    "modified": 1500014890
+    "modified": 1509633843
 }
