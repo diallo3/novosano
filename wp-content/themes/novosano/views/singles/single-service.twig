@@ -80,7 +80,7 @@
 							<img src="http://www.zurb.com/blog/system/images/690/original/blue_bw_web.jpg?1354921642" alt="sweet foundation shirt" />
 							{% endif %}
 
-							<a href="#" class="o-cta o-cta--ghost">Schedule {{post.title}}</a>
+							<a href="{% if options.schedule %}{{options.schedule}} {% else %} {{site.url}}/contact {% endif %}" class="o-cta o-cta--ghost">Schedule {{post.title}}</a>
 						</div>
 					</div>	
 				</div>
