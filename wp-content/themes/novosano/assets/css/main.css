@@ -3525,6 +3525,99 @@ input.datepicker_with_icon {
 */
 /*--------------------------------
   
+  Journey
+*/
+.o-vline {
+  background-color: #e6e6e6;
+  bottom: 0;
+  left: 50%;
+  position: absolute;
+  transform: transitionX(-50%);
+  top: 0;
+  width: 1px; }
+
+.c-journey {
+  position: relative; }
+  .c-journey:before, .c-journey:after {
+    content: "";
+    display: table; }
+  .c-journey:after {
+    clear: both; }
+  .c-journey__lead {
+    text-align: center;
+    margin: 1em 0 4em; }
+  .c-journey__block {
+    background-color: #fff;
+    border: 1px solid #cacaca;
+    margin-bottom: 3em;
+    padding: 2.2rem 1.5rem 2rem;
+    position: relative; }
+  .c-journey__num {
+    margin: auto;
+    position: absolute;
+    top: -30px;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: #bf0413;
+    border-radius: 30px;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    border: 1px solid #cacaca;
+    padding-top: 0.75rem;
+    display: block; }
+  .c-journey__entry {
+    max-width: 75rem;
+    margin-right: auto;
+    margin-left: auto; }
+    .c-journey__entry:before, .c-journey__entry:after {
+      content: "";
+      display: table; }
+    .c-journey__entry:after {
+      clear: both; }
+    @media print, screen and (min-width: 40em) {
+      .c-journey__entry.even .c-journey__img {
+        position: relative;
+        left: 50%; }
+      .c-journey__entry.even .c-journey__content {
+        position: relative;
+        left: -50%; } }
+  .c-journey__title {
+    background: url("../images/icon-dots.svg") no-repeat 1% 100%;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.5em; }
+  .c-journey__img, .c-journey__content {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      .c-journey__img, .c-journey__content {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .c-journey__img:last-child:not(:first-child), .c-journey__content:last-child:not(:first-child) {
+      float: right; }
+    @media print, screen and (min-width: 40em) {
+      .c-journey__img, .c-journey__content {
+        width: 50%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 40em) and (min-width: 40em) {
+    .c-journey__img, .c-journey__content {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media print, screen and (min-width: 40em) {
+        .c-journey__img:last-child:not(:first-child), .c-journey__content:last-child:not(:first-child) {
+          float: right; } }
+    .c-journey__img img, .c-journey__content img {
+      margin: 0; }
+
+/*--------------------------------
+  
   FAQs
 */
 .c-faq__accordion {

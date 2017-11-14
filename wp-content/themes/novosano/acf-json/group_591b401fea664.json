@@ -283,6 +283,65 @@
             "endpoint": 0
         },
         {
+            "key": "field_5a09dac9f94e7",
+            "label": "Tracking",
+            "name": "tracking",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5a09dae2f94e8",
+            "min": 0,
+            "max": 0,
+            "layout": "row",
+            "button_label": "Add Tracking Code",
+            "sub_fields": [
+                {
+                    "key": "field_5a09dae2f94e8",
+                    "label": "Tracking Name",
+                    "name": "tracking_name",
+                    "type": "text",
+                    "instructions": "Enter Tracking Name, IE: Google Analytics",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Tracking Name, IE: Google Analytics",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5a09db28f94e9",
+                    "label": "Tracking Code",
+                    "name": "tracking_code",
+                    "type": "textarea",
+                    "instructions": "Enter Tracking Code Here",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Tracking Code Here",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                }
+            ]
+        },
+        {
             "key": "field_595bc6f8d7359",
             "label": "Call to Actions",
             "name": "",
@@ -392,5 +451,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "General Site Options",
-    "modified": 1505421065
+    "modified": 1510595542
 }
