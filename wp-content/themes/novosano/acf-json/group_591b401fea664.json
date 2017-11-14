@@ -298,7 +298,7 @@
             "collapsed": "field_5a09dae2f94e8",
             "min": 0,
             "max": 0,
-            "layout": "row",
+            "layout": "block",
             "button_label": "Add Tracking Code",
             "sub_fields": [
                 {
@@ -451,5 +451,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "General Site Options",
-    "modified": 1510595542
+    "modified": 1510676440
 }
