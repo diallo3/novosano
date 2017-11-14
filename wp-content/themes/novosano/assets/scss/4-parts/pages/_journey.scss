@@ -1,0 +1,70 @@
+/*--------------------------------
+  
+  Journey
+*/
+
+$journey: c-journey;
+
+.o-vline {
+	background-color: $light-gray;
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    transform: transitionX(-50%);
+    top: 0;
+    width: 1px;
+}
+
+.#{$journey} {
+	@include clearfix;
+	position: relative;
+	&__lead {
+		text-align: center;
+		margin: 1em 0 4em; 
+	}
+	&__block {
+		background-color: $white; 
+		border: 1px solid $medium-gray; 
+		margin-bottom: 3em; 
+		padding: 2.2rem 1.5rem 2rem;
+		position: relative; 
+	}
+	&__num {
+		@include abs-pos($t:-30px, $r:0, $b:auto, $l:0);
+		@include circle(60px, $s-primary);
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+		border: 1px solid $medium-gray; 
+		padding-top: rem-calc(12); 
+		display: block;
+	}
+	&__entry {
+		@include grid-row;
+		&.even {
+			@include breakpoint(medium) {
+				.#{$journey}__img {
+					@include grid-col-pos(6);
+				}
+				.#{$journey}__content {
+					@include grid-col-pos(-6);
+				}
+			}
+		}
+	}
+	&__title {
+		background: url('#{$imgPath}/icon-dots.svg') no-repeat 1% 100%;
+		margin-bottom: 0.8em; 
+		padding-bottom: 0.5em;  
+	}
+	&__img, &__content {
+		@include grid-col(12);
+		@include breakpoint(medium) {
+			@include grid-col(6);
+		}
+		img {
+			margin: 0; 
+		}
+	}
+	
+}

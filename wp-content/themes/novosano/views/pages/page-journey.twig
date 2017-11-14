@@ -1,0 +1,52 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero.twig" %}
+	{% include "/includes/inc-lead.twig" %}
+
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="c-article__content">
+				{{post.get_content}}
+			</section>
+			
+			<section class="c-journey">
+				<figure class="c-journey__featured"><img src="http://placehold.it/1200x600" alt=""></figure>
+
+				<div class="c-journey__lead">
+					<h2 class="c-journey__lead--title">UNIQUE APPROACH TO REALIZING YOUR VISION</h2>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo ipsam, exercitationem iusto et. Sapiente consequatur reprehenderit fuga, quibusdam maiores possimus cumque magnam. Quibusdam sit totam maxime eum, doloremque dolore eos.</p>
+				</div>
+			</section>
+			<section class="c-journey">
+				<div class="o-vline"></div>
+				{% for item in post.get_field('journey_steps') %}
+				{% set counter = ( counter | default(0) ) + 1 %}
+				<div class="c-journey__block">
+					<span class="c-journey__num">{{counter}}</span>
+					<div class="c-journey__entry {{ cycle(['odd', 'even'], loop.index0) }}">
+						<figure class="c-journey__img">
+							{% if item.image %}
+								<img src="{{TimberImage(item.image)}}" alt="">
+							{% else %}
+								<img src="http://placehold.it/800x500" alt="">
+							{% endif %}
+						</figure>
+						<div class="c-journey__content">
+							<h3 class="c-journey__title">{{item.title}}</h3>
+							
+							{{item.entry}}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</section>
+
+
+			{% include "includes/inc-end-cap.twig" %}
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}
