@@ -105,8 +105,8 @@ class MetaSlider {
             'direction' => 'horizontal',
             'reverse' => false,
             'animationSpeed' => 600,
-            'prevText' => '<',
-            'nextText' => '>',
+            'prevText' => __('Previous', 'ml-slider'),
+            'nextText' => __('Next', 'ml-slider'),
             'slices' => 15,
             'center' => false,
             'smartCrop' => true,
@@ -128,6 +128,7 @@ class MetaSlider {
 
     /**
      * The main query for extracting the slides for the slideshow
+     * @return WP_Query
      */
     public function get_slides() {
         $args = array(
@@ -148,11 +149,13 @@ class MetaSlider {
             )
         );
 
-        $args = apply_filters( 'metaslider_populate_slides_args', $args, $this->id, $this->settings );
+        // if there is a var set to include the trashed slides, then include it
+        if (metaslider_viewing_trashed_slides($this->id)) {
+            $args['post_status'] = array('trash');
+        }
 
-        $query = new WP_Query( $args );
-
-        return $query;
+        $args = apply_filters('metaslider_populate_slides_args', $args, $this->id, $this->settings);
+        return new WP_Query($args);
     }
 
     /**
@@ -212,18 +215,15 @@ class MetaSlider {
      * @return string HTML & Javascrpt
      */
     public function render_public_slides() {
-        $html[] = '<!-- meta slider -->';
+        $html[] = '<!-- MetaSlider -->';
         $html[] = '<div style="' . $this->get_container_style() . '" class="' . esc_attr($this->get_container_class()) .'">';
         $html[] = '    ' . $this->get_inline_css();
         $html[] = '    <div id="' . $this->get_container_id() . '">';
         $html[] = '        ' . $this->get_html();
         $html[] = '        ' . $this->get_html_after();
         $html[] = '    </div>';
-        $html[] = '    <script type="text/javascript">';
-        $html[] = '        ' .  $this->get_inline_javascript();
-        $html[] = '    </script>';
         $html[] = '</div>';
-        $html[] = '<!--// meta slider-->';
+        $html[] = '<!--// MetaSlider-->';
 
         $slideshow = implode( "\n", $html );
 
@@ -442,11 +442,27 @@ class MetaSlider {
     }
 
     /**
+     * Polyfill to handle the wp_add_inline_script() function.
+     */
+    public function wp_add_inline_script($handle, $data, $position = 'after') {
+        if (function_exists('wp_add_inline_script')) return wp_add_inline_script($handle, $data, $position);
+        global $wp_scripts;
+        if (!$data) return false;
+        if ('after' !== $position) $position = 'before';
+
+        $script  = (array) $wp_scripts->get_data($handle, $position);
+        $script[] = $data;
+        return $wp_scripts->add_data($handle, $position, $script);
+    }
+
+    /**
      * Include slider assets, JS and CSS paths are specified by child classes.
      */
     public function enqueue_scripts() {
-        if ( $this->get_setting( 'printJs' ) == 'true' ) {
-            wp_enqueue_script( 'metaslider-' . $this->get_setting( 'type' ) . '-slider', METASLIDER_ASSETS_URL . $this->js_path, array( 'jquery' ), METASLIDER_VERSION );
+        if ('true' == $this->get_setting('printJs')) {
+            $handle = 'metaslider-' . $this->get_setting('type') . '-slider';
+            wp_enqueue_script($handle, METASLIDER_ASSETS_URL . $this->js_path, array('jquery'), METASLIDER_VERSION);
+            $this->wp_add_inline_script($handle, $this->get_inline_javascript());
         }
 
         if ( $this->get_setting( 'printCss' ) == 'true' ) {

@@ -24,3 +24,20 @@ $lead: c-lead;
 		@include typi('lead');
 	}
 }
+
+.c-hero__cta--default {
+	text-align: center;
+	margin: 2em 0; 
+	.o-cta {
+		color: $black;
+		border-color: $black;
+		&--hero {
+			background-color: $white; 
+		} 
+		&:hover {
+			color: $white;
+			background-color: $s-primary;
+			border-color: $light-gray;  
+		}
+	}
+}

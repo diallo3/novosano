@@ -915,6 +915,18 @@ p {
         .l-column__block-one:first-of-type:last-child:last-child {
           float: left; } }
 
+@media print, screen and (min-width: 64em) {
+  .o-multi-column-2 {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -moz-column-fill: auto;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    -webkit-column-fill: auto;
+    column-count: 2;
+    column-gap: 20px;
+    column-fill: auto; } }
+
 /*--------------------------------
   
   Utilities
@@ -3301,6 +3313,19 @@ input.datepicker_with_icon {
     @media all and (min-width: 1024px) {
       .c-lead__title {
         font-size: 1.875rem; } }
+
+.c-hero__cta--default {
+  text-align: center;
+  margin: 2em 0; }
+  .c-hero__cta--default .o-cta {
+    color: #0d0d0d;
+    border-color: #0d0d0d; }
+    .c-hero__cta--default .o-cta--hero {
+      background-color: #fff; }
+    .c-hero__cta--default .o-cta:hover {
+      color: #fff;
+      background-color: #bf0413;
+      border-color: #e6e6e6; }
 
 /*--------------------------------
   

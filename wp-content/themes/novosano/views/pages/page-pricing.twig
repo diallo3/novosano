@@ -1,0 +1,28 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+	{% include "/includes/inc-hero.twig" %}
+	{% include "/includes/inc-lead.twig" %}
+	<div class="c-content__entry l-wrap">
+		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			{{post.get_content}}
+
+			<section class="c-content__entry">
+				{% set fbs = post.get_field('features_and_benefits') %}
+				<ul class="c-sidekick__points o-multi-column-2">
+					{% for item in fbs %}
+						<li class="c-feature">{{item.feature_item}}</li>
+					{% endfor %}
+				</ul>
+			</section>
+
+			<div class="c-hero__cta--default">
+				{% include "includes/inc-cta-main.twig" %}
+			</div>
+
+			{% include "includes/inc-end-cap.twig" %}
+		</article>
+	</div> 
+	{% include "includes/inc-testimonials.twig" %}
+{% endblock %}
+

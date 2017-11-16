@@ -1,0 +1,64 @@
+{
+    "key": "group_5a0c6aee0688c",
+    "title": "Pricing Options",
+    "fields": [
+        {
+            "key": "field_5a0c6bdd0a312",
+            "label": "Features and Benefits",
+            "name": "features_and_benefits",
+            "type": "repeater",
+            "instructions": "Add Feature and or Benefit",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_5a0c6c1e0a313",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_5a0c6c1e0a313",
+                    "label": "Feature Item",
+                    "name": "feature_item",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Add Feature Item",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-pricing.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1510764638
+}
