@@ -3169,6 +3169,91 @@ input.datepicker_with_icon {
       .gform_fields:last-child:not(:first-child) {
         float: right; } }
 
+/*--------------------------------
+  
+  Woocommerce
+*/
+/*--------------------------------
+  
+  Woocommerce - Single
+*/
+.c-woo__images {
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem; }
+  @media print, screen and (min-width: 40em) {
+    .c-woo__images {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  .c-woo__images:last-child:not(:first-child) {
+    float: right; }
+  @media print, screen and (min-width: 64em) {
+    .c-woo__images {
+      width: 25%;
+      float: left;
+      padding-right: 0.625rem;
+      padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-woo__images {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  @media print, screen and (min-width: 64em) {
+      .c-woo__images:last-child:not(:first-child) {
+        float: right; } }
+
+.c-woo__summary {
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem; }
+  @media print, screen and (min-width: 40em) {
+    .c-woo__summary {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  .c-woo__summary:last-child:not(:first-child) {
+    float: right; }
+  @media print, screen and (min-width: 64em) {
+    .c-woo__summary {
+      width: 75%;
+      float: left;
+      padding-right: 0.625rem;
+      padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-woo__summary {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  @media print, screen and (min-width: 64em) {
+      .c-woo__summary:last-child:not(:first-child) {
+        float: right; } }
+
+.c-woo__product-desc {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  float: left;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem; }
+  .c-woo__product-desc:before, .c-woo__product-desc:after {
+    content: "";
+    display: table; }
+  .c-woo__product-desc:after {
+    clear: both; }
+  @media print, screen and (min-width: 40em) {
+    .c-woo__product-desc {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+  .c-woo__product-desc:last-child:not(:first-child) {
+    float: right; }
+  .c-woo__product-desc, .c-woo__product-desc:last-child {
+    float: none; }
+
+.c-woo .quantity {
+  display: inline-block; }
+  .c-woo .quantity input {
+    padding: .5rem; }
+
 .o-sticky-bar {
   background-color: transparent;
   padding: 0;

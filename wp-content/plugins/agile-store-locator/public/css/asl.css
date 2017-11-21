@@ -366,7 +366,7 @@
   margin: auto;
   width: 95% !important;
 }
-#asl-storelocator.storelocator-main.asl-bg-0 #map-canvas {
+#asl-storelocator.storelocator-main.asl-bg-0 #asl-map-canv {
   background: #ffffff;
   width: 100%;
   height: 530px;
@@ -461,7 +461,7 @@
 #asl-storelocator.storelocator-main.asl-bg-0 .panel-inner .panel li:last {
   padding-bottom: 0 !important;
 }
-#asl-storelocator.asl-p-cont.asl-bg-0 .map-canvas-outer {
+#asl-storelocator.asl-p-cont.asl-bg-0 .asl-map-canv-outer {
   background: none repeat scroll 0 0 #ffffff;
   border: 1px solid #dddddd;
   padding: 5px;
@@ -582,7 +582,7 @@
 #asl-storelocator.asl-p-cont.asl-bg-0 #content-test {
   margin-top: 30px;
 }
-#asl-storelocator.asl-p-cont.asl-bg-0 #map-canvas img {
+#asl-storelocator.asl-p-cont.asl-bg-0 #asl-map-canv img {
   max-width: none !important;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 #panel {
@@ -770,13 +770,13 @@
   font-size: 11px;
   font-weight: normal;
   line-height: 1.2;
-  max-width: 175px;
+  max-width: 100%;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 .item .p-time {
   font-size: 11px;
   font-weight: normal;
   line-height: 1.2;
-  max-width: 175px;
+  max-width: 100%;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 .item .p-direction {
   font-size: 11px;
@@ -978,7 +978,7 @@
 #asl-storelocator.asl-p-cont.asl-bg-0 .search_filter > p:first-child {
   color: #CC3333;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 400;
   margin-bottom: 5px;
   padding: 0;
 }
@@ -1185,7 +1185,7 @@
   width: 99%;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 .addr-sec .p-area:nth-child(2) {
-  max-width: 175px;
+  max-width: 100%;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 .col-xs-5.col-md-12.item-thumb {
   display: table-cell;
@@ -1953,7 +1953,7 @@ element.style {
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 #style_0 .info-addr {
   float: left;
-  width: 65%;
+  width: 100%;
 }
 #asl-storelocator.asl-p-cont.asl-bg-0 #style_0 .img_box > img {
   width: 100%;

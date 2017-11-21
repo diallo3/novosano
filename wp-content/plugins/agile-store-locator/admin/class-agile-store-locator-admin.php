@@ -236,9 +236,7 @@ class AgileStoreLocator_Admin {
 				'is_disabled'	=> $form_data['is_disabled'],
 				'description_2'	=> $form_data['description_2'],
 				'logo_id'		=> $form_data['logo_id'],
-				'start_time'	=> $form_data['start_time'],
-				'end_time'		=> $form_data['end_time'],
-				'days'			=> $form_data['days'],
+				'open_hours'	=> $form_data['open_hours'],
 				'marker_id'		=> 1,
 				'logo_id'		=> $form_data['logo_id'],
 				'updated_on' 	=> date('Y-m-d H:i:s')
@@ -255,24 +253,6 @@ class AgileStoreLocator_Admin {
 			$wpdb->insert(AGILESTORELOCATOR_PREFIX.'stores_categories', 
 			 	array('store_id'=>$update_id,'category_id'=>$category),
 			 	array('%s','%s'));	
-		}
-
-
-		//ADD THE TIMINGS
-		$timing_result = $wpdb->get_results("SELECT count(*) as c FROM ".AGILESTORELOCATOR_PREFIX."stores_timing WHERE store_id = $update_id");
-
-		//INSERT OR UPDATE
-		if($timing_result[0]->c == 0) {
-			
-			$datatime = $_REQUEST['datatime'];
-			$datatime['store_id'] = $update_id;
-			$wpdb->insert( AGILESTORELOCATOR_PREFIX.'stores_timing', $datatime);
-		}
-
-		else {
-
-			$datatime = $_REQUEST['datatime'];
-			$wpdb->update( AGILESTORELOCATOR_PREFIX.'stores_timing', $datatime,array('store_id' => $update_id));
 		}
 
 
@@ -316,6 +296,58 @@ class AgileStoreLocator_Admin {
 	}
 
 
+
+	//to  Duplicate the store
+	public function duplicate_store() {
+
+		global $wpdb;
+
+		$response  = new \stdclass();
+		$response->success = false;
+
+		$store_id = $_REQUEST['store_id'];
+
+
+		$result = $wpdb->get_results("SELECT * FROM ".AGILESTORELOCATOR_PREFIX."stores WHERE id = ".$store_id);		
+
+		if($result && $result[0]) {
+
+			$result = (array)$result[0];
+
+			unset($result['id']);
+			unset($result['created_on']);
+			unset($result['updated_on']);
+
+			//insert into stores table
+			if($wpdb->insert( AGILESTORELOCATOR_PREFIX.'stores', $result)){
+				$response->success = true;
+				$new_store_id = $wpdb->insert_id;
+
+				//get categories and copy them
+				$s_categories = $wpdb->get_results("SELECT * FROM ".AGILESTORELOCATOR_PREFIX."stores_categories WHERE store_id = ".$store_id);
+
+				/*Save Categories*/
+				foreach ($s_categories as $_category) {	
+
+					$wpdb->insert(AGILESTORELOCATOR_PREFIX.'stores_categories', 
+					 	array('store_id'=>$new_store_id,'category_id'=>$_category->category_id),
+					 	array('%s','%s'));			
+				}
+
+				//SEnd the response
+				$response->msg = 'Store Duplicated successfully.';
+			}
+			else
+			{
+				$response->error = 'Error occurred while saving Store';//$form_data
+				$response->msg   = $wpdb->show_errors();
+			}	
+
+		}
+
+		echo json_encode($response);die;
+	}
+	
 	/////////////////////////////////ALL Category Methods
 	/*Categories methods*/
 	public function add_category() {
@@ -665,11 +697,11 @@ class AgileStoreLocator_Admin {
 		$params  = isset($_REQUEST)?$_REQUEST:null; 	
 
 		$acolumns = array(
-			AGILESTORELOCATOR_PREFIX.'stores.id ','title','description','lat','lng','street','state','city','phone','email','website','postal_code','is_disabled','days',AGILESTORELOCATOR_PREFIX.'stores.created_on'/*,'country_id'*/
+			AGILESTORELOCATOR_PREFIX.'stores.id ','title','description','lat','lng','street','state','city','phone','email','website','postal_code','is_disabled',AGILESTORELOCATOR_PREFIX.'stores.created_on'/*,'country_id'*/
 		);
 
 		$columnsFull = array(
-			AGILESTORELOCATOR_PREFIX.'stores.id as id','title','description','lat','lng','street','state','city','phone','email','website','postal_code','is_disabled','days',AGILESTORELOCATOR_PREFIX.'stores.created_on'/*,AGILESTORELOCATOR_PREFIX.'countries.country_name'*/
+			AGILESTORELOCATOR_PREFIX.'stores.id as id','title','description','lat','lng','street','state','city','phone','email','website','postal_code','is_disabled',AGILESTORELOCATOR_PREFIX.'stores.created_on'/*,AGILESTORELOCATOR_PREFIX.'countries.country_name'*/
 		);
 
 		
@@ -743,7 +775,7 @@ class AgileStoreLocator_Admin {
 		
 
 
-		$fields .= ',start_time,end_time,marker_id,logo_id,group_concat(category_id) as categories';
+		$fields .= ',marker_id,logo_id,group_concat(category_id) as categories';
 
 		###get the fields###
 		$sql = 	"SELECT $fields
@@ -800,18 +832,7 @@ class AgileStoreLocator_Admin {
 	    		$row->is_disabled = 'No';	
 	    	}
 
-	    	//Days
-	    	if($row->days) {
-	    		$days 	  = explode(',',$row->days);
-	    		$days_are = array();
-	    		
-	    		foreach($days as $d) {
-
-	    			$days_are[] = $days_in_words[$d];
-	    		}
-
-	    		$row->days = $days_are;
-	    	}
+	    	
 
 	        $output['aaData'][] = $row;
 
@@ -830,6 +851,7 @@ class AgileStoreLocator_Admin {
 
 		echo json_encode($output);die;
 	}
+
 
 
 
@@ -906,17 +928,6 @@ class AgileStoreLocator_Admin {
 		}
 
 		$store  = $wpdb->get_results("SELECT * FROM ".AGILESTORELOCATOR_PREFIX."stores WHERE id = $store_id");		
-		$timing = $wpdb->get_results("SELECT * FROM ".AGILESTORELOCATOR_PREFIX."stores_timing WHERE store_id = $store_id");
-
-		if($timing) {
-			$timing = (array)$timing[0];
-		}
-
-		else {
-
-			$timing['start_time_0'] = $timing['start_time_1'] = $timing['start_time_2'] = $timing['start_time_3'] = $timing['start_time_4'] = $timing['start_time_5'] = $timing['start_time_6'] = '';
-			$timing['end_time_0'] = $timing['end_time_1'] = $timing['end_time_2'] = $timing['end_time_3'] = $timing['end_time_4'] = $timing['end_time_5'] = $timing['end_time_6'] = '';
-		}
 
 
 		$storecategory = $wpdb->get_results("SELECT * FROM ".AGILESTORELOCATOR_PREFIX."stores_categories WHERE store_id = $store_id");
@@ -939,6 +950,7 @@ class AgileStoreLocator_Admin {
 		include AGILESTORELOCATOR_PLUGIN_PATH.'admin/partials/edit_store.php';		
 	}
 
+
 	public function admin_add_new_store() {
 		
 		global $wpdb;
@@ -955,6 +967,7 @@ class AgileStoreLocator_Admin {
 
 		include AGILESTORELOCATOR_PLUGIN_PATH.'admin/partials/add_store.php';    
 	}
+
 
 	public function admin_delete_all_stores() {
 		

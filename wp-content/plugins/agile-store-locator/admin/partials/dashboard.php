@@ -7,7 +7,7 @@
       Support Forum for Bugs or Troubleshooting. <a target="_blank" href="https://wordpress.org/support/plugin/agile-store-locator">Create a Ticket</a> 
     </div>
     <div class="alert alert-info" role="alert">
-      Please visit the documentation page to explore all options. <a target="_blank" href="https://agilestorelocator.com?v=1.0.3">Agile Store Locator</a> 
+      Please visit the documentation page to explore all options. <a target="_blank" href="https://agilestorelocator.com?v=1.1.0">Agile Store Locator</a> 
     </div>
     <?php if(!$all_configs['api_key']): ?>
         <h3  class="alert alert-danger" style="font-size: 14px">Google API KEY is missing, the Map Search and Direction will not work without it, Please add Google API KEY. <a href="https://agilestorelocator.com/blog/enable-google-maps-api-agile-store-locator-plugin/?v=1.0.3" target="_blank">How to Add API Key?</a></h3>

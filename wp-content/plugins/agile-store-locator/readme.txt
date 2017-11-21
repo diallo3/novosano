@@ -4,9 +4,9 @@ Author URI: http://agilelogix.com/
 Plugin URI: https://agilestorelocator.com/
 Tags:  store locator, location finder,google maps, directions,store finder, geocoding,business locations, google maps plugin, map directions, nearest stores, routes, street view, store locator widget, wp google maps, wp store locator,geolocation
 Requires at least: 3.3.2
-Tested up to: 4.8
+Tested up to: 4.9
 Donate link: https://codecanyon.net/item/agile-store-locator-google-maps-for-wordpress/16973546
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,9 @@ https://www.youtube.com/watch?v=5GjsKNyJQC4
 * Change Placeholder Text for your search field.
 * Show Category Icons instead of Marker icons.
 * Enable/Disable Distance Slider.
+* Distance Dropdown and Slider.
+* Sort by Distance, City and State.
+* Set Google Maps Language.
 * Set Default Lat/Lng of your Map.
 * Change Header Title Text.
 * Change font color for default Template.
@@ -131,7 +134,7 @@ https://www.youtube.com/watch?v=5GjsKNyJQC4
 * Option to select Map Region for Tiles
 * Logo Manger with Listing
 * Full Screen Map and Fixed
-* 40+ Advance Options for Store Locator Admin.
+* 60+ Advance Options for Store Locator Admin.
 * GeoDirectory Supported.
 
 Real Estate and Deals Maps are included in the plugin which makes it complete Location Finder plugin with beautiful Listing.
@@ -142,6 +145,9 @@ For Help, Please create a ticket here, we will reply at our earliest. https://wo
 
 = How to add it on Page or Post? =
 With the easy shortcode, you can add Store Locator on page, paste the [ASL_STORELOCATOR] shortcode on your page or post.
+
+= Why Search is not working? =
+Either Google Maps key is not added with service or you have [Multiple inclusion of Google Maps API Key](https://agilestorelocator.com/wiki/plugins-map-slow-malfunctioning/)
 
 = Multiple inclusion of Google Maps =
 The most basic error is because of multiple times inclusion of Google maps, you can resolve the problem with the help of this guide ["Plugin's Map is Slow and Malfunctioning"](https://agilestorelocator.com/wiki/plugins-map-slow-malfunctioning/).

@@ -10,7 +10,7 @@
  * Plugin Name:       Agile Store Locator
  * Plugin URI:        http://agilestorelocator.com
  * Description:       Agile Store Locator is a WordPress Store Finder/Locator Plugin that renders stores list with Location markers on Google Maps v3, it supports GeoLocation and render nearest stores with direction over google maps.
- * Version:           1.0.3
+ * Version:           1.1.0
  * Author:            AGILELOGIX
  * Author URI:        https://agilestorelocator.com/
  * License:           Copyrights 2017
@@ -29,7 +29,7 @@ define( 'AGILESTORELOCATOR_URL_PATH', plugin_dir_url( __FILE__ ) );
 define( 'AGILESTORELOCATOR_PLUGIN_PATH', plugin_dir_path(__FILE__) );
 define( 'AGILESTORELOCATOR_PREFIX', $wpdb->prefix."asl_" );
 define( 'AGILESTORELOCATOR_PLUGIN_BASE', dirname( plugin_basename( __FILE__ ) ) );
-
+define( 'AGILESTORELOCATOR_CVERSION', "1.1.0" );
 
 global $wp_version;
 
@@ -61,6 +61,15 @@ register_deactivation_hook( __FILE__, 'deactivate_AgileStoreLocator' );
 
 
 
+add_action( 'upgrader_process_complete', 'asl_upgrate_process',10, 2);
+
+
+function asl_upgrate_process( $upgrader_object, $options ) {
+
+  	//Store Timing
+	require_once AGILESTORELOCATOR_PLUGIN_PATH . 'includes/class-agile-store-locator-helper.php';
+	AgileStoreLocator_Helper::fix_backward_compatible();
+}
 
 
 

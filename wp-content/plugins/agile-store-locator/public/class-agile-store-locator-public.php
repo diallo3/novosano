@@ -78,6 +78,97 @@ class AgileStoreLocator_Public {
 		wp_enqueue_style( $this->AgileStoreLocator.'-asl',  AGILESTORELOCATOR_URL_PATH.'public/css/asl.css', array(), $this->version, 'all' );
 	}
 
+
+	/*Frontend of Plugin*/
+	public function frontendStoreLocator($atts)
+	{
+		
+		//[myshortcode foo="bar" bar="bing"]
+	    //AGILESTORELOCATOR_PLUGIN_PATH.
+
+	    
+		if(!$atts) {
+
+			$atts = array();
+		}
+		
+		
+		global $wpdb;
+
+		$query   = "SELECT * FROM ".AGILESTORELOCATOR_PREFIX."configs";
+		$configs = $wpdb->get_results($query);
+
+		$all_configs = array();
+		
+		foreach($configs as $_config)
+			$all_configs[$_config->key] = $_config->value;
+
+
+		$all_configs = shortcode_atts( $all_configs, $atts );
+		
+		$all_configs['URL'] = AGILESTORELOCATOR_URL_PATH;
+		
+
+		//Get the categories
+		$all_categories = array();
+		$results = $wpdb->get_results("SELECT id,category_name as name,icon FROM ".AGILESTORELOCATOR_PREFIX."categories WHERE is_active = 1");
+
+		foreach($results as $_result)
+		{
+			$all_categories[$_result->id] = $_result;
+		}
+
+
+		//Get the Markers
+		$all_markers = array();
+		$results = $wpdb->get_results("SELECT id,marker_name as name,icon FROM ".AGILESTORELOCATOR_PREFIX."markers WHERE is_active = 1");
+
+		foreach($results as $_result)
+		{
+			$all_markers[$_result->id] = $_result;
+		}
+
+
+		$all_configs['map_layout'] = '[]';
+
+		
+			
+		//For Translation	
+		$words = array(
+			'direction' => __('Directions','asl_locator'),
+			'zoom' => __('Zoom Here','asl_locator'),
+			'detail' => __('Website','asl_locator'),
+			'select_option' => __('Select Option','asl_locator'),
+			'none' => __('None','asl_locator')
+		);
+
+		$all_configs['words'] 	= $words;
+		$all_configs['version'] = AGILESTORELOCATOR_CVERSION;
+		
+		$template_file = 'template-frontend.php';
+
+
+		ob_start();
+
+		//Customization of Template
+		if($template_file) {
+
+			if ( $theme_file = locate_template( array ( $template_file ) ) ) {
+	            $template_path = $theme_file;
+	        }
+	        else {
+	            $template_path = 'partials/'.$template_file;
+	        }
+
+	        include $template_path;
+		}
+		
+
+		$output = ob_get_contents();
+		ob_end_clean();
+		return $output;
+	}
+
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
@@ -132,7 +223,7 @@ class AgileStoreLocator_Public {
 		}
 
 
-		//dd(get_locale());
+		
 
 		//dd($wp_scripts->registered);
 		wp_enqueue_script('google-map', $map_url,array('jquery'), null, true  );
@@ -167,7 +258,7 @@ class AgileStoreLocator_Public {
 
 		
 
-		$query   = "SELECT s.`id`, `title`,  `description`, `street`,  `city`,  `state`, `postal_code`, {$country_field} `lat`,`lng`,`phone`,  `fax`,`email`,`website`,`logo_id`,{$AGILESTORELOCATOR_PREFIX}storelogos.`path`,
+		$query   = "SELECT s.`id`, `title`,  `description`, `street`,  `city`,  `state`, `postal_code`, {$country_field} `lat`,`lng`,`phone`,  `fax`,`email`,`website`,`logo_id`,{$AGILESTORELOCATOR_PREFIX}storelogos.`path`,`open_hours`,
 					group_concat(category_id) as categories FROM {$AGILESTORELOCATOR_PREFIX}stores as s 
 					LEFT JOIN {$AGILESTORELOCATOR_PREFIX}storelogos ON logo_id = {$AGILESTORELOCATOR_PREFIX}storelogos.id
 					LEFT JOIN {$AGILESTORELOCATOR_PREFIX}stores_categories ON s.`id` = {$AGILESTORELOCATOR_PREFIX}stores_categories.store_id
@@ -179,6 +270,31 @@ class AgileStoreLocator_Public {
 
 		
 		$all_results = $wpdb->get_results($query);
+
+
+		//die($wpdb->last_error);
+		$days_in_words = array('sun'=>__( 'Sun','asl_locator'), 'mon'=>__('Mon','asl_locator'), 'tue'=>__( 'Tues','asl_locator'), 'wed'=>__( 'Wed','asl_locator' ), 'thu'=> __( 'Thur','asl_locator'), 'fri'=>__( 'Fri','asl_locator' ), 'sat'=> __( 'Sat','asl_locator')) ;
+		$days 		   = array('mon','tue','wed','thu','fri','sat','sun');
+
+
+		foreach($all_results as $aRow) {
+
+			if($aRow->open_hours) {
+
+				$days_are 	= array();
+				$open_hours = json_decode($aRow->open_hours);
+
+				foreach($days as $day) {
+
+					if(!empty($open_hours->$day)) {
+
+						$days_are[] = $days_in_words[$day];
+					}
+				}
+
+				$aRow->days_str = implode(', ', $days_are);
+			}
+	    }
 
 
 		echo json_encode($all_results);die;

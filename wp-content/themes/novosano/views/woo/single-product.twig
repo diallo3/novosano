@@ -1,0 +1,35 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+    {% include "/includes/inc-hero.twig" %}
+
+    <div class="c-content__entry l-wrap">
+        {% do action('woocommerce_before_single_product') %}
+        <article itemscope itemtype="http://schema.org/Product" class="c-article post-type-{{post.post_type}} single-product-details {{ post.class }}" id="post-{{post.ID}}">
+            
+            <section class="c-article__content">
+                <div class="c-woo">
+                    <div class="c-woo__images">
+                        {% do action('woocommerce_before_single_product_summary') %}
+
+                        <img src="{{ post.thumbnail.src('shop_single') }}" />
+                    </div>
+
+                    <div class="c-woo__summary">
+                        {% do action('woocommerce_single_product_summary') %}
+                    </div>
+                    
+                    <div class="c-woo__product-desc">
+                        {% do action('woocommerce_after_single_product_summary') %}
+                    </div>
+                </div>
+                
+                <meta itemprop="url" content="{{ post.link }}" />
+            </section>
+
+            {% include "includes/inc-end-cap.twig" %}
+        </article>
+        {% do action('woocommerce_after_single_product') %}
+    </div>     
+
+{% endblock  %}

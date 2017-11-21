@@ -108,21 +108,92 @@ body .metaslider .flexslider .flex-direction-nav li {
 
 /* Flexslider */
 
-/* Arrow styles to use background images (old style) */
-/* which makes it compatible with the theme builder */
 .metaslider .flexslider {
-    margin: 0;
-    background: transparent;
-    border:0;
+    background: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    border: 0;
+    margin: 0 0 40px 0;
+    max-width: none;
+    max-height: none;
 }
 
-/* .metaslider .flexslider .flex-control-nav {
+.flex-control-nav {
+	bottom: -30px;
+	line-height: 11px;
+}
+
+/** move margin from list items to anchors */
+.flex-control-nav li {
+	margin: 0;
+}
+
+.flex-control-nav li a {
+	margin: 0 6px;
+	padding: 0;
+}
+
+.flexslider .slides li {
+    position: relative;
+    height: auto;
+}
+
+/** fix for users with RTL languages */
+.flex-viewport {
+    direction: ltr;
+}
+
+/** add transition effects to firefox **/
+.flex-direction-nav a {
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.flexslider .slides p {
+    margin: 0;
+}
+
+.flex-control-nav {
+	margin: auto;
+}
+
+.metaslider .flexslider.filmstrip {
+	margin-top: 10px;
+}
+
+.metaslider .flexslider.filmstrip .slides li {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.metaslider .flexslider.filmstrip .slides li.flex-active-slide,
+.metaslider .flexslider.filmstrip .slides li:hover,
+.metaslider .flexslider.filmstrip .slides li:focus {
+    opacity: 1.0 !important;
+}
+
+.metaslider .flex-control-thumbs li {
     width: auto;
-    position: static;
-    text-align: center;
-    padding: 10px;
-    height: 11px;
-} */
+}
+
+.metaslider ol.flex-control-thumbs img,
+#content .metaslider ol.flex-control-thumbs img {
+    margin: 10px 5px 0;
+    width: auto;
+}
+
+.metaslider.nav-hidden .flexslider {
+    margin-bottom: 0;
+}
+
+.metaslider.nav-hidden.add-margin .flexslider {
+    margin-bottom: 40px;
+}
+
+/* Arrow styles to use background images (old style) */
+/* which makes it compatible with the theme builder */
 
 .metaslider .flexslider .flex-direction-nav li a:before {
     content:none!important;
@@ -201,12 +272,4 @@ body .metaslider .flexslider .flex-direction-nav li {
 .metaslider .coin-slider .cs-buttons a,
 .metaslider .coin-slider > a {
     box-shadow: none !important;
-}
-
-.flex-control-nav li a {
-    margin: 0 6px;
-    padding: 0;
-}
-.flex-control-nav {
-   padding: 10px 0!important;
 }

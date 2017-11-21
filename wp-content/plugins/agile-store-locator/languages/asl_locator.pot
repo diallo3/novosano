@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Agile Store Locator\n"
-"POT-Creation-Date: 2017-02-12 15:18+0500\n"
+"POT-Creation-Date: 2017-11-17 19:27+0500\n"
 "PO-Revision-Date: 2017-02-12 12:46+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -20,64 +20,89 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/class-agile-store-locator.php:298 includes/template-frontend.php:44
-#: includes/template-frontend.php:119
+#: public/class-agile-store-locator-public.php:138
+#: public/partials/template-frontend.php:43
+#: public/partials/template-frontend.php:118
 msgid "Directions"
 msgstr ""
 
-#: includes/class-agile-store-locator.php:299
+#: public/class-agile-store-locator-public.php:139
 msgid "Zoom Here"
 msgstr ""
 
-#: includes/class-agile-store-locator.php:300
-msgid "Details"
+#: public/class-agile-store-locator-public.php:140
+msgid "Website"
 msgstr ""
 
-#: includes/class-agile-store-locator.php:301
+#: public/class-agile-store-locator-public.php:141
 msgid "Select Option"
 msgstr ""
 
-#: includes/class-agile-store-locator.php:302
+#: public/class-agile-store-locator-public.php:142
 msgid "None"
 msgstr ""
 
-#: includes/template-frontend.php:18
+#: public/class-agile-store-locator-public.php:275
+msgid "Sun"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Mon"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Tues"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Wed"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Thur"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Fri"
+msgstr ""
+
+#: public/class-agile-store-locator-public.php:275
+msgid "Sat"
+msgstr ""
+
+#: public/partials/template-frontend.php:17
 msgid "Search Location"
 msgstr ""
 
-#: includes/template-frontend.php:24
-msgid "Stores"
-msgstr ""
-
-#: includes/template-frontend.php:31
+#: public/partials/template-frontend.php:30
 msgid "Loading..."
 msgstr ""
 
-#: includes/template-frontend.php:60
+#: public/partials/template-frontend.php:59
 msgid "Get Your Directions"
 msgstr ""
 
-#: includes/template-frontend.php:63
+#: public/partials/template-frontend.php:62
 msgid "From"
 msgstr ""
 
-#: includes/template-frontend.php:67
+#: public/partials/template-frontend.php:66
 msgid "To"
 msgstr ""
 
-#: includes/template-frontend.php:71
+#: public/partials/template-frontend.php:70
 msgid "Show Distance In"
 msgstr ""
 
-#: includes/template-frontend.php:80
+#: public/partials/template-frontend.php:79
 msgid "GET DIRECTIONS"
 msgstr ""
 
-#: includes/template-frontend.php:104
+#: public/partials/template-frontend.php:101
 msgid "Phone"
 msgstr ""
 
-#: includes/template-frontend.php:123
+#: public/partials/template-frontend.php:122
 msgid "Distance"
 msgstr ""
 
@@ -91,8 +116,9 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Agile Store Locator is a WordPress Plugin that renders stores list with "
-"google maps V3 API. Paste ShortCode [ASL_STORELOCATOR] in your page/post."
+"Agile Store Locator is a WordPress Store Finder/Locator Plugin that renders "
+"stores list with Location markers on Google Maps v3, it supports GeoLocation "
+"and render nearest stores with direction over google maps."
 msgstr ""
 
 #. Author of the plugin/theme

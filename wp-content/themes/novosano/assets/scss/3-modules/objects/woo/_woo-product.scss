@@ -1,0 +1,30 @@
+/*--------------------------------
+  
+  Woocommerce - Single
+*/
+
+$woo: c-woo;
+
+.#{$woo} {
+	&__images {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(3);
+		}
+	}
+	&__summary {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(9);
+		}
+	}
+	&__product-desc {
+		@include grid-col-row;
+	}
+	.quantity {
+		display: inline-block;
+		input {
+			padding: .5rem;
+		}
+	}
+}

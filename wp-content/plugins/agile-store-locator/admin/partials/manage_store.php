@@ -14,6 +14,7 @@
 	<table id="tbl_stores" class="table table-bordered table-striped">
       <thead>
         <tr>
+          <th  align="center"><Button type="button" class="btn btn-default" id="Search_Data">Search</Button></th>
           <th align="center"><input type="text" data-id="id"  placeholder="Search ID"  /></th>
           <th align="center"><input type="text" data-id="title"  placeholder="Search Title"  /></th>
           <th align="center"><input type="text" data-id="description"  placeholder="Search Description"  /></th>
@@ -30,13 +31,10 @@
           <th  align="center"><input type="text" data-id="category" disabled="disabled" style="opacity:0"  placeholder="Categories"  /></th>
           <th  align="center"><input type="text" data-id="marker_id"  placeholder="Marker ID"  /></th>
           <th  align="center"><input type="text" data-id="logo_id"  placeholder="Logo ID" /></th>
-          <th  align="center"><input type="text" data-id="start_time"  placeholder="Start Time"  /></th>
-          <th  align="center"><input type="text" data-id="end_time"  placeholder="End Time"  /></th>
-          <th  align="center"><input type="text" data-id="days"  placeholder="Created On" style="visibility: hidden"  /></th>
           <th  align="center"><input type="text" data-id="created_on"  placeholder="Created On"  /></th>
-          <th  align="center"><Button type="button" class="btn btn-default" id="Search_Data">Search</Button></th>
         </tr>
         <tr>
+          <th align="center">Action&nbsp;</th>
           <th align="center">Store ID</th>
           <th align="center">Title</th>
           <th align="center">Description</th>
@@ -53,11 +51,7 @@
           <th align="center">Categories</th>
           <th align="center">Marker ID</th>
           <th align="center">Logo ID</th>
-          <th align="center">Start Time</th>
-          <th align="center">End Time</th>
-          <th align="center">Days</th>
           <th align="center">Created On</th>
-          <th align="center">Action&nbsp;</th>
         </tr>
       </thead>
       <tbody>

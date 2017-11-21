@@ -69,7 +69,7 @@ class AgileStoreLocator {
 	public function __construct() {
 
 		$this->AgileStoreLocator = 'agile-store-locator';
-		$this->version = '1.0.0';
+		$this->version = AGILESTORELOCATOR_CVERSION;
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -83,7 +83,7 @@ class AgileStoreLocator {
 
 		
 
-		if (is_admin())
+		if (is_admin()) 
 			$this->define_admin_hooks();
 		else
 			$this->define_public_hooks();
@@ -249,72 +249,6 @@ class AgileStoreLocator {
         }
 	}
 
-	/*Frontend of Plugin*/
-	public function frontendStoreLocatore($atts)
-	{
-		
-		//[myshortcode foo="bar" bar="bing"]
-	    //AGILESTORELOCATOR_PLUGIN_PATH.
-		
-		global $wpdb;
-
-		$query   = "SELECT * FROM ".AGILESTORELOCATOR_PREFIX."configs";
-		$configs = $wpdb->get_results($query);
-
-		$all_configs = array();
-		
-		foreach($configs as $_config)
-			$all_configs[$_config->key] = $_config->value;
-
-
-		$all_configs = shortcode_atts( $all_configs, $atts );
-		
-		$all_configs['URL'] = AGILESTORELOCATOR_URL_PATH;
-		
-
-		//Get the categories
-		$all_categories = array();
-		$results = $wpdb->get_results("SELECT id,category_name as name,icon FROM ".AGILESTORELOCATOR_PREFIX."categories WHERE is_active = 1");
-
-		foreach($results as $_result)
-		{
-			$all_categories[$_result->id] = $_result;
-		}
-
-
-		//Get the Markers
-		$all_markers = array();
-		$results = $wpdb->get_results("SELECT id,marker_name as name,icon FROM ".AGILESTORELOCATOR_PREFIX."markers WHERE is_active = 1");
-
-		foreach($results as $_result)
-		{
-			$all_markers[$_result->id] = $_result;
-		}
-
-
-		$all_configs['map_layout'] = '[]';
-
-		
-			
-		//For Translation	
-		$words = array(
-			'direction' => __('Directions','asl_locator'),
-			'zoom' => __('Zoom Here','asl_locator'),
-			'detail' => __('Details','asl_locator'),
-			'select_option' => __('Select Option','asl_locator'),
-			'none' => __('None','asl_locator')
-		);
-
-		$all_configs['words'] = $words;
-		
-		ob_start();
-		
-		include 'template-frontend.php';
-
-		$output = ob_get_contents();
-		ob_end_clean();
-		return $output;
-	}
 
 	/**
 	 * Register all of the hooks related to the public-facing functionality
@@ -329,7 +263,7 @@ class AgileStoreLocator {
 		$this->loader->add_action( 'wp_enqueue_scripts', $this->plugin_public, 'enqueue_scripts' );
 		
 
-        add_shortcode( 'ASL_STORELOCATOR',array($this,'frontendStoreLocatore'));	
+        add_shortcode( 'ASL_STORELOCATOR',array($this->plugin_public,'frontendStoreLocator'));	
 	}
 
 	

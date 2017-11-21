@@ -76,6 +76,39 @@
                                 <p class="help-p col-sm-offset-3 col-sm-9">(Enter the Language Code, 2 character. <a href="https://agilestorelocator.com/wiki/display-maps-different-language/" target="_blank" rel="nofollow">Get Code</a>)</p>
                             </div>
 
+                            <br clear="both">
+                            <div class="form-group s-option no-4 full">
+                                <label class="col-sm-3 control-label">Header Title</label>
+                                <div class="col-sm-8" style="padding-left: 0px">
+                                    <input  type="text" class="form-control validate[required]" name="data[head_title]" id="asl-head_title" placeholder="Head title">
+                                </div>
+                            </div>
+                            <br clear="both">
+
+                            <div class="form-group s-option no-4 full">
+                                <label class="col-sm-3 control-label">Category Title</label>
+                                <div class="col-sm-8" style="padding-left: 0px">
+                                    <input  type="text"   class="form-control validate[required]" name="data[category_title]" id="asl-category_title" placeholder="Category title">
+                                </div>
+                            </div>
+                            <br clear="both">
+
+                            <div class="form-group s-option no-4 full">
+                                <label class="col-sm-3 control-label">No Item Text</label>
+                                <div class="col-sm-8" style="padding-left: 0px">
+                                    <input  type="text" class="form-control validate[required]" name="data[no_item_text]" id="asl-no_item_text" placeholder="No Item Text">
+                                </div>
+                            </div>
+                            <br clear="both">
+
+                            <div class="form-group s-option no-4 full">
+                                <label class="col-sm-3 control-label">Google API KEY</label>
+                                <div class="col-sm-8" style="padding-left: 0px">
+                                    <input  type="text" class="form-control" name="data[api_key]" id="asl-api_key" placeholder="API KEY">
+                                </div>
+                                <p class="help-p col-sm-offset-3 col-sm-9">(Generate Key from  google console if required)</p>
+                            </div>
+
                             <div class="form-group s-option no-4 full">
                                 <label class="col-sm-3 control-label" for="prompt_location">Prompt Location</label>
                                  <select  id="asl-prompt_location" disabled="disabled"  name="data[prompt_location]" class="form-control">
@@ -201,7 +234,7 @@
                             <div class="form-group page_layout">
                                 <label class="col-sm-3 control-label" >Layout</label>
                                 <div id="radio">
-                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos" target="_blank">Full Version</a></p>
+                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos/?v=1.1.0" target="_blank">Full Version</a></p>
                                 </div>
                             </div>
                             <br clear="both">
@@ -215,44 +248,13 @@
                                 </div>
                                 <p class="help-p col-sm-offset-3 col-sm-9">(Default coordinates for map to load)</p>
                             </div>
-                            <br clear="both">
-                            <div class="row form-group no-of-shop">
-                                <label class="col-sm-3 control-label">Header Title</label>
-                                <div class="col-sm-8">
-                                    <input  type="text" class="form-control validate[required]" name="data[head_title]" id="asl-head_title" placeholder="Head title">
-                                </div>
-                            </div>
-                            <br clear="both">
-
-                            <div class="row form-group no-of-shop">
-                                <label class="col-sm-3 control-label">Category Title</label>
-                                <div class="col-sm-8">
-                                    <input  type="text"   class="form-control validate[required]" name="data[category_title]" id="asl-category_title" placeholder="Category title">
-                                </div>
-                            </div>
-                            <br clear="both">
-
-                            <div class="row form-group no-of-shop">
-                                <label class="col-sm-3 control-label">No Item Text</label>
-                                <div class="col-sm-8">
-                                    <input  type="text" class="form-control validate[required]" name="data[no_item_text]" id="asl-no_item_text" placeholder="No Item Text">
-                                </div>
-                            </div>
-                            <br clear="both">
-
-                            <div class="row form-group no-of-shop">
-                                <label class="col-sm-3 control-label">Google API KEY</label>
-                                <div class="col-sm-8">
-                                    <input  type="text" class="form-control" name="data[api_key]" id="asl-api_key" placeholder="API KEY">
-                                </div>
-                                <p class="help-p col-sm-offset-3 col-sm-9">(Generate Key from  google console if required)</p>
-                            </div>
+                            
                             <br clear="both">
 
                             <div class="form-group map_layout">
                                 <label class="col-sm-3 control-label" >Map Layout</label>
                                 <div id="radio">
-                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos" target="_blank">Full Version</a></p>
+                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos/?v=1.1.0" target="_blank">Full Version</a></p>
                                 </div>
                             </div>
 
@@ -260,7 +262,7 @@
                             <div class="form-group layout">
                                 <label class="col-sm-3 control-label">Template</label>
                                 <div id="radio">
-                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos" target="_blank">Full Version</a></p>
+                                    <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos/?v=1.1.0" target="_blank">Full Version</a></p>
                                 </div>
                             </div>
 
@@ -339,7 +341,7 @@
                                 <div class="form-group infobox_layout">
                                     <label class="col-sm-3 control-label" >Infobox Layout</label>
                                     <div id="radio">
-                                        <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos" target="_blank">Full Version</a></p>
+                                        <p style=" line-height: 28px;">Available in <a href="https://agilestorelocator.com/demos/?v=1.1.0" target="_blank">Full Version</a></p>
                                     </div>
                                 </div>
                             </div>
