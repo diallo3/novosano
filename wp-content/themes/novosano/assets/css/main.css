@@ -3229,6 +3229,8 @@ input.datepicker_with_icon {
       background-color: #bf0413;
       padding: 5px 15px 5px 5px;
       display: inline-block; }
+      .c-woo-product__media .price * {
+        color: #fff; }
   .c-woo-product__content--title {
     font-size: 0.875rem !important; }
 
@@ -3312,6 +3314,9 @@ input.datepicker_with_icon {
   display: inline-block; }
   .c-woo .quantity input {
     padding: .5rem; }
+
+.c-woo form label {
+  display: block; }
 
 .wc-tabs {
   margin: 0;

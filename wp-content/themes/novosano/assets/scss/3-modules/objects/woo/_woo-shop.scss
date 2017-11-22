@@ -27,6 +27,9 @@ $woo: c-woo-product;
 			background-color: $s-primary; 
 			padding: 5px 15px 5px 5px;
 			display: inline-block; 
+			* {
+				color: $white;
+			}
 		}
 	}
 	&__content {
