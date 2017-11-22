@@ -1,0 +1,21 @@
+/*--------------------------------
+  
+  Woocommerce - Alert Panels
+*/
+
+$wc: woocommerce;
+
+.#{$wc} {
+	&-error, &-info, &-message {
+		margin: 1em 0;
+		a {
+			color: $s-primary;
+		}
+	}
+	&-info {
+		border-top-color: $black;
+		&::before {
+			color: $black;
+		} 
+	}
+}

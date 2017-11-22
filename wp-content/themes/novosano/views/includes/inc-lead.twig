@@ -3,6 +3,7 @@
 {% set l_title  = acf.lead_title.value %}
 {% set l_entry  = acf.lead_entry.value %}
 
+{% if l_entry %}
 <div class="c-lead-container l-block">
 	<div class="l-wrap">
 		<div class="c-lead">
@@ -25,3 +26,4 @@
 		</div>
 	</div>
 </div>
+{% endif %}

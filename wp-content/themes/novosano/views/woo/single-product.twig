@@ -1,7 +1,7 @@
 {% extends 'layouts/base.twig' %}
 
 {% block content %}
-    {% include "/includes/inc-hero.twig" %}
+    {% include "/includes/inc-hero-store.twig" %}
 
     <div class="c-content__entry l-wrap">
         {% do action('woocommerce_before_single_product') %}
@@ -10,9 +10,8 @@
             <section class="c-article__content">
                 <div class="c-woo">
                     <div class="c-woo__images">
-                        {% do action('woocommerce_before_single_product_summary') %}
-
                         <img src="{{ post.thumbnail.src('shop_single') }}" />
+                        {# {% do action('woocommerce_before_single_product_summary') %} #}
                     </div>
 
                     <div class="c-woo__summary">

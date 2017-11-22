@@ -1,0 +1,24 @@
+{% extends 'layouts/base.twig' %}
+
+{% block content %}
+    {% include "/includes/inc-hero-store.twig" %}
+
+   
+    {# {% do action('woocommerce_before_main_content') %} #}
+
+    {# <div class="before-shop-loop">
+        {% do action('woocommerce_before_shop_loop') %}
+    </div> #}
+
+     <div class="c-content__entry l-wrap">
+        <div class="c-woo-product">
+            {% for post in products %}
+                {% include ["includes/inc-tease-product.twig"] %}
+            {% endfor %}
+        </div>
+    </div>
+
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
+
+{% endblock  %}

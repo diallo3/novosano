@@ -1,0 +1,72 @@
+/*--------------------------------
+  
+  Woocommerce - Buttons
+*/
+
+// add to cart
+$wc: woocommerce;
+.#{$wc}{
+	#respond input#submit, a.button, button.button, input.button {
+	    @include button(
+			$background: $white, 
+			$background-hover: $s-primary, 
+			$color: $black, 
+			$style: solid
+		);
+		font-size: rem-calc(12);
+		font-weight: 500; 
+		text-transform: uppercase;
+		border-color: $medium-gray; 
+		border-width: 1px; 
+		border-style: solid; 
+		border-radius: 20px; 
+		margin-bottom: 0; 
+		padding: .5em 1em;
+		width: auto; 
+		&:hover {
+			color: $white;
+		}
+	}
+
+	// alts
+	#respond input#submit.alt, a.button.alt, button.button.alt,input.button.alt {
+		@include button(
+			$background: transparent, 
+			$background-hover: $s-primary, 
+			$color: $s-primary, 
+			$style: solid
+		);
+		font-size: rem-calc(13);
+		font-weight: 700; 
+		text-transform: uppercase;
+		border-color: $s-primary; 
+		border-width: 1px; 
+		border-style: solid; 
+		border-radius: 50px; 
+		margin-bottom: 0; 
+		padding: 1em 2em;
+		width: auto; 
+		&:hover {
+			color: $white;
+		}
+		&.checkout-button {
+			@include button(
+				$background: $black, 
+				$background-hover: $s-primary, 
+				$color: $white, 
+				$style: solid
+			);
+			border-radius: 50px;
+		}
+	}
+	input.button.alt {
+		@include button(
+			$background: $black, 
+			$background-hover: $s-primary, 
+			$color: $white, 
+			$style: solid
+		);
+		border-radius: 50px;
+	}
+}
+

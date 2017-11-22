@@ -1,0 +1,11 @@
+{# vars #}
+{% set bck = TimberImage(acf.goal_banner.value).src %}
+<div class="c-hero c-hero--store" {% if bck %} style="background-image: url({{bck}}) {% endif %}">
+	<div class="o-ov"></div>
+	<article class="c-hero__entry">
+		<header class="c-hero__header">
+			<span class="c-hero__accent">The</span>
+			<h1 class="c-hero__title">Novosano Store</h1>
+		</header>
+	</article>
+</div>

@@ -3175,6 +3175,65 @@ input.datepicker_with_icon {
 */
 /*--------------------------------
   
+  Woocommerce - Shop
+*/
+.c-woo-product {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 2em 0; }
+  .c-woo-product:before, .c-woo-product:after {
+    content: "";
+    display: table; }
+  .c-woo-product:after {
+    clear: both; }
+  .c-woo-product__tease {
+    width: 100%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      .c-woo-product__tease {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    .c-woo-product__tease:last-child:not(:first-child) {
+      float: right; }
+    @media print, screen and (min-width: 64em) {
+      .c-woo-product__tease {
+        width: 33.33333%;
+        float: left;
+        padding-right: 0.625rem;
+        padding-left: 0.625rem; } }
+  @media print, screen and (min-width: 64em) and (min-width: 40em) {
+    .c-woo-product__tease {
+      padding-right: 0.9375rem;
+      padding-left: 0.9375rem; } }
+    @media print, screen and (min-width: 64em) {
+        .c-woo-product__tease:last-child:not(:first-child) {
+          float: right; } }
+  .c-woo-product__media {
+    text-align: center;
+    border: 1px solid #e6e6e6;
+    padding: 1rem;
+    position: relative; }
+    .c-woo-product__media .price {
+      margin: auto;
+      position: absolute;
+      top: 0.625rem;
+      right: 0;
+      bottom: auto;
+      left: auto;
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      background-color: #bf0413;
+      padding: 5px 15px 5px 5px;
+      display: inline-block; }
+  .c-woo-product__content--title {
+    font-size: 0.875rem !important; }
+
+/*--------------------------------
+  
   Woocommerce - Single
 */
 .c-woo__images {
@@ -3253,6 +3312,177 @@ input.datepicker_with_icon {
   display: inline-block; }
   .c-woo .quantity input {
     padding: .5rem; }
+
+.wc-tabs {
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  list-style-type: none;
+  border-width: 0 0 1px;
+  padding: 0; }
+  .wc-tabs:before, .wc-tabs:after {
+    content: "";
+    display: table; }
+  .wc-tabs:after {
+    clear: both; }
+  .wc-tabs [class*="_tab"] {
+    float: left; }
+    .wc-tabs [class*="_tab"] > a {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      font-size: 0.75rem;
+      line-height: 1;
+      color: #1779ba; }
+      .wc-tabs [class*="_tab"] > a:hover {
+        background: #fff;
+        color: #1468a0; }
+      .wc-tabs [class*="_tab"] > a:focus, .wc-tabs [class*="_tab"] > a[aria-selected='true'] {
+        background: #e6e6e6;
+        color: #1779ba; }
+    .wc-tabs [class*="_tab"].active {
+      border: 1px solid #e6e6e6;
+      border-bottom-color: #fff;
+      position: relative;
+      top: 1px; }
+      .wc-tabs [class*="_tab"].active a:focus {
+        color: #bf0413;
+        background-color: #fff; }
+
+.woocommerce-Tabs-panel {
+  border: 1px solid #e6e6e6;
+  border-top: 0;
+  background: #fff;
+  color: foreground(#fff, #2199e8);
+  transition: all 0.5s ease;
+  margin-bottom: 3em;
+  padding: 2em; }
+
+/*--------------------------------
+  
+  Woocommerce - Buttons
+*/
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  color: #0d0d0d;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-color: #cacaca;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 20px;
+  margin-bottom: 0;
+  padding: .5em 1em;
+  width: auto; }
+  [data-whatinput='mouse'] .woocommerce #respond input#submit, [data-whatinput='mouse'] .woocommerce a.button, [data-whatinput='mouse'] .woocommerce button.button, [data-whatinput='mouse'] .woocommerce input.button {
+    outline: 0; }
+  .woocommerce #respond input#submit:hover, .woocommerce #respond input#submit:focus, .woocommerce a.button:hover, .woocommerce a.button:focus, .woocommerce button.button:hover, .woocommerce button.button:focus, .woocommerce input.button:hover, .woocommerce input.button:focus {
+    background-color: #bf0413;
+    color: #0d0d0d; }
+  .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
+    color: #fff; }
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: transparent;
+  color: #bf0413;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-color: #bf0413;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50px;
+  margin-bottom: 0;
+  padding: 1em 2em;
+  width: auto; }
+  [data-whatinput='mouse'] .woocommerce #respond input#submit.alt, [data-whatinput='mouse'] .woocommerce a.button.alt, [data-whatinput='mouse'] .woocommerce button.button.alt, [data-whatinput='mouse'] .woocommerce input.button.alt {
+    outline: 0; }
+  .woocommerce #respond input#submit.alt:hover, .woocommerce #respond input#submit.alt:focus, .woocommerce a.button.alt:hover, .woocommerce a.button.alt:focus, .woocommerce button.button.alt:hover, .woocommerce button.button.alt:focus, .woocommerce input.button.alt:hover, .woocommerce input.button.alt:focus {
+    background-color: #bf0413;
+    color: #bf0413; }
+  .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+    color: #fff; }
+  .woocommerce #respond input#submit.alt.checkout-button, .woocommerce a.button.alt.checkout-button, .woocommerce button.button.alt.checkout-button, .woocommerce input.button.alt.checkout-button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #0d0d0d;
+    color: #fff;
+    border-radius: 50px; }
+    [data-whatinput='mouse'] .woocommerce #respond input#submit.alt.checkout-button, [data-whatinput='mouse'] .woocommerce a.button.alt.checkout-button, [data-whatinput='mouse'] .woocommerce button.button.alt.checkout-button, [data-whatinput='mouse'] .woocommerce input.button.alt.checkout-button {
+      outline: 0; }
+    .woocommerce #respond input#submit.alt.checkout-button:hover, .woocommerce #respond input#submit.alt.checkout-button:focus, .woocommerce a.button.alt.checkout-button:hover, .woocommerce a.button.alt.checkout-button:focus, .woocommerce button.button.alt.checkout-button:hover, .woocommerce button.button.alt.checkout-button:focus, .woocommerce input.button.alt.checkout-button:hover, .woocommerce input.button.alt.checkout-button:focus {
+      background-color: #bf0413;
+      color: #fff; }
+
+.woocommerce input.button.alt {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem 0;
+  padding: 0.85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  font-size: 0.9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  background-color: #0d0d0d;
+  color: #fff;
+  border-radius: 50px; }
+  [data-whatinput='mouse'] .woocommerce input.button.alt {
+    outline: 0; }
+  .woocommerce input.button.alt:hover, .woocommerce input.button.alt:focus {
+    background-color: #bf0413;
+    color: #fff; }
+
+/*--------------------------------
+  
+  Woocommerce - Alert Panels
+*/
+.woocommerce-error, .woocommerce-info, .woocommerce-message {
+  margin: 1em 0; }
+  .woocommerce-error a, .woocommerce-info a, .woocommerce-message a {
+    color: #bf0413; }
+
+.woocommerce-info {
+  border-top-color: #0d0d0d; }
+  .woocommerce-info::before {
+    color: #0d0d0d; }
 
 .o-sticky-bar {
   background-color: transparent;

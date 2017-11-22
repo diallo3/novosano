@@ -28,3 +28,29 @@ $woo: c-woo;
 		}
 	}
 }
+
+// tabs 
+.wc-tabs {
+	@include tabs-container;
+	border-width: 0 0 1px;
+	padding: 0;
+	[class*="_tab"] {
+		@include tabs-title;
+		&.active {
+			border: 1px solid $light-gray; 
+			border-bottom-color: $white;
+    		position: relative;
+    		top: 1px;
+    		a:focus {
+    			color: $s-primary;
+    			background-color: $white; 
+    		}
+		}
+	}
+}
+
+.woocommerce-Tabs-panel {
+	@include tabs-content;
+	margin-bottom: 3em; 
+	padding: 2em;
+}

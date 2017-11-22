@@ -1,0 +1,37 @@
+/*--------------------------------
+  
+  Woocommerce - Shop
+*/
+
+$woo: c-woo-product;
+
+.#{$woo} {
+	@include grid-row;
+	padding: 2em 0; 
+	&__tease {
+		@include grid-col(12);
+		@include breakpoint(large) {
+			@include grid-col(4);
+		}
+	}
+	&__media {
+		text-align: center;
+		border: 1px solid $light-gray; 
+		padding: 1rem;
+		position: relative;
+		.price {
+			@include abs-pos($t:rem-calc(10), $r:0);
+			color: $white;
+			font-size: rem-calc(14);
+			font-weight: 700; 
+			background-color: $s-primary; 
+			padding: 5px 15px 5px 5px;
+			display: inline-block; 
+		}
+	}
+	&__content {
+		&--title {
+			font-size: rem-calc(14) !important; 
+		}
+	}
+}
