@@ -3,6 +3,9 @@
 
 {% if type.value == 'vid' %}
 	{% include "/includes/prt-hero-vid.twig" %}
+{% elseif type.value == 'sld' %}
+	{% include "/includes/prt-hero-slider.twig" %}	
 {% else %}
 	{% include "/includes/prt-hero-img.twig" %}
 {% endif %}
+

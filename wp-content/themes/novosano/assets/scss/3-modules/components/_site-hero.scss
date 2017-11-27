@@ -5,6 +5,7 @@
 
 
 $hero: c-hero;
+$orbit: c-orbit;
 $type: post-type-archive;
 
 .#{$hero} {
@@ -125,5 +126,21 @@ $type: post-type-archive;
 		.#{$hero} {
 			background-image: url(#{$imgPath}/bck-hero-main.jpg) !important; 
 		}
+	}
+}
+
+.#{$orbit} {
+	@include orbit-wrapper;
+	position: absolute;
+	width: 100%;
+	&__container {
+		@include orbit-container;
+		padding: 0;
+	}
+	&__slide {
+		@include orbit-slide;
+	}
+	&__img {
+		@include orbit-image;
 	}
 }

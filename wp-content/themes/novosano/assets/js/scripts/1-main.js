@@ -20,6 +20,15 @@
             animationEasing: 'linear',
             contentScroll: false
         });
+        var mainSlider = new Foundation.Orbit($('#slideHeader'), {
+            containerClass: 'c-orbit__container',
+            slideClass: 'c-orbit__slide',
+            timerDelay: 3000,
+            animInFromRight: 'fade-in',
+            animOutToRight: 'fade-out',
+            animInFromLeft: 'fade-in',
+            animOutToLeft: 'fade-out'
+        });
 
         $('#faq li:first-of-type').addClass('is-active').children('[data-tab-content]').show();
 

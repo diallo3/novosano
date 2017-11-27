@@ -17,7 +17,6 @@
             },
             "choices": {
                 "vid": "Video",
-                "car": "Carousel",
                 "img": "Image"
             },
             "allow_null": 0,
@@ -539,5 +538,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1510779329
+    "modified": 1511811586
 }
