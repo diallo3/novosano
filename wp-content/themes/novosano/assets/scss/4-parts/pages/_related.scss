@@ -72,6 +72,9 @@ $related: c-relationship;
 		font-size: rem-calc(14); 
 		font-weight: 700;
 		font-style: italic; 
+		@include breakpoint(large) {
+			max-width: 60%; 
+		}
 	}
 
 	&__block {
@@ -88,6 +91,20 @@ $related: c-relationship;
 	&__type {
 		text-align: center;
 		background: url('#{$imgPath}/icon-dots.svg') no-repeat 50% 100%;
+	}
+	&--index {
+		.#{$related} {
+			&__item {
+				margin-bottom: 1.5em; 
+				padding-bottom: 1rem; 
+				height: auto;
+				min-height: 280px;
+			}
+			&__entry {
+				height: auto;
+			}
+		}
+			
 	}
 
 }

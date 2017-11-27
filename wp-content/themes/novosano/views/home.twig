@@ -14,9 +14,11 @@
 		        		<div class="c-relationship__content">
 
 		        			<h4 class="c-relationship__title">
-		        				{# <span class="">{{ post.terms('categories')|first }}</span> #}
-		        				{% for term in post.terms %}
+		        				{# <span class="o-term"><a href="{{ term.link }}" class="o-term__link">{{ post.terms('category') | first }}</a></span> #}
+		        				{% for term in post.terms('category') %}
+		        					{% if loop.first %}
 								    <span class="o-term"><a href="{{ term.link }}" class="o-term__link">{{ term.name }}</a></span>
+								    {% endif %}
 								{% endfor %}
 		        				<a href="{{post.link}}" class="c-relationship__link">{{post.title}}</a>
 		        			</h4>

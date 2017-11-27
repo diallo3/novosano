@@ -4118,6 +4118,9 @@ input.datepicker_with_icon {
     font-size: 0.875rem;
     font-weight: 700;
     font-style: italic; }
+    @media print, screen and (min-width: 64em) {
+      .c-relationship__tag {
+        max-width: 60%; } }
   .c-relationship__block {
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 1.875rem;
@@ -4134,6 +4137,13 @@ input.datepicker_with_icon {
   .c-relationship__type {
     text-align: center;
     background: url("../images/icon-dots.svg") no-repeat 50% 100%; }
+  .c-relationship--index .c-relationship__item {
+    margin-bottom: 1.5em;
+    padding-bottom: 1rem;
+    height: auto;
+    min-height: 280px; }
+  .c-relationship--index .c-relationship__entry {
+    height: auto; }
 
 /*--------------------------------
   
