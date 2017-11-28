@@ -37,6 +37,14 @@ $type: post-type-archive;
 		.#{$hero}__entry {
 			padding-top: 10rem;
 		}
+		&.slider {
+			.#{$hero}__entry {
+				@include breakpoint(large) {
+					@include center-align($ver: true, $hor: true, $pos: absolute);
+					padding-top: 0;
+				}
+			}
+		}
 	}
 	&__header {
 		@include center-block;

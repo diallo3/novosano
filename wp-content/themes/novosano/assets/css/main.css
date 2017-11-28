@@ -1865,6 +1865,13 @@ q {
         height: auto; } }
     .c-hero--main .c-hero__entry {
       padding-top: 10rem; }
+    @media print, screen and (min-width: 64em) {
+      .c-hero--main.slider .c-hero__entry {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        padding-top: 0; } }
   .c-hero__header {
     margin-right: auto;
     margin-left: auto;
