@@ -1,13 +1,9 @@
 <div class="c-hero c-hero--main">
-	<div id="slideHeader" class="c-orbit" role="region" arial-lable="">
-	 	<ul class="c-orbit__container">
-	 		{% for item in post.get_field('hero_slider') %}
-	 		<li class="c-orbit__slide {% if loop.first %} is-active {% endif %}">
-	 			<figure class="c-orbit__figure"><img src="{{ TimberImage(item.slide_image).src }}" alt="" class="c-orbit__img"></figure>
-	 		</li>
-	 		{% endfor %}
-	 	</ul>
-	</div>
+	<div class="c-orbit owl-carousel">
+ 		{% for item in post.get_field('hero_slider') %}
+ 			<img src="{{ TimberImage(item.slide_image).src }}" alt="" class="c-orbit__img">
+ 		{% endfor %}
+ 	</div>
 	<div class="o-ov"></div>
 	{% include "/includes/prt-hero-entry.twig" %}
 </div>

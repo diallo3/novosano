@@ -6,24 +6,36 @@
 $pg: c-pagination;
 
 .#{$pg} {
-	background: url('#{$imgPath}/icon-dots.svg') no-repeat 50% 50%;
-	border-top: 1px solid $medium-gray; 
-	margin: 3em 0 1em;
-	&__nav {
-		@include grid-row;
-		padding: 1em 0; 
-	}
+	background: url('#{$imgPath}/icon-dots.svg') no-repeat 50% 100%;
+	margin: 0 0 2em;
+	padding-bottom: .5em; 
 	&__prev, &__next {
-		@include grid-col(30%);
-		vertical-align: baseline; 
-		a {
-			display: table;
+		.invisible {
+			cursor: not-allowed;
+			opacity: .5; 
+			&:hover {
+				background: none;
+			}
 		}
 	}
-
-	&__next {
+	&__pages {
+		@include pagination-container;
+		text-align: center;
+		padding: 0;
+		.current {
+			color: $white;
+			background-color: $s-primary;
+			border-radius: 50%;  
+			padding: .1875rem .625rem;
+			display: inline-block;
+		}
 		a {
-			float: right;
+			@include pagination-item-current;
+			background: none;
+			&:hover {
+				color: $s-primary;
+				background: none;
+			}
 		}
 	}
 }

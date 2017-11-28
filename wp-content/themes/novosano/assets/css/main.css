@@ -1855,8 +1855,6 @@ q {
   display: block;
   position: relative;
   overflow: hidden; }
-  .c-hero * {
-    position: relative; }
   .c-hero--main {
     padding: 0;
     height: auto;
@@ -1891,7 +1889,8 @@ q {
     padding-left: 0.625rem;
     margin-right: auto;
     margin-left: auto;
-    position: relative; }
+    position: relative;
+    z-index: 3; }
     .c-hero .c-hero__entry:before, .c-hero .c-hero__entry:after {
       content: "";
       display: table; }
@@ -1910,6 +1909,8 @@ q {
     .c-hero .c-hero__entry, .c-hero .c-hero__entry:last-child:not(:first-child) {
       float: none;
       clear: both; }
+    .c-hero .c-hero__entry hr {
+      margin-bottom: .5em; }
   .c-hero .c-hero__accent {
     margin: 0 auto;
     overflow: hidden;
@@ -1985,7 +1986,8 @@ q {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5); }
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2; }
   .o-ov--vid {
     background: rgba(0, 0, 0, 0.6); }
 
@@ -2004,25 +2006,15 @@ q {
   background-image: url(../images/bck-hero-main.jpg) !important; }
 
 .c-orbit {
-  position: relative;
-  position: absolute;
-  width: 100%; }
-  .c-orbit__container {
-    position: relative;
-    height: 0;
-    margin: 0;
-    list-style: none;
-    overflow: hidden;
-    padding: 0; }
-  .c-orbit__slide {
-    width: 100%; }
-    .c-orbit__slide.no-motionui.is-active {
-      top: 0;
-      left: 0; }
+  background-color: #0d0d0d;
+  position: absolute !important;
+  z-index: 1; }
   .c-orbit__img {
-    width: 100%;
-    max-width: 100%;
-    margin: 0; }
+    width: 100%; }
+  .c-orbit .owl-item {
+    display: block;
+    position: relative;
+    min-height: 1px; }
 
 /*--------------------------------
   
@@ -2457,35 +2449,58 @@ q {
   Pagination
 */
 .c-pagination {
-  background: url("../images/icon-dots.svg") no-repeat 50% 50%;
-  border-top: 1px solid #cacaca;
-  margin: 3em 0 1em; }
-  .c-pagination__nav {
-    max-width: 75rem;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 1em 0; }
-    .c-pagination__nav:before, .c-pagination__nav:after {
+  background: url("../images/icon-dots.svg") no-repeat 50% 100%;
+  margin: 0 0 2em;
+  padding-bottom: .5em; }
+  .c-pagination__prev .invisible, .c-pagination__next .invisible {
+    cursor: not-allowed;
+    opacity: .5; }
+    .c-pagination__prev .invisible:hover, .c-pagination__next .invisible:hover {
+      background: none; }
+  .c-pagination__pages {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    padding: 0; }
+    .c-pagination__pages:before, .c-pagination__pages:after {
       content: "";
       display: table; }
-    .c-pagination__nav:after {
+    .c-pagination__pages:after {
       clear: both; }
-  .c-pagination__prev, .c-pagination__next {
-    width: 30%;
-    float: left;
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-    vertical-align: baseline; }
-    @media print, screen and (min-width: 40em) {
-      .c-pagination__prev, .c-pagination__next {
-        padding-right: 0.9375rem;
-        padding-left: 0.9375rem; } }
-    .c-pagination__prev:last-child:not(:first-child), .c-pagination__next:last-child:not(:first-child) {
-      float: right; }
-    .c-pagination__prev a, .c-pagination__next a {
-      display: table; }
-  .c-pagination__next a {
-    float: right; }
+    .c-pagination__pages li {
+      margin-right: 0.0625rem;
+      border-radius: 0;
+      font-size: 0.875rem;
+      display: none; }
+      .c-pagination__pages li:last-child, .c-pagination__pages li:first-child {
+        display: inline-block; }
+      @media print, screen and (min-width: 40em) {
+        .c-pagination__pages li {
+          display: inline-block; } }
+    .c-pagination__pages a,
+    .c-pagination__pages button {
+      display: block;
+      padding: 0.1875rem 0.625rem;
+      border-radius: 0;
+      color: #0d0d0d; }
+      .c-pagination__pages a:hover,
+      .c-pagination__pages button:hover {
+        background: #e6e6e6; }
+    .c-pagination__pages .current {
+      color: #fff;
+      background-color: #bf0413;
+      border-radius: 50%;
+      padding: .1875rem .625rem;
+      display: inline-block; }
+    .c-pagination__pages a {
+      padding: 0.1875rem 0.625rem;
+      background: #2199e8;
+      color: foreground(#2199e8);
+      cursor: default;
+      background: none; }
+      .c-pagination__pages a:hover {
+        color: #bf0413;
+        background: none; }
 
 .o-pg__title, .o-pg__dir {
   vertical-align: top; }

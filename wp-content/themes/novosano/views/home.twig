@@ -7,14 +7,12 @@
 		<article class="c-article post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<div class="c-relationship c-relationship--index">
 				{% for post in posts %}
-				{% set bck = TimberImage(acf.hero_background.value).src %}
-				<section class="c-relationship__item" style="background-image: url('{{bck}}')">
+				<section class="c-relationship__item" style="background-image: url('{{TimberImage(post.get_field('hero_background')).src}}')">
 					<div class="ov"></div>
 					<div class="c-relationship__entry">
 		        		<div class="c-relationship__content">
 
 		        			<h4 class="c-relationship__title">
-		        				{# <span class="o-term"><a href="{{ term.link }}" class="o-term__link">{{ post.terms('category') | first }}</a></span> #}
 		        				{% for term in post.terms('category') %}
 		        					{% if loop.first %}
 								    <span class="o-term"><a href="{{ term.link }}" class="o-term__link">{{ term.name }}</a></span>
@@ -34,25 +32,7 @@
 				{% endfor %}
 			</div>
 
-			<div class="tool-pagination">
-			    {% if posts.pagination.prev %}
-			        <a href="{{posts.pagination.prev.link}}" class="prev {{posts.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
-			    {% endif %}
-			    <ul class="pages">
-			        {% for page in posts.pagination.pages %}
-			            <li>
-			                {% if page.link %}
-			                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
-			                {% else %}
-			                    <span class="{{page.class}}">{{page.title}}</span>
-			                {% endif %}
-			            </li>
-			        {% endfor %}
-			    </ul>
-			    {% if posts.pagination.next %}
-			        <a href="{{posts.pagination.next.link}}" class="next {{posts.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
-			    {% endif %}
-			</div>
+			{% include "includes/inc-pagination.twig" %}
 
 			{% include "includes/inc-end-cap.twig" %}
 		</article>

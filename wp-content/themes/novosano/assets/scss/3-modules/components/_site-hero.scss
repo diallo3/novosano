@@ -23,9 +23,9 @@ $type: post-type-archive;
 	display: block;
 	position: relative;
 	overflow: hidden;
-	* {
-		position: relative;
-	}
+	// * {
+	// 	position: relative;
+	// }
 	&--main {
 		padding: 0;
 		height: auto;
@@ -54,7 +54,10 @@ $type: post-type-archive;
 		@include grid-col-end ;
 		@include grid-col-pos(center);
 		position: relative;
-		
+		z-index: 3;
+		hr {
+			margin-bottom: .5em; 
+		}
 	}
 	.#{$hero}__accent {
 		@include heading-line($white);
@@ -104,6 +107,7 @@ $type: post-type-archive;
 .o-ov {
 	@include abs-pos($t:0, $r:0, $b:0, $l:0);
 	background: black(0.5); 
+	z-index: 2;
 	&--vid {
 		background: black(0.6); 
 	}
@@ -130,17 +134,16 @@ $type: post-type-archive;
 }
 
 .#{$orbit} {
-	@include orbit-wrapper;
-	position: absolute;
-	width: 100%;
-	&__container {
-		@include orbit-container;
-		padding: 0;
-	}
-	&__slide {
-		@include orbit-slide;
-	}
+	background-color: $black; 
+	position: absolute !important;
+    z-index: 1;
 	&__img {
-		@include orbit-image;
+		width: 100%; 
+	}
+
+	.owl-item {
+		display: block;
+		position: relative;
+    	min-height: 1px;
 	}
 }

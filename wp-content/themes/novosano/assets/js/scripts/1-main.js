@@ -20,15 +20,6 @@
             animationEasing: 'linear',
             contentScroll: false
         });
-        var mainSlider = new Foundation.Orbit($('#slideHeader'), {
-            containerClass: 'c-orbit__container',
-            slideClass: 'c-orbit__slide',
-            timerDelay: 3000,
-            animInFromRight: 'fade-in',
-            animOutToRight: 'fade-out',
-            animInFromLeft: 'fade-in',
-            animOutToLeft: 'fade-out'
-        });
 
         $('#faq li:first-of-type').addClass('is-active').children('[data-tab-content]').show();
 
@@ -60,7 +51,7 @@
         }
         stickyHeader();
 
-        $('.owl-carousel').owlCarousel({
+        $('.o-slide').owlCarousel({
             autoplay: true,
             loop: true,
             margin: 20,
@@ -76,6 +67,15 @@
                     items: 2,
                 }
             }
+        });
+
+        $('.c-orbit').owlCarousel({
+            autoplay: true,
+            loop: true,
+            margin: 1,
+            nav: false,
+            dots: false,
+            items: 1
         });
 
         /************************************************************

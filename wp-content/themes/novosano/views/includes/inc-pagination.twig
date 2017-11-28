@@ -1,0 +1,21 @@
+<div class="c-pagination">
+	<ul class="c-pagination__pages">
+        <li class="c-pagination__prev">
+        	<a href="{{pagination.prev.link}}" class="prev {{pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+        </li>
+    
+        {% for page in pagination.pages %}
+            
+            {% if page.link %}
+                <li class="c-pagination__item"><a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a></li>
+            {% else %}
+                <li class="c-pagination__current"><span class="{{page.class}}">{{page.title}}</span></li>
+            {% endif %}
+            
+        {% endfor %}
+
+    	<li class="c-pagination__next">
+	        <a href="{{pagination.next.link}}" class="next {{pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+	    </li>
+    </ul>
+</div>
