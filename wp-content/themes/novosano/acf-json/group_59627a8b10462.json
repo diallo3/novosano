@@ -7,7 +7,6 @@
             "label": "Title Accent",
             "name": "title_accent",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -27,7 +26,6 @@
             "label": "Alternative Title",
             "name": "alternative_title",
             "type": "text",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -47,7 +45,6 @@
             "label": "Hero Background",
             "name": "hero_background",
             "type": "image",
-            "value": null,
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -75,13 +72,6 @@
                 "operator": "==",
                 "value": "post"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "transition"
-            }
         ]
     ],
     "menu_order": 0,
@@ -101,5 +91,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507915310
+    "modified": 1511973891
 }

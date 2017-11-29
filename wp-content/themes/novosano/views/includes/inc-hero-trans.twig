@@ -1,24 +1,8 @@
 {# vars #}
-{% set bck = TimberImage(acf.hero_background.value).src %}
-{% set h_title  = acf.alternative_title.value %} 
-<div class="c-hero c-hero--service" {% if bck %} style="background-image: url({{bck}}) {% endif %}">
-	<div class="o-ov"></div>
-	<article class="c-hero__entry">
-		<header class="c-hero__header">
-			<hr class="c-hero__line">
-			<h1 class="c-hero__title">
-				{% if h_title %}
-					{{h_title}}
-				{% else %}
-					{{post.title}}
-				{% endif %}
-			</h1>
-		</header>
-		
-		{% if tag %}
-			<div class="c-hero__tag">
-				<p>{{tag}}</p>
-			</div>
-		{% endif %}
-	</article>
-</div>
+{% set type = acf.hero_type.value %}
+	
+{% if type.value == 'sld' %}
+	{% include "/includes/prt-hero-slider.twig" %}	
+{% else %}
+	{% include "/includes/prt-hero-img.twig" %}
+{% endif %}
