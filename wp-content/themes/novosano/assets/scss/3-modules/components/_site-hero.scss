@@ -29,7 +29,7 @@ $type: post-type-archive;
 	&--main {
 		padding: 0;
 		height: auto;
-		min-height: 100vh;
+		min-height: 85vh;
 		position: relative;
 		@include breakpoint(small only) {
 			height: auto; 

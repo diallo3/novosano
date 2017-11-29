@@ -1858,7 +1858,7 @@ q {
   .c-hero--main {
     padding: 0;
     height: auto;
-    min-height: 100vh;
+    min-height: 85vh;
     position: relative; }
     @media screen and (max-width: 39.9375em) {
       .c-hero--main {
