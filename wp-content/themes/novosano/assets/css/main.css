@@ -4524,7 +4524,8 @@ input.datepicker_with_icon {
       width: auto !important;
       display: inline-block; }
   .hbspt-form fieldset {
-    margin: 0 auto !important; }
+    margin: 0 auto !important;
+    max-width: 40rem !important; }
     .hbspt-form fieldset ul.hs-error-msgs {
       display: none !important; }
     .hbspt-form fieldset input {
@@ -4605,8 +4606,8 @@ input.datepicker_with_icon {
       line-height: 1;
       text-align: center;
       text-transform: uppercase;
-      background: #bf0413;
-      border: 1px solid #bf0413;
+      background: #0d0d0d;
+      border: 1px solid #0d0d0d;
       border-radius: 50px;
       display: inline-block;
       vertical-align: middle;
@@ -4616,6 +4617,6 @@ input.datepicker_with_icon {
       -webkit-appearance: none;
       transition: background-color .25s ease-out,color .25s ease-out; }
       .hbspt-form .hs_submit input:hover {
-        background: #0d0d0d;
-        border-color: #0d0d0d;
+        background: #bf0413;
+        border-color: #bf0413;
         cursor: pointer !important; }

@@ -50,7 +50,8 @@
     
 
     fieldset { 
-        margin: 0 auto !important; 
+        margin: 0 auto !important;
+        max-width: 40rem !important;  
 
         ul.hs-error-msgs { 
             display: none !important; 
@@ -144,8 +145,8 @@
         line-height: 1;
         text-align: center;
         text-transform: uppercase;
-        background: $s-primary;
-        border: 1px solid $s-primary;
+        background: $black;
+        border: 1px solid $black;
         border-radius: 50px;
         display: inline-block;
         vertical-align: middle;
@@ -155,8 +156,8 @@
         -webkit-appearance: none;
         transition: background-color .25s ease-out,color .25s ease-out;
       &:hover { 
-        background: $black;
-        border-color: $black;
+        background: $s-primary;
+        border-color: $s-primary;
         cursor: pointer !important;
       }
     }
