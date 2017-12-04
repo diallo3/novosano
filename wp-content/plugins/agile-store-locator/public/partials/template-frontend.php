@@ -1,10 +1,4 @@
 
-<script type="text/javascript">
-  var asl_configuration = <?php echo json_encode($all_configs); ?>,
-    asl_categories      = <?php echo json_encode($all_categories); ?>,
-		asl_markers	        = [];
-</script>
-
 <div id="asl-storelocator" class="container no-pad storelocator-main asl-p-cont asl-bg-0 asl-text-0">
   <div class="row">
       <div class="col-md-12" id="filter-options">
@@ -16,7 +10,7 @@
       <div class="col-xs-12 inside search_filter">
         <p><?php echo __( 'Search Location', 'asl_locator') ?></p>
         <div class="asl-store-search">
-            <input type="text" id="auto-complete-search" class="form-control" placeholder="">
+            <input type="text" id="auto-complete-search" class="form-control" placeholder="<?php echo __('Type your Address', 'asl_locator') ?>">
             <span><i class="glyphicon glyphicon-screenshot" title="Current Location"></i></span>
         </div>
         <div class="Num_of_store">
@@ -95,7 +89,9 @@
     </div>
   	<div class="clear"></div>
   	<div class="col-md-12 col-xs-12 addr-sec">
-    	
+    	{{if description}}
+      <p class="p-area" style="margin-bottom: 10px">{{:description}}</p>
+      {{/if}}
     	<p class="p-area"><span class="glyphicon glyphicon-map-marker"></span>{{:address}}</p>
       {{if phone}}
     	<p class="p-area"><span class="glyphicon glyphicon-earphone"></span> <?php echo __( 'Phone','asl_locator') ?>: {{:phone}}</p>
@@ -133,8 +129,22 @@
   <h3>{{:title}}</h3>
   <div class="infowindowContent">
     <div class="info-addr">
+      {{if description}}
+      <div class="address" style="margin-bottom: 10px">{{:description}}</div>
+      {{/if}}
       <div class="address"><span class="glyphicon glyphicon-map-marker"></span>{{:address}}</div>
       <div class="phone"><span class="glyphicon glyphicon-earphone"></span><b>Phone: </b><a href="tel:{{:phone}}">{{:phone}}</a></div>
+      {{if c_names}}
+      <div class="p-category"><span class="glyphicon glyphicon-tags"></span> {{:c_names}}</div>
+      {{/if}}
+      {{if open_hours}}
+      <div class="p-time"><span class="glyphicon glyphicon-time"></span> {{:open_hours}}</div>
+      {{/if}}
+      {{if dist_str}}
+        <div class="col-xs-12">
+            <a class="s-distance pull-right"><?php echo __( 'Distance','asl_locator') ?>: {{:dist_str}}</a>
+        </div>
+      {{/if}}
     </div>
   <div class="asl-buttons"></div>
 </div><div class="arrow-down"></div>

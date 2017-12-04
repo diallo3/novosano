@@ -99,6 +99,9 @@ $type: post-type-archive;
 			color: $white;
 		}
 	}
+	.#{$hero}__cta {
+		padding-bottom: 3em; 
+	}
 	.#{$hero}__tag {
 		@include header-size(h6);
 		color: $white;

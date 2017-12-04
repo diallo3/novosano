@@ -4,13 +4,13 @@
   <div class="col-md-12">
     <h3  class="alert alert-info head-1">Agile Store Locator Dashboard</h3>
     <div class="alert alert-info" role="alert">
-      Support Forum for Bugs or Troubleshooting. <a target="_blank" href="https://wordpress.org/support/plugin/agile-store-locator">Create a Ticket</a> 
+      Simply add [ASL_STORELOCATOR] shortcode on your <a href="post-new.php?post_type=page">page</a> or <a href="post-new.php">post</a> to display Store Locator, Support Forum for Bugs or Troubleshooting <a target="_blank" href="https://wordpress.org/support/plugin/agile-store-locator">Create a Ticket</a> 
     </div>
     <div class="alert alert-info" role="alert">
-      Please visit the documentation page to explore all options. <a target="_blank" href="https://agilestorelocator.com?v=1.1.0">Agile Store Locator</a> 
+      Upgrade to PRO VERSION, without any hassle, please visit the demo page to explore all options of <a target="_blank" href="https://agilestorelocator.com?v=1.1.0">Agile Store Locator</a> 
     </div>
     <?php if(!$all_configs['api_key']): ?>
-        <h3  class="alert alert-danger" style="font-size: 14px">Google API KEY is missing, the Map Search and Direction will not work without it, Please add Google API KEY. <a href="https://agilestorelocator.com/blog/enable-google-maps-api-agile-store-locator-plugin/?v=1.0.3" target="_blank">How to Add API Key?</a></h3>
+        <h3  class="alert alert-danger" style="font-size: 14px">Your Google API KEY is missing, the Map Search and Direction will not work without key, Please add Google MAPS API KEY in ASL Settings. <a href="https://agilestorelocator.com/blog/enable-google-maps-api-agile-store-locator-plugin/?v=1.0.3" target="_blank">How to Add API Key?</a></h3>
       <?php endif; ?>
     <div class="dashboard-area">
       <div class="row">
@@ -47,7 +47,7 @@
        <div class="tab-pane fade in active" role="tabpanel" id="amaps-analytics" aria-labelledby="amaps-analytics">
         <div class="row">
           <div class="col-md-12">
-            <p class="alert alert-info" style="margin-top: 30px">Analytics with Bar Chart, Top Views and Top Stores is added in <a href="https://agilestorelocator.com/demos" target="_blank">PRO version</a>.</p>
+            <p class="alert alert-info" style="margin-top: 30px">Analytics with Bar Chart, Top Views and Top Stores is added in <a href="https://agilestorelocator.com/demos/?v=1.1.0" target="_blank">PRO version</a>.</p>
             <img src="<?php echo AGILESTORELOCATOR_URL_PATH.'admin/images/searches.png' ?>" style="max-width:100%;margin-top: 0px">
           </div>
         </div>

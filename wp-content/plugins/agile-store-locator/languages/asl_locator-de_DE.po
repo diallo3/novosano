@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agile Store Locator\n"
-"POT-Creation-Date: 2017-11-17 19:41+0500\n"
-"PO-Revision-Date: 2017-11-17 19:41+0500\n"
+"POT-Creation-Date: 2017-11-30 13:54+0500\n"
+"PO-Revision-Date: 2017-11-30 13:54+0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -20,89 +20,94 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: public/class-agile-store-locator-public.php:138
-#: public/partials/template-frontend.php:43
-#: public/partials/template-frontend.php:118
+#: public/class-agile-store-locator-public.php:140
+#: public/partials/template-frontend.php:37
+#: public/partials/template-frontend.php:114
 msgid "Directions"
 msgstr "Richtungen"
 
-#: public/class-agile-store-locator-public.php:139
+#: public/class-agile-store-locator-public.php:141
 msgid "Zoom Here"
 msgstr "Zoom hier"
 
-#: public/class-agile-store-locator-public.php:140
+#: public/class-agile-store-locator-public.php:142
 msgid "Website"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:141
+#: public/class-agile-store-locator-public.php:143
 msgid "Select Option"
 msgstr "Wähle eine Option"
 
-#: public/class-agile-store-locator-public.php:142
+#: public/class-agile-store-locator-public.php:144
 msgid "None"
 msgstr "Keiner"
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Sun"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Mon"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Tues"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Wed"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Thur"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Fri"
 msgstr ""
 
-#: public/class-agile-store-locator-public.php:275
+#: public/class-agile-store-locator-public.php:288
 msgid "Sat"
 msgstr ""
 
-#: public/partials/template-frontend.php:17
+#: public/partials/template-frontend.php:11
 msgid "Search Location"
 msgstr "Suche Ort"
 
-#: public/partials/template-frontend.php:30
+#: public/partials/template-frontend.php:13
+msgid "Type your Address"
+msgstr ""
+
+#: public/partials/template-frontend.php:24
 msgid "Loading..."
 msgstr ""
 
-#: public/partials/template-frontend.php:59
+#: public/partials/template-frontend.php:53
 msgid "Get Your Directions"
 msgstr "Erhalten Sie Ihre Richtungen"
 
-#: public/partials/template-frontend.php:62
+#: public/partials/template-frontend.php:56
 msgid "From"
 msgstr "Von"
 
-#: public/partials/template-frontend.php:66
+#: public/partials/template-frontend.php:60
 msgid "To"
 msgstr "Zur Lage"
 
-#: public/partials/template-frontend.php:70
+#: public/partials/template-frontend.php:64
 msgid "Show Distance In"
 msgstr "Entfernung anzeigen"
 
-#: public/partials/template-frontend.php:79
+#: public/partials/template-frontend.php:73
 msgid "GET DIRECTIONS"
 msgstr "ANWEISUNGEN BEKOMMEN"
 
-#: public/partials/template-frontend.php:101
+#: public/partials/template-frontend.php:97
 msgid "Phone"
 msgstr "Telefon"
 
-#: public/partials/template-frontend.php:122
+#: public/partials/template-frontend.php:118
+#: public/partials/template-frontend.php:145
 msgid "Distance"
 msgstr "Entfernung"
 

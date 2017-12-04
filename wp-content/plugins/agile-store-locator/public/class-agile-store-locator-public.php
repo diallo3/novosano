@@ -86,6 +86,8 @@ class AgileStoreLocator_Public {
 		//[myshortcode foo="bar" bar="bing"]
 	    //AGILESTORELOCATOR_PLUGIN_PATH.
 
+		wp_enqueue_script( $this->AgileStoreLocator.'-script', AGILESTORELOCATOR_URL_PATH . 'public/js/site_script.js', array('jquery'), $this->version, true );
+		
 	    
 		if(!$atts) {
 
@@ -166,6 +168,20 @@ class AgileStoreLocator_Public {
 
 		$output = ob_get_contents();
 		ob_end_clean();
+
+
+		$title_nonce = wp_create_nonce( 'asl_remote_nonce' );
+		
+		wp_localize_script( $this->AgileStoreLocator.'-script', 'ASL_REMOTE', array(
+		    'ajax_url' => admin_url( 'admin-ajax.php' ),
+		    'nonce'    => $title_nonce // It is common practice to comma after
+		) );
+
+		wp_localize_script( $this->AgileStoreLocator.'-script', 'asl_configuration',$all_configs);
+		wp_localize_script( $this->AgileStoreLocator.'-script', 'asl_categories',$all_categories);
+		wp_localize_script( $this->AgileStoreLocator.'-script', 'asl_markers',array());
+
+
 		return $output;
 	}
 
@@ -228,11 +244,7 @@ class AgileStoreLocator_Public {
 		//dd($wp_scripts->registered);
 		wp_enqueue_script('google-map', $map_url,array('jquery'), null, true  );
 		wp_enqueue_script( $this->AgileStoreLocator.'-lib', AGILESTORELOCATOR_URL_PATH . 'public/js/libs_new.min.js', array('jquery'), $this->version, true );
-		wp_enqueue_script( $this->AgileStoreLocator.'-script', AGILESTORELOCATOR_URL_PATH . 'public/js/site_script.js', array('jquery'), $this->version, true );
-		wp_localize_script( $this->AgileStoreLocator.'-script', 'ASL_REMOTE', array(
-		    'ajax_url' => admin_url( 'admin-ajax.php' ),
-		    'nonce'    => $title_nonce // It is common practice to comma after
-		) );
+
 	}
 
 

@@ -1969,6 +1969,8 @@ q {
         max-width: 66.66667%; } }
     .c-hero .c-hero__summary * {
       color: #fff; }
+  .c-hero .c-hero__cta {
+    padding-bottom: 3em; }
   .c-hero .c-hero__tag {
     font-size: 1rem;
     color: #fff;
@@ -4502,49 +4504,44 @@ input.datepicker_with_icon {
 .hbspt-form {
   font-family: 'Muli', sans-serif !important;
   font-weight: 700; }
-  @media (max-width: 600px) {
-    .hbspt-form .hs-form-field {
-      float: none !important;
-      width: 100% !important; }
-    .hbspt-form input, .hbspt-form select, .hbspt-form textarea {
-      width: 100% !important; }
-    .hbspt-form .input {
-      margin-right: 0 !important; } }
   .hbspt-form ul {
     list-style-type: none;
     padding-left: 0; }
-  .hbspt-form .hs_phone_type_radio label,
-  .hbspt-form .hs_gender_radio label,
-  .hbspt-form .hs_preferred_contact_method label {
+  .hbspt-form .hs_phone_type_radio label, .hbspt-form .hs_gender_radio label, .hbspt-form .hs_preferred_contact_method label {
     display: block; }
+  .hbspt-form .hs_phone_type_radio > label {
+    padding-right: 1em;
+    float: left; }
+    .hbspt-form .hs_phone_type_radio > label:first-of-type::after {
+      content: ":"; }
+  .hbspt-form .hs_phone_type_radio ul {
+    margin-top: 0;
+    display: table; }
+  .hbspt-form .hs_phone_type_radio .hs-form-radio {
+    padding-right: 1em;
+    display: table-cell; }
+    .hbspt-form .hs_phone_type_radio .hs-form-radio .hs-input, .hbspt-form .hs_phone_type_radio .hs-form-radio span {
+      width: auto !important;
+      display: inline-block; }
   .hbspt-form fieldset {
     margin: 0 auto !important; }
     .hbspt-form fieldset ul.hs-error-msgs {
       display: none !important; }
-    .hbspt-form fieldset input[type=radio] {
+    .hbspt-form fieldset input {
       display: inline-block;
-      margin-right: 5px;
-      width: auto !important;
-      -webkit-appearance: radio;
-      -moz-appearance: radio;
-      appearance: radio; }
-    .hbspt-form fieldset input[type=checkbox] {
-      display: inline-block;
-      margin-right: 5px;
-      width: auto !important;
-      -webkit-appearance: checkbox;
-      -moz-appearance: checkbox;
-      appearance: checkbox; }
-    .hbspt-form fieldset ul.invalid.error {
-      color: #bf0413; }
-      .hbspt-form fieldset ul.invalid.error label {
-        color: #bf0413; }
-    .hbspt-form fieldset label.hs-form-radio-display {
-      display: block; }
+      margin-right: 5px; }
+      .hbspt-form fieldset input[type=radio] {
+        -webkit-appearance: radio;
+        -moz-appearance: radio;
+        appearance: radio; }
+      .hbspt-form fieldset input[type=checkbox] {
+        -webkit-appearance: checkbox;
+        -moz-appearance: checkbox;
+        appearance: checkbox; }
     .hbspt-form fieldset input, .hbspt-form fieldset select, .hbspt-form fieldset textarea {
-      border-radius: 50px;
-      border: 1px solid black;
-      font-size: .8125rem;
+      font-size: 0.8125rem;
+      border-radius: 5px;
+      border: 1px solid #cacaca;
       margin-bottom: 10px;
       text-transform: uppercase;
       width: 100% !important;
@@ -4555,34 +4552,44 @@ input.datepicker_with_icon {
         color: transparent;
         text-shadow: 0 0 0 #000; }
       .hbspt-form fieldset input::-webkit-input-placeholder, .hbspt-form fieldset select::-webkit-input-placeholder, .hbspt-form fieldset textarea::-webkit-input-placeholder {
-        color: black; }
+        color: #979797;
+        font-size: 0.8125rem; }
       .hbspt-form fieldset input::-moz-placeholder, .hbspt-form fieldset select::-moz-placeholder, .hbspt-form fieldset textarea::-moz-placeholder {
-        color: black; }
+        color: #979797;
+        font-size: 0.8125rem; }
       .hbspt-form fieldset input:-ms-input-placeholder, .hbspt-form fieldset select:-ms-input-placeholder, .hbspt-form fieldset textarea:-ms-input-placeholder {
-        color: black; }
+        color: #979797;
+        font-size: 0.8125rem; }
       .hbspt-form fieldset input:-moz-placeholder, .hbspt-form fieldset select:-moz-placeholder, .hbspt-form fieldset textarea:-moz-placeholder {
-        color: black; }
+        color: #979797;
+        font-size: 0.8125rem; }
       .hbspt-form fieldset input.error, .hbspt-form fieldset input.invalid, .hbspt-form fieldset select.error, .hbspt-form fieldset select.invalid, .hbspt-form fieldset textarea.error, .hbspt-form fieldset textarea.invalid {
-        background: #bf0413;
-        border-color: #bf0413;
-        color: #fff; }
+        color: #bf0413;
+        background: #fff;
+        border-color: #bf0413; }
         .hbspt-form fieldset input.error::-webkit-input-placeholder, .hbspt-form fieldset input.invalid::-webkit-input-placeholder, .hbspt-form fieldset select.error::-webkit-input-placeholder, .hbspt-form fieldset select.invalid::-webkit-input-placeholder, .hbspt-form fieldset textarea.error::-webkit-input-placeholder, .hbspt-form fieldset textarea.invalid::-webkit-input-placeholder {
-          color: #fff; }
+          color: #bf0413; }
         .hbspt-form fieldset input.error::-moz-placeholder, .hbspt-form fieldset input.invalid::-moz-placeholder, .hbspt-form fieldset select.error::-moz-placeholder, .hbspt-form fieldset select.invalid::-moz-placeholder, .hbspt-form fieldset textarea.error::-moz-placeholder, .hbspt-form fieldset textarea.invalid::-moz-placeholder {
-          color: #fff; }
+          color: #bf0413; }
         .hbspt-form fieldset input.error:-ms-input-placeholder, .hbspt-form fieldset input.invalid:-ms-input-placeholder, .hbspt-form fieldset select.error:-ms-input-placeholder, .hbspt-form fieldset select.invalid:-ms-input-placeholder, .hbspt-form fieldset textarea.error:-ms-input-placeholder, .hbspt-form fieldset textarea.invalid:-ms-input-placeholder {
-          color: #fff; }
+          color: #bf0413; }
         .hbspt-form fieldset input.error:-moz-placeholder, .hbspt-form fieldset input.invalid:-moz-placeholder, .hbspt-form fieldset select.error:-moz-placeholder, .hbspt-form fieldset select.invalid:-moz-placeholder, .hbspt-form fieldset textarea.error:-moz-placeholder, .hbspt-form fieldset textarea.invalid:-moz-placeholder {
-          color: #fff; }
+          color: #bf0413; }
+    .hbspt-form fieldset ul.invalid.error {
+      color: #bf0413; }
+      .hbspt-form fieldset ul.invalid.error label {
+        color: #bf0413; }
+    .hbspt-form fieldset label.hs-form-radio-display {
+      display: block; }
     .hbspt-form fieldset select {
-      background: url(/wp-content/themes/novosano/assets/images/down-chevron.png) no-repeat;
-      background-position: 100% 0%;
-      background-size: 43px 86px;
+      background: url("../images/icon-select-down.svg") no-repeat;
+      background-position: 98% 47%;
       height: 43px; }
       .hbspt-form fieldset select.error, .hbspt-form fieldset select.invalid {
-        background: #bf0413 url(/wp-content/themes/novosano/assets/images/down-chevron.png) no-repeat;
-        background-position: 100% 100%;
-        background-size: 43px 86px; }
+        background-position: 100% 100%; }
+      .hbspt-form fieldset select option {
+        color: #cacaca;
+        font-size: 0.8125rem; }
     .hbspt-form fieldset textarea {
       height: 140px;
       border-radius: 10px;
@@ -4593,31 +4600,22 @@ input.datepicker_with_icon {
     .hbspt-form .hs_submit .actions {
       text-align: center; }
     .hbspt-form .hs_submit input {
+      color: #fff;
+      font-size: .8125rem;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      background: #bf0413;
+      border: 1px solid #bf0413;
+      border-radius: 50px;
       display: inline-block;
       vertical-align: middle;
       margin: 0 0 10px 0;
-      padding: .85em 1em;
-      -webkit-appearance: none;
-      border: 1px solid transparent;
-      border-radius: 0;
-      transition: background-color .25s ease-out,color .25s ease-out;
-      font-size: .9rem;
-      line-height: 1;
-      text-align: center;
-      cursor: pointer;
-      background-color: transparent;
-      color: #bf0413;
-      font-size: .8125rem;
-      text-transform: uppercase;
-      border: 1px solid #bf0413;
-      border-radius: 50px;
-      padding: 1.5em 2em;
+      padding: 1.5em 2.5em;
       width: auto;
-      background: #bf0413 !important;
-      border-color: #bf0413 !important;
-      color: #fff !important; }
+      -webkit-appearance: none;
+      transition: background-color .25s ease-out,color .25s ease-out; }
       .hbspt-form .hs_submit input:hover {
-        background: #ef0013 !important;
-        border-color: #ef0013 !important;
-        color: #fff !important;
+        background: #0d0d0d;
+        border-color: #0d0d0d;
         cursor: pointer !important; }

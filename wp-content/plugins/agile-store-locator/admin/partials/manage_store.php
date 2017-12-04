@@ -1,17 +1,20 @@
 <!-- Container -->
 <style type="text/css">
-  #tbl_stores_wrapper {position: relative;}
+  #tbl_stores_wrapper {position: relative;margin-top: 55px;}
   #tbl_stores_length {position: absolute; top: -36px; left: 11px;}
 </style>
 <div class="asl-p-cont">
   <div>
 	<h3 class="alert alert-info head-1">Manage Stores</h3>
   <div class="row">
+    <div class="col-md-3 pull-left">
+      <a type="button" href="admin.php?page=create-agile-store"  class="btn btn-primary">Add New Store</a>
+    </div>
     <div class="col-md-3 pull-right">
       <button type="button" id="asl-delete-stores" class="btn btn-primary btn-danger">Delete All Stores</button>
     </div>
   </div>
-	<table id="tbl_stores" class="table table-bordered table-striped">
+	<table id="tbl_stores" class="table table-bordered table-striped" >
       <thead>
         <tr>
           <th  align="center"><Button type="button" class="btn btn-default" id="Search_Data">Search</Button></th>

@@ -6,7 +6,7 @@ Tags:  store locator, location finder,google maps, directions,store finder, geoc
 Requires at least: 3.3.2
 Tested up to: 4.9
 Donate link: https://codecanyon.net/item/agile-store-locator-google-maps-for-wordpress/16973546
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,6 +134,10 @@ https://www.youtube.com/watch?v=5GjsKNyJQC4
 * Option to select Map Region for Tiles
 * Logo Manger with Listing
 * Full Screen Map and Fixed
+* Search on Bound Button
+* Show Limited Stores
+* Select Default Category
+* Show Center Button
 * 60+ Advance Options for Store Locator Admin.
 * GeoDirectory Supported.
 
@@ -193,10 +197,22 @@ Installation of this plugin is pretty easy.
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-Please upgrade your version to latest 1.0.1 version
+= 1.1.1 =
+Please upgrade your version to latest 1.1.1 version
 
 == Changelog ==
+
+= 1.1.1 =
+Updated Help Guide
+Translation Updated
+More Compatible
+
+= 1.1.0 =
+Added Distance in List and InfoWindow
+Multiple Time slots per Day
+Updated the Backend of Locator
+Some new awesome updates
+
 
 = 1.0.3 =
 Sweetalert conflict
