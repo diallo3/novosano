@@ -78,6 +78,78 @@
             items: 1
         });
 
+        $('#subscribeModal').slickModals({
+            // Hide on pages
+            hideOnPages: '',
+            // Popup type
+            popupType: 'scrolled',
+            delayTime: 0,
+            scrollTopDistance: 220,
+            // Auto closing
+            autoClose: true,
+            autoCloseDelay: 30000,
+            // Statistics
+            enableStats: false,
+            fileLocation: 'slickStats/collect.php',
+            modalName: 'Subscribe',
+            modalSummary: '',
+            callToAction: 'cta',
+            // Popup cookies
+            setCookie: false,
+            cookieDays: 0,
+            cookieTriggerClass: 'subscribeCookie-1',
+            cookieName: 'subscribeModal-1',
+            cookieScope: 'domain',
+            // Overlay styling
+            overlayVisible: false,
+            overlayClosesModal: true,
+            overlayColor: 'rgba(0, 0, 0, 0.8)',
+            overlayAnimationDuration: '0.4',
+            overlayAnimationEffect: 'fadeIn',
+            // Background effects
+            pageAnimationDuration: '0.4',
+            pageAnimationEffect: 'none',
+            pageBlurRadius: '1px',
+            pageScaleValue: '0.9',
+            pageMoveDistance: '30%',
+            // Popup styling
+            popupWidth: '480px',
+            popupHeight: '320px',
+            popupLocation: 'bottomLeft',
+            popupAnimationDuration: '0.4',
+            popupAnimationEffect: 'fadeIn',
+            popupBoxShadow: '0 0 20px rgba(0,0,0,0.4)',
+            popupBackground: 'rgba(255, 255, 255, 1)',
+            popupRadius: '4px',
+            popupMargin: '0px',
+            popupPadding: '0px',
+            // Mobile rules
+            showOnMobile: true,
+            responsive: true,
+            mobileBreakPoint: '480px',
+            mobileLocation: 'center',
+            mobileWidth: '90%',
+            mobileHeight: '280px',
+            mobileRadius: '0px',
+            mobileMargin: '0px',
+            mobilePadding: '24px',
+            // Animate content
+            contentAnimation: true,
+            contentAnimationEffect: 'slideBottom',
+            contentAnimationDuration: '0.4',
+            contentAnimationDelay: '0.4',
+            // Youtube videos
+            videoSupport: false,
+            videoAutoPlay: false,
+            videoStopOnClose: false,
+            // Close and reopen button
+            addCloseButton: true,
+            buttonStyle: 'circle',
+            enableESC: true,
+            reopenClass: 'openSlickModal-1',
+            // Additional events
+        });
+
         /************************************************************
 
             Navigation

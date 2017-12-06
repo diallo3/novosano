@@ -1,0 +1,16 @@
+/*--------------------------------
+  
+  Slick Theme
+*/
+$sub: c-subscribe;
+
+.#{$sub} {
+	padding: 1em 1em 3em;
+	&__header {
+		text-align: center;
+		margin-bottom: 1em;
+		p {
+			font-size: rem-calc(12); 
+		}
+	}
+}

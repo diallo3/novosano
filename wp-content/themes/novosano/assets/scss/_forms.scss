@@ -116,6 +116,7 @@
         select { 
             background: url('#{$imgPath}/icon-select-down.svg') no-repeat;
             background-position: 98% 47%;
+            padding-left: 1em; 
             height: 43px;
             &.error, &.invalid { 
             background-position: 100% 100%; 
