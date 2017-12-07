@@ -58,10 +58,6 @@
 		padding: 1.75em 0.5rem !important;
 		width: 80px;
 		height: 80px; 
-		visibility: hidden;
-		@include breakpoint(medium) {
-			visibility: visible;
-		}
 	}
 }
 

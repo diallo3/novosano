@@ -1159,11 +1159,7 @@ q {
     border-color: #fff;
     padding: 1.75em 0.5rem !important;
     width: 80px;
-    height: 80px;
-    visibility: hidden; }
-    @media print, screen and (min-width: 40em) {
-      .o-cta--sm {
-        visibility: visible; } }
+    height: 80px; }
 
 /*!
  * Hamburgers
