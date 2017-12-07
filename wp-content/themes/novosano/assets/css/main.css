@@ -2012,8 +2012,12 @@ q {
 
 .c-orbit {
   background-color: #0d0d0d;
+  display: none !important;
   position: absolute !important;
   z-index: 1; }
+  @media print, screen and (min-width: 64em) {
+    .c-orbit {
+      display: block; } }
   .c-orbit__img {
     width: 100%; }
   .c-orbit .owl-item {

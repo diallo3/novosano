@@ -146,6 +146,10 @@ $type: post-type-archive;
 
 .#{$orbit} {
 	background-color: $black; 
+	display: none !important;
+	@include breakpoint(large) {
+		display: block;
+	}
 	position: absolute !important;
     z-index: 1;
 	&__img {
