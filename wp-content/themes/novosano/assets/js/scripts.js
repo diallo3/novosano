@@ -653,8 +653,8 @@ if (window.jQuery) {
             modalSummary: '',
             callToAction: 'cta',
             // Popup cookies
-            setCookie: false,
-            cookieDays: 0,
+            setCookie: true,
+            cookieDays: 1,
             cookieTriggerClass: 'subscribeCookie-1',
             cookieName: 'subscribeModal-1',
             cookieScope: 'domain',
