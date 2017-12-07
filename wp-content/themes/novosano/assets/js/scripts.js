@@ -687,7 +687,7 @@ if (window.jQuery) {
             mobileBreakPoint: '480px',
             mobileLocation: 'center',
             mobileWidth: '90%',
-            mobileHeight: '280px',
+            mobileHeight: '380px',
             mobileRadius: '0px',
             mobileMargin: '0px',
             mobilePadding: '24px',

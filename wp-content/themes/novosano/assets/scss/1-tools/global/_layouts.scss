@@ -16,7 +16,7 @@
 	&--main {
 		@include grid-col(10);
 		@include breakpoint(large) {
-			@include grid-col(4);
+			@include grid-col(3);
 		}
 	}
 	&--secondary {
@@ -28,7 +28,7 @@
 	&--main {
 		@include grid-col(2);
 		@include breakpoint(large) {
-			@include grid-col(8);
+			@include grid-col(9);
 		}
 		
 	}

@@ -838,7 +838,7 @@ p {
     float: right; }
   @media print, screen and (min-width: 64em) {
     .l-logo--main {
-      width: 33.33333%;
+      width: 25%;
       float: left;
       padding-right: 0.625rem;
       padding-left: 0.625rem; } }
@@ -866,7 +866,7 @@ p {
     float: right; }
   @media print, screen and (min-width: 64em) {
     .l-menu--main {
-      width: 66.66667%;
+      width: 75%;
       float: left;
       padding-right: 0.625rem;
       padding-left: 0.625rem; } }
