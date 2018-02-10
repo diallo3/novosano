@@ -17,7 +17,7 @@
 	{% endfor %}
 	
 		<li class="c-menu__item c-menu__schedule">
-			<a href="{% if options.schedule %}{{options.schedule}} {% else %} {{site.url}}/contact {% endif %}" class="o-cta o-cta--nav" target="_blank">Schedule Today</a>
+			<a href="{% if options.schedule %}{{options.schedule}} {% else %} {{site.url}}/contact {% endif %}" class="o-cta o-cta--nav" target="_blank">{{options.schedule_text}}</a>
 		</li>
 	
 	</menu>
