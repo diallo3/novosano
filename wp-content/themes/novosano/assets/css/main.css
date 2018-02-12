@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /******************************************************************
 	
 Stylesheet: Main Stylesheet
@@ -1161,6 +1162,36 @@ q {
     width: 80px;
     height: 80px; }
 
+.back-to-top {
+  font-family: verdana;
+  font-size: 1.1rem;
+  background-color: #595959;
+  width: 64px;
+  height: 50px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity .8s ease, background-color .3s ease; }
+  .back-to-top.is-visible {
+    opacity: .5; }
+  .back-to-top.is-fade-out {
+    opacity: 1; }
+  .back-to-top::before {
+    content: "^";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+    color: #fff;
+    font-weight: bold; }
+  .back-to-top:hover {
+    background-color: #bf0413; }
+
 /*!
  * Hamburgers
  * @description Tasty CSS-animated hamburgers
@@ -1269,6 +1300,8 @@ q {
         height: 140px; } }
     .c-header-wrap.sticky .o-logo__brand {
       background-image: url(../images/logo-drk.svg); }
+    .c-header-wrap.sticky .c-menu__item.menu-item-has-children::before {
+      color: #575757; }
     .c-header-wrap.sticky .c-menu__link:not(.o-cta) {
       color: #3e3e3e; }
     .c-header-wrap.sticky .o-cta--nav {
@@ -1552,6 +1585,40 @@ q {
       .c-menu--main .dropdown.menu.large-vertical > li.opens-right > .is-dropdown-submenu {
         right: auto;
         left: 100%; } }
+    @media screen and (min-width: 75em) {
+      .c-menu--main .dropdown.menu.xlarge-horizontal > li.opens-left > .is-dropdown-submenu {
+        top: 100%;
+        right: 0;
+        left: auto; }
+      .c-menu--main .dropdown.menu.xlarge-horizontal > li.opens-right > .is-dropdown-submenu {
+        top: 100%;
+        right: auto;
+        left: 0; }
+      .c-menu--main .dropdown.menu.xlarge-vertical > li .is-dropdown-submenu {
+        top: 0; }
+      .c-menu--main .dropdown.menu.xlarge-vertical > li.opens-left > .is-dropdown-submenu {
+        right: 100%;
+        left: auto; }
+      .c-menu--main .dropdown.menu.xlarge-vertical > li.opens-right > .is-dropdown-submenu {
+        right: auto;
+        left: 100%; } }
+    @media screen and (min-width: 90em) {
+      .c-menu--main .dropdown.menu.xxlarge-horizontal > li.opens-left > .is-dropdown-submenu {
+        top: 100%;
+        right: 0;
+        left: auto; }
+      .c-menu--main .dropdown.menu.xxlarge-horizontal > li.opens-right > .is-dropdown-submenu {
+        top: 100%;
+        right: auto;
+        left: 0; }
+      .c-menu--main .dropdown.menu.xxlarge-vertical > li .is-dropdown-submenu {
+        top: 0; }
+      .c-menu--main .dropdown.menu.xxlarge-vertical > li.opens-left > .is-dropdown-submenu {
+        right: 100%;
+        left: auto; }
+      .c-menu--main .dropdown.menu.xxlarge-vertical > li.opens-right > .is-dropdown-submenu {
+        right: auto;
+        left: 100%; } }
     .c-menu--main .dropdown.menu.align-right .is-dropdown-submenu.first-sub {
       top: 100%;
       right: 0;
@@ -1626,16 +1693,33 @@ q {
         width: 100%; }
     .c-menu--main > .c-menu__item {
       margin-left: 1.5em; }
+      .c-menu--main > .c-menu__item.menu-item-has-children::before {
+        content: "›";
+        display: block;
+        position: absolute;
+        transition: all 1.2s ease;
+        color: #fff;
+        font-weight: bold;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-40%) rotate(90deg);
+        opacity: 1; }
+      .c-menu--main > .c-menu__item:hover::before {
+        color: #bf0413 !important;
+        opacity: 0;
+        top: 120%; }
       .c-menu--main > .c-menu__item.is-active .c-menu__link::before, .c-menu--main > .c-menu__item.is-active .c-menu__link::after {
         width: 100%; }
-    .c-menu--main .c-menu--children {
+    .c-menu--main .c-menu--children, .c-menu--main .c-menu--grandchildren {
       background-color: rgba(0, 0, 0, 0.8);
       border-width: 0;
       padding-left: 0;
-      top: 57px !important;
+      position: absolute; }
+    .c-menu--main .c-menu--children {
       left: 0 !important;
       right: auto;
-      display: none; }
+      display: none;
+      width: 100%; }
       .c-menu--main .c-menu--children::before, .c-menu--main .c-menu--children::after {
         content: " ";
         border: solid transparent;
@@ -1655,13 +1739,24 @@ q {
         border-bottom-color: rgba(0, 0, 0, 0.8);
         border-width: 10px;
         margin-left: -80px; }
-    .c-menu--main .c-menu__sub-link {
+      .c-menu--main .c-menu--children .is-dropdown-submenu-parent .c-menu__sub-link::before {
+        content: "\203A";
+        font-family: verdana;
+        font-size: 0.9rem;
+        font-weight: bold;
+        position: absolute;
+        right: 5%; }
+    .c-menu--main .c-menu__sub-link, .c-menu--main .c-menu__ter-link {
       color: #fff;
       padding: .5em .8em;
       display: block;
-      transition: all ease .3s; }
-      .c-menu--main .c-menu__sub-link:hover {
+      transition: all ease .3s;
+      position: relative; }
+      .c-menu--main .c-menu__sub-link:hover, .c-menu--main .c-menu__ter-link:hover {
         background-color: #bf0413; }
+    .c-menu--main .c-menu--grandchildren {
+      top: 0 !important;
+      left: 100% !important; }
   .c-menu--btn-mobile {
     display: block; }
     @media print, screen and (min-width: 64em) {
@@ -1821,14 +1916,6 @@ q {
     text-align: center;
     text-transform: uppercase;
     background-color: #bf0413; }
-
-.c-menu--children {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-  .c-menu--children li {
-    float: none;
-    position: relative; }
 
 .c-menu--btn-mobile .hamburger, .c-menu--btn-mobile .hamburger:hover, .c-menu--btn-mobile .hamburger:focus {
   background-color: transparent !important;
@@ -4904,9 +4991,6 @@ input.datepicker_with_icon {
     font-size: 0.875rem;
     font-weight: 700;
     font-style: italic; }
-    @media print, screen and (min-width: 64em) {
-      .c-relationship__tag {
-        max-width: 60%; } }
   .c-relationship__block {
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 1.875rem;
@@ -4930,6 +5014,10 @@ input.datepicker_with_icon {
     min-height: 280px; }
   .c-relationship--index .c-relationship__entry {
     height: auto; }
+
+@media print, screen and (min-width: 64em) {
+  .l-column__block-one .c-relationship__content {
+    max-width: 50%; } }
 
 /*--------------------------------
   

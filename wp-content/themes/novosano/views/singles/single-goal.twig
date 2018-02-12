@@ -8,26 +8,27 @@
 	{% set resp = post.get_field('goal_team_response') %}
 
 	{# responses #}
+	{% if tell or resp %}
 	<div class="c-lead-container l-block">
 		<div class="l-wrap">
 			<div class="c-lead c-lead--reasons">
-				{# <span class="c-lead__accent">accent</span> #}
-				{# {{post.content}} #}
-
+				{% if tell %}
 				<div class="c-lead__quote">
 					<h4 class="c-lead__qtitle">What you tell us:</h4>
 					<p class="c-lead__qcontent">{{tell}}</p>
 				</div>
-				{# <div class="c-lead__mid">
-					<span class="o-circle">&nbsp;</span>	
-				</div> #}
+				{% endif %}
+
+				{% if resp %}
 				<div class="c-lead__quote">
 					<h4 class="c-lead__qtitle">Our team responds:</h4>
 					<p class="c-lead__qcontent">{{resp}}</p>
 				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
+	{% endif %}
 
 
 	<div class="c-content__entry c-content__wide l-wrap">
@@ -74,4 +75,8 @@
 		</article>
 	</div> 
 	{% include "includes/inc-testimonials.twig" %}
+
+	{% if post.get_field('include_optin') %}
+		{% include 'includes/inc-opt-in.twig' %}
+	{% endif %}
 {% endblock %}

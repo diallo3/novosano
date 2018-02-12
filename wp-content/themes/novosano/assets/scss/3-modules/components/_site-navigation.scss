@@ -49,6 +49,26 @@ $off: c-canvas;
 		}
 		> .#{$menu}__item {
 			margin-left: 1.5em; 
+			&.menu-item-has-children {
+				
+				&::before {
+					@include pseudo($display: block, $pos: absolute, $content: "\203A");
+					transition: all 1.2s ease;
+					color: $white;
+					font-weight: bold;
+					top: 70%;
+					left: 50%;
+					transform: translateX(-40%) rotate(90deg);
+					opacity: 1;
+				}
+			}
+			&:hover {
+				&::before {
+					color: $s-primary !important;
+					opacity: 0;
+					top: 120%;
+				}
+			}
 			&.is-active {
 				.#{$menu}__link {
 					&::before, &::after {
@@ -57,14 +77,17 @@ $off: c-canvas;
 				}
 			}
 		}
-		.#{$menu}--children {
+		.#{$menu}--children, .#{$menu}--grandchildren {
 			background-color: black(0.8);
 			border-width: 0; 
 			padding-left: 0;
-			top: 57px !important;
+			position: absolute;
+		}
+		.#{$menu}--children {
 			left: 0 !important;
 			right: auto;
 			display: none;
+			width: 100%;
 			&::before, &::after {
 				content: " ";
 				border: solid transparent;
@@ -87,19 +110,31 @@ $off: c-canvas;
 				border-width: 10px;
 				margin-left: -80px;
 			}
+			.is-dropdown-submenu-parent {
+				.c-menu__sub-link::before {
+					content: "\203A";
+					font-family: verdana;
+					font-size: 0.9rem;
+					font-weight: bold;
+					position: absolute;
+					right: 5%;
+				}
+				
+			}
 		}
-		.#{$menu}__sub-link {
+		.#{$menu}__sub-link, .#{$menu}__ter-link {
 			color: $white;
 			padding: .5em .8em; 
-			display: block;
-			-webkit-transition: all ease .3s; 
-			-moz-transition: all ease .3s; 
-			-ms-transition: all ease .3s; 
-			-o-transition: all ease .3s; 
+			display: block; 
 			transition: all ease .3s; 
+			position: relative;
 			&:hover {
 				background-color: $s-primary; 
 			}
+		}
+		.#{$menu}--grandchildren {
+			top: 0 !important;
+			left: 100% !important;
 		}
 	}
 	&--btn-mobile {
@@ -172,7 +207,7 @@ $off: c-canvas;
 }
 
 .#{$menu}--children {
-	@include flat-list;
+	
 }
 
 .#{$menu}--btn-mobile {

@@ -61,3 +61,36 @@
 	}
 }
 
+.back-to-top {
+	font-family: verdana;
+	font-size: 1.1rem;
+	background-color: darken($s-gray, 60%);
+	width: 64px;
+	height: 50px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: 999;
+	opacity: 0;
+	transition: opacity .8s ease, background-color .3s ease;
+	
+	&.is-visible {
+		opacity: .5;
+	}
+
+	&.is-fade-out {
+		opacity: 1;
+	}
+	
+	&::before {
+		@include pseudo($display: block, $pos: absolute, $content: "\005e");
+		@include center($xy:xy);
+		color: $white;
+		font-weight: bold;
+	}
+
+	&:hover {
+		background-color: $s-primary;
+	}
+}
+

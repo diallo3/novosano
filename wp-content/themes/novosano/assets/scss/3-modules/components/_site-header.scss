@@ -29,6 +29,11 @@
 		.o-logo__brand {
 			background-image: url(#{$imgPath}/logo-drk.svg); 
 		}
+		.c-menu__item {
+			&.menu-item-has-children::before {
+				color: darken($dark-gray, 20%);
+			}
+		}
 		.c-menu__link:not(.o-cta) {
 			color: darken($dark-gray, 30%);
 		}

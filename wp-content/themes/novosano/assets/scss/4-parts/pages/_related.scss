@@ -72,9 +72,6 @@ $related: c-relationship;
 		font-size: rem-calc(14); 
 		font-weight: 700;
 		font-style: italic; 
-		@include breakpoint(large) {
-			max-width: 60%; 
-		}
 	}
 
 	&__block {
@@ -107,4 +104,12 @@ $related: c-relationship;
 			
 	}
 
+}
+
+.l-column__block-one {
+	@include breakpoint(large) {
+		.#{$related}__content {
+			max-width: 50%;
+		}
+	}
 }

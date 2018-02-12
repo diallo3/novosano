@@ -104,4 +104,8 @@
 		</article>
 	</div> 
 	{% include "includes/inc-testimonials.twig" %}
+
+	{% if post.get_field('include_optin') %}
+		{% include 'includes/inc-opt-in.twig' %}
+	{% endif %}
 {% endblock %}

@@ -653,7 +653,7 @@ if (window.jQuery) {
             modalSummary: '',
             callToAction: 'cta',
             // Popup cookies
-            setCookie: true,
+            setCookie: false,
             cookieDays: 1,
             cookieTriggerClass: 'subscribeCookie-1',
             cookieName: 'subscribeModal-1',
@@ -729,6 +729,32 @@ if (window.jQuery) {
         }
         hamburgerNav();
 
+        // back to top
+        function backTop() {
+            var $offset = 300;
+            var $opacity = 1200;
+            var $duration = 700;
+            var $back_top = $('.back-to-top');
+
+            $(window).scroll(function(){
+                var $this = $(this);
+                ( $this.scrollTop() > $offset ) ? $back_top.addClass('is-visible') : $back_top.removeClass('is-visible is-fade-out');
+                if( $this.scrollTop() > $opacity) {
+                    $back_top.addClass('is-fade-out');
+                }
+            });
+
+            $back_top.on('click', function(e) {
+                e.preventDefault();
+                $('body,html').animate({
+                    scrollTop: 0,
+                    },
+                    $duration
+                );
+            });
+        }
+        backTop();
+
         /************************************************************
 
             Homepage
@@ -736,12 +762,13 @@ if (window.jQuery) {
         ************************************************************/ 
 
         // CoverVid
-        if($('.c-vid').length > 0) {
-            $('.c-vid__bck').coverVid(640, 360);
+        if($('.c-vid')[0]) {
+            $('.c-vid__bck').coverVid(1920, 1080);
+            console.log('video')
+        } else {
+            console.log('no video')
         }
         
-
-
         // Odd Even for homepage
         function skCount() {
             var $sk = $('.c-sidekick__block');
@@ -757,7 +784,7 @@ if (window.jQuery) {
         }
         return skCount();
 
-  });
+});
 
 
 })(jQuery);
