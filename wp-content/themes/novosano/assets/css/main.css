@@ -4394,6 +4394,7 @@ input.datepicker_with_icon {
         background-color: inherit; }
     .o-sticky-bar .o-sticky__icon > a {
       color: inherit;
+      font-family: "Muli", sans-serif;
       background-color: inherit;
       display: block; }
       .o-sticky-bar .o-sticky__icon > a > .fa {
